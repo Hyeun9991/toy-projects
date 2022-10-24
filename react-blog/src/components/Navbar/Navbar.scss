@@ -1,0 +1,191 @@
+// colors
+$backColor: #f1f1f1;
+$textColor: #333333;
+
+.navbar {
+  background-color: rgba($color: $backColor, $alpha: 0.8);
+  height: 55px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: all 0.35s ease;
+  opacity: 1;
+
+  &.hide {
+    top: -100%;
+    opacity: 0.7;
+  }
+
+  .navbar-container {
+    width: 100%;
+    height: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 22px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .menu-icon {
+      // a태그들
+      padding: 0.4rem;
+    }
+
+    .navbar-logo {
+    }
+
+    .navbar-menus {
+      display: flex;
+
+      li {
+        margin: 0.4rem;
+
+        &:nth-child(3) {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .navbar-btn {
+      display: none;
+    }
+  }
+}
+.navbar-fixed-menu {
+  background-color: $textColor;
+  width: 100%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  opacity: 0.7;
+  transition: all 0.35s ease;
+
+  a {
+    color: $backColor;
+  }
+
+  &.fixed {
+    width: 100%;
+    top: 0;
+    right: 0;
+    opacity: 1;
+    transition: all 0.35s ease;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    background-color: $textColor;
+    a {
+      color: $backColor;
+    }
+
+    .navbar-container {
+      position: relative;
+
+      .menu-icon {
+        // a태그들
+        padding: 0.4rem;
+        color: $backColor;
+      }
+
+      .navbar-logo {
+        z-index: 99999;
+      }
+
+      .navbar-menus {
+        background-color: $textColor;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.35s ease;
+
+        &.open {
+          right: 0;
+        }
+
+        li {
+          // background-color: red;
+          width: 100%;
+          // height: 100%;
+          text-align: center;
+
+          &:nth-child(3) {
+            margin-right: 0.4rem;
+          }
+
+          a {
+            // background-color: red;
+            color: $backColor;
+          }
+        }
+      }
+
+      .navbar-btn {
+        // background-color: red;
+        display: block;
+        width: 30px;
+        height: 35px;
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+        z-index: 99999;
+        cursor: pointer;
+
+        &.close {
+          span {
+            background-color: transparent;
+          }
+          span:before {
+            top: 0;
+          }
+          span:after {
+            top: 0;
+          }
+        }
+
+        span {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          width: 100%;
+          height: 1.5px;
+          background-color: $backColor;
+          transition: all 0.35s ease;
+
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1.5px;
+            background-color: $backColor;
+            transition: all 0.35s ease;
+          }
+
+          &::before {
+            top: 4px;
+          }
+
+          &::after {
+            top: -4px;
+          }
+        }
+      }
+    }
+  }
+}
