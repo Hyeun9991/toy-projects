@@ -3,7 +3,6 @@ $backColor: #f1f1f1;
 $textColor: #333333;
 
 .home-section2 {
-  // background-color: rgba($color: $textColor, $alpha: 0.9);
   position: fixed;
   bottom: 0;
   left: 0;
@@ -47,6 +46,36 @@ $textColor: #333333;
 
       a {
         
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .home-section2 {
+    // margin: 1rem;
+    
+    &.move {
+      .home-section2-container {
+      }
+    }
+  
+    .home-section2-container {
+      
+      max-width: 650px;
+  
+      .home-section2-span {
+      }
+  
+      li {
+       
+        &.scroll-down {
+        }
+  
+        a {
+          
+        }
       }
     }
   }

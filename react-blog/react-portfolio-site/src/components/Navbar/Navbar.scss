@@ -1,0 +1,316 @@
+// colors
+$backColor: #f1f1f1;
+$textColor: #333333;
+$boxColor: #d1d1d1;
+
+.navbar {
+  width: 100%;
+  height: 100vh;
+
+  .navbar-container {
+    // background-color: rgba($color: #000000, $alpha: 0.2);
+    max-width: 1080px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+
+    .navbar-box {
+      background-color: rgba($color: #000000, $alpha: 0.2);
+      width: 1000px;
+      height: 600px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .profile-box {
+        // background-color: blue;
+        width: 200px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem;
+
+        margin: 0 auto;
+
+        .profile-image {
+          background-color: blueviolet;
+          display: block;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          margin-bottom: 0.6rem;
+        }
+        .profile-name {
+        }
+        .profile-job {
+        }
+      }
+
+      .resume-box {
+        // background-color: red;
+        padding: 1rem;
+        display: flex;
+        text-align: center;
+        .resume-text {
+          font-size: 22px;
+        }
+      }
+
+      .contact-box {
+        // background-color: green;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+
+        p {
+          font-size: 20px;
+          // background-color: greenyellow;
+          margin-bottom: 1rem;
+        }
+
+        li {
+          text-align: center;
+
+          a {
+            // background-color: red;
+            display: block;
+            width: 70px;
+            height: auto;
+            padding: 0.4rem 1rem;
+            font-size: 14px;
+          }
+        }
+      }
+      .menu-list {
+        // background-color: yellow;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+
+        p {
+          font-size: 20px;
+          // background-color: greenyellow;
+          margin-bottom: 1rem;
+        }
+
+        li {
+          // margin: 0.4rem;
+          text-align: center;
+
+          a {
+            // background-color: red;
+            display: block;
+            width: 70px;
+            height: auto;
+            padding: 0.4rem 1rem;
+            font-size: 14px;
+            // color: white;
+          }
+        }
+      }
+
+      .menu-icon {
+        display: none;
+      }
+      .hidden-menu {
+        display: none;
+      }
+    }
+  }
+
+  &.to-top {
+    background-color: rgba($color: $backColor, $alpha: .7);
+    // background-color: rgba($color: black, $alpha: 0.8);
+    backdrop-filter: blur(4px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+
+    .navbar-container {
+      .navbar-box {
+        background-color: transparent;
+        max-width: 1080px;
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+
+        .profile-box {
+          background-color: red;
+          align-self: start;
+          width: auto;
+          height: auto;
+
+          .profile-image {
+            display: none;
+          }
+          .profile-name {
+            position: absolute;
+            top: 50%;
+            left: 22px;
+            transform: translateY(-50%);
+          }
+          .profile-job {
+            display: none;
+          }
+        }
+        .resume-box {
+          display: none;
+        }
+        .contact-box {
+          display: none;
+        }
+        .menu-list {
+          display: none;
+        }
+        .menu-icon {
+          // background-color: red;
+          display: block;
+          width: 40px;
+          height: 30px;
+          position: relative;
+          top: 50%;
+          right: 22px;
+          transform: translateY(-50%);
+          cursor: pointer;
+
+          &.open {
+            span:before {
+              top: 0;
+            }
+            span::after {
+              top: 0;
+            }
+          }
+
+          span {
+            background-color: transparent;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 2px;
+
+            &::before,
+            &::after {
+              content: '';
+              background-color: black;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 2px;
+              transition: all 0.35s;
+            }
+
+            &::before {
+              top: 4px;
+            }
+
+            &::after {
+              top: -4px;
+            }
+          }
+        }
+        .hidden-menu {
+          display: none;
+          color: $backColor;
+          a {
+            color: $backColor;
+          }
+
+          &.open-menu {
+            display: block;
+            background-color: rgba($color: #000000, $alpha: 1);
+            position: absolute;
+            top: 55px;
+            right: 0;
+            width: 300px;
+            height: auto;
+            padding: 1rem;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          }
+
+          .contact-box2 {
+            // background-color: black;
+            padding: 1rem;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            margin-bottom: 1rem;
+
+            p {
+              // background-color: red;
+              font-size: 18px;
+            }
+
+            li {
+              a {
+                display: block;
+                width: 70px;
+                height: auto;
+                padding: 0.4rem 1rem;
+                font-size: 14px;
+                opacity: 0.7;
+
+                &:hover {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+          .menu-list2 {
+            // background-color: black;
+            padding: 1rem;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+
+            p {
+              // background-color: red;
+              font-size: 18px;
+            }
+
+            li {
+              a {
+                display: block;
+                width: 70px;
+                height: auto;
+                padding: 0.4rem 1rem;
+                font-size: 14px;
+                opacity: 0.7;
+
+                &:hover {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

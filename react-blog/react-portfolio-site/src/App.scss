@@ -1,0 +1,26 @@
+// 초기화
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+li, a {
+  list-style: none;
+  text-decoration: none;
+}
+
+// colors
+$backColor: #f1f1f1;
+$textColor: #333333;
+$boxColor: #d1d1d1;
+
+
+.App {
+  background-color: rgba($color: $backColor, $alpha: 1.0);
+  height: 300vh;
+  .App-container {
+    
+  }
+}

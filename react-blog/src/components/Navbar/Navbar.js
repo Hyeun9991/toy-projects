@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.scss';
-import { MenuItems } from './NavItems';
 
 const Navbar = () => {
   const [clicked, setClicked] = useState(false); // 메뉴버튼, 메뉴창 컨트롤할 state
@@ -47,25 +46,17 @@ const Navbar = () => {
 
           <ul className={clicked ? 'navbar-menus open' : 'navbar-menus'}>
             <li>
-              <a
-                href="https://velog.io/@hyeun9991"
-                target="_blank"
-                className="menu-icon"
-              >
+              <a href="https://velog.io/@hyeun9991" target="_blank">
                 Blog
               </a>
             </li>
             <li>
-              <a
-                href="https://github.com/Hyeun9991"
-                target="_blank"
-                className="menu-icon"
-              >
+              <a href="https://github.com/Hyeun9991" target="_blank">
                 Github
               </a>
             </li>
             <li>
-              <a href="mailto: hyeun9991@gmail.com" className="menu-icon">
+              <a href="mailto: hyeun9991@gmail.com">
                 Email
               </a>
             </li>
