@@ -2,6 +2,11 @@
 $backColor: #f1f1f1;
 $textColor: #333333;
 
+.menu-icon {
+  // a태그들
+  padding: 0.4rem;
+}
+
 .navbar {
   background-color: rgba($color: $backColor, $alpha: 0.8);
   height: 55px;
@@ -28,11 +33,6 @@ $textColor: #333333;
     justify-content: space-between;
     align-items: center;
 
-    .menu-icon {
-      // a태그들
-      padding: 0.4rem;
-    }
-
     .navbar-logo {
     }
 
@@ -53,41 +53,22 @@ $textColor: #333333;
     }
   }
 }
-.navbar-fixed-menu {
-  background-color: $textColor;
-  width: 100%;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  bottom: 0;
-  opacity: 0.7;
-  transition: all 0.35s ease;
 
-  a {
-    color: $backColor;
-  }
 
-  &.fixed {
-    width: 100%;
-    top: 0;
-    right: 0;
-    opacity: 1;
-    transition: all 0.35s ease;
-  }
-}
 
 @media screen and (max-width: 768px) {
   .navbar {
     background-color: $textColor;
+    z-index: 99999;
+
     a {
       color: $backColor;
     }
 
     .navbar-container {
       position: relative;
-
+      z-index: 99999;
+      
       .menu-icon {
         // a태그들
         padding: 0.4rem;
