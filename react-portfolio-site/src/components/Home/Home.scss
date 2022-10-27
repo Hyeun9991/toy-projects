@@ -1,20 +1,23 @@
+@import '../../styles/colors.scss';
+
 .home {
-  background-color: rgba($color: #000000, $alpha: .2);
+  // background-color: rgba($color: #000000, $alpha: 0.2);
   width: 100%;
-  height: 100%;
+  // height: calc(100vh - 80px);
+  height: 300vh;
+  margin-top: 80px;
 
   .home-container {
-    background-color: rgba($color: #000000, $alpha: .2);
+    // background-color: rgba($color: #000000, $alpha: 0.2);
     width: 100%;
     height: 100%;
     max-width: 1080px;
     margin: 0 auto;
 
     .home-section1 {
-      background-color: blue;
+      background-color: rgba($color: #000000, $alpha: 0.2);
       width: 100%;
-      height: 100vh;
-      overflow: hidden;
+      height: 100%;
     }
   }
 }
