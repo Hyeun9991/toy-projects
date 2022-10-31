@@ -26,7 +26,7 @@ export const NavItems2 = [
     id: 2,
     title: 'Contact',
     url: '/contact',
-    class: 'menu-items',
+    class: 'menu-items contact-icon',
   },
 ];
 
@@ -34,7 +34,7 @@ export const allNavItems = [
   {
     id: 1,
     title: 'Home',
-    url: '/home',
+    url: '/',
     ptag: <p>01</p>,
   },
   {
