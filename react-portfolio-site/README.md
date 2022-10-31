@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# 포트폴리오 사이트 프로젝트
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [목차](#프로젝트-소개)
+- [사용언어, 툴](#사용-언어-툴)
+- [페이지 구성](#페이지-구성)
+- [진행 상황](#진행-상황)
+  - [디자인](#디자인)  
+  - [기능](#기능)  
 
-## Available Scripts
+## 프로젝트 소개
 
-In the project directory, you can run:
+react를 복습하는 목적으로 만든 프로젝트
+**나를 나타낼 수 있는 사이트**
 
-### `npm start`
+<br>
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 사용 언어, 툴
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- JavaScript(jsx)
+- React, react-router-dom(v.6)
+- scss
+- ide) Visual Studio Code
 
-### `npm test`
+<br>
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 페이지 구성
 
-### `npm run build`
+- Home Page: 사이트의 메인 페이지 (각 컴포넌트의 내용을 한눈에 볼 수 있게 요약한 페이지)
+- Projects Page: 개발 공부를 하면서 만든 토이 프로젝트들의 사진, 링크, 설명, 코드가 있는 페이지
+- About Page: 간단한 자기소개, 활용가능한 언어들의 숙련도를 볼 수 있는 페이지
+- Contact Page: 연락, 피드백등을 직접적으로 받기 위한 페이지 (이메일)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br>
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 진행 상황
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 프리뷰
+![2022/10/28](./src/asstes/preview/2022%3A10%3A28.png)
+2022/10/28
 
-### `npm run eject`
+### 디자인
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- 레이아웃: Navbar(90%), Component 공통 페이지(5%)
+<!-- - css 이펙트: -->
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 기능
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 각 컴포넌트의 url연결 (메뉴 클릭 시 해당 컴포넌트 페이지로 이동)

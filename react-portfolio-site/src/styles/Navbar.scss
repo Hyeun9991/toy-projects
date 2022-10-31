@@ -1,13 +1,13 @@
-@import '../../styles/colors.scss';
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=DM+Serif+Display&family=Libre+Barcode+39&family=Marcellus&display=swap');
+@import './colors.scss';
 
 @font-face {
   font-family: 'Troye';
-  src: url('../../asstes/fonts/Troye\ Serif\ Free.ttf');
+  src: url('../asstes/fonts/Troye\ Serif\ Free.ttf');
 }
 
 .navbar {
-  background-color: rgba($color: $back-l-3, $alpha: .5);
+  background-color: rgba($color: $back-l-3, $alpha: 0.5);
   backdrop-filter: blur(14px);
   width: 100%;
   height: 80px;
@@ -34,7 +34,8 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       position: relative;
-      font-family: 'Quattrocento Sans', sans-serif;
+      // font-family: 'Quattrocento Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
 
       span {
         position: relative;
@@ -90,7 +91,6 @@
 @media screen and (max-width: 768px) {
   .navbar {
     border: none;
-    
 
     .navbar-container {
       .menu-items {
@@ -183,12 +183,13 @@
         left: 0;
         width: 100%;
         height: calc(100vh - 80px);
-        transition: all .35s;
+        transition: all 0.35s;
 
         display: flex;
         align-items: center;
         justify-content: center;
-        
+        font-family: 'Montserrat', sans-serif;
+
         &.open {
           top: 80px;
         }
@@ -198,38 +199,47 @@
           display: flex;
           flex-direction: column;
           width: 100%;
+          height: 100%;
           padding: 1rem;
-          
 
           li {
             // background-color: green;
             width: 100%;
+            height: 100%;
             display: flex;
             align-items: center;
             opacity: 0.4;
-            transition: all .35s;
+            transition: all 0.35s;
             cursor: pointer;
             
-            &:hover {
-              opacity: 1;
-
-              a {
-                padding-left: 1rem;
-                transition: all .35s;
-              }
-            }
-
             p {
               // background-color: yellow;
               font-size: 14px;
-              margin-right: 1rem;
-              padding: 1rem;
+              margin: 1rem;
+              color: $text-l-1;
+              font-weight: 200;
             }
 
             a {
               // background-color: red;
               font-size: 4.5em;
-              letter-spacing: 0;
+              letter-spacing: 1px;
+              display: flex;
+              align-items: center;
+              width: 100%;
+              height: 100%;
+              color: $text-l-1;
+              text-transform: uppercase;
+            }
+
+            &:hover {
+              opacity: 1;
+
+              a {
+                padding-left: 1rem;
+                transition: all 0.35s;
+                font-weight: 600;
+              }
             }
           }
         }
