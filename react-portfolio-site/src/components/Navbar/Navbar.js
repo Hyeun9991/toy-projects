@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { NavItems1, NavItems2, allNavItems } from './NavItems';
+import { FullPageNavItems, allNavItems } from './NavItems';
 import '../../styles/Navbar.scss';
 
 const Navbar = () => {
@@ -20,7 +20,7 @@ const Navbar = () => {
   }, [pathname]);
 
   const changeNavbar = () => {
-    if (scrollY > 160) {
+    if (scrollY > 40) {
       setScrollY(window.pageYOffset);
       setScrollYActive(true);
     } else {
@@ -40,57 +40,101 @@ const Navbar = () => {
   });
 
   return (
-    <div className={scrollYActive ? 'navbar change' : 'navbar'}>
-      <div className="navbar-top">
-        <div className="navbar-top-container">
-          <div className="show">
-            <div className="show-icon-box">
-              <div
-                className={clicked ? 'show-menu-icon on' : 'show-menu-icon'}
-                onClick={showMenu}
-              >
-                <span className="show-icon" onClick={showMenu}></span>
-              </div>
-              <div className="show-logo">
-                <a>EH</a>
-              </div>
-            </div>
-            <div className="show-contact-box">
-              <a href="#">Contact</a>
-            </div>
+    <div className={scrollYActive ? 'nav-section change' : 'nav-section'}>
+      <ul className={clicked ? 'hidden-menu-box open' : 'hidden-menu-box'}>
+        <div className="hidden-icon-box">
+          <div className="hidden-menu-icon" onClick={showMenu}>
+            <span className="hidden-icon" onClick={showMenu}></span>
           </div>
-
-          <ul className="link-box">
-            <li>
-              <a href="#">Blog</a>
-            </li>
-            <li>
-              <a href="#">Github</a>
-            </li>
-            <li>
-              <a href="#">Email</a>
-            </li>
-          </ul>
-
-          <div className="logo-box">
-            <a href="/">EUNHYE</a>
+          <div className="hidden-logo">
+            <a className="hidden-logo-text">Eh</a>
           </div>
         </div>
-      </div>
+        {allNavItems.map((t) => {
+          return (
+            <li key={t.id}>
+              <p>{t.ptag}</p>
+              <Link to={t.url} className={t.class}>
+                {t.title}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+      <div className="navbar">
+        <div className="navbar-top">
+          <div className="navbar-top-container">
+            <div className="show">
+              <div className="show-icon-box">
+                <div
+                  className={clicked ? 'show-menu-icon on' : 'show-menu-icon'}
+                  onClick={showMenu}
+                >
+                  <span className="show-icon" onClick={showMenu}></span>
+                </div>
+                <div className="show-logo">
+                  <a className="logo-text">Eh</a>
+                </div>
+              </div>
+              <div className="show-contact-box">
+                <a href="#" className="menu-items contact-items">
+                  Contact
+                </a>
+              </div>
+            </div>
 
-      <div className="navbar-bottom">
-        <div className="navbar-bottom-container">
-          <ul className="menu-box">
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Projects</a>
-            </li>
-          </ul>
+            <ul className="link-box">
+              <li>
+                <a
+                  href="https://velog.io/@hyeun9991"
+                  target="_blank"
+                  className="menu-items"
+                >
+                  <span>Blog</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/Hyeun9991"
+                  target="_blank"
+                  className="menu-items"
+                >
+                  <span>Github</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto: hyeun9991@gmail.com"
+                  title="Email"
+                  className="menu-items"
+                >
+                  <span>Email</span>
+                </a>
+              </li>
+            </ul>
+
+            <div className="logo-box">
+              <a href="/" className="logo-text">
+                Eh
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="navbar-bottom">
+          <div className="navbar-bottom-container">
+            <ul className="menu-box">
+              {FullPageNavItems.map((t) => {
+                return (
+                  <li key={t.id}>
+                    <Link to={t.url} className={t.class}>
+                      <span>{t.title}</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

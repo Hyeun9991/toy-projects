@@ -1,32 +1,38 @@
 import React from 'react';
 
-export const NavItems1 = [
+// export const NavItems1 = [
+//   {
+//     id: 1,
+//     title: 'Home',
+//     url: '/',
+//     class: 'menu-items',
+//   },
+//   {
+//     id: 2,
+//     title: 'Projects',
+//     url: '/projects',
+//     class: 'menu-items',
+//   },
+// ];
+
+export const FullPageNavItems = [
   {
     id: 1,
     title: 'Home',
-    url: '/',
+    url: '/home',
     class: 'menu-items',
   },
   {
     id: 2,
-    title: 'Projects',
-    url: '/projects',
-    class: 'menu-items',
-  },
-];
-
-export const NavItems2 = [
-  {
-    id: 1,
     title: 'About',
     url: '/about',
     class: 'menu-items',
   },
   {
-    id: 2,
-    title: 'Contact',
-    url: '/contact',
-    class: 'menu-items contact-icon',
+    id: 3,
+    title: 'Projects',
+    url: '/project',
+    class: 'menu-items',
   },
 ];
 
@@ -39,14 +45,15 @@ export const allNavItems = [
   },
   {
     id: 2,
-    title: 'Projects',
-    url: '/projects',
+    title: 'About',
+    url: '/about',
     ptag: <p>02</p>,
   },
   {
     id: 3,
-    title: 'About',
-    url: '/about',
+    title: 'Projects',
+    url: '/projects',
+    
     ptag: <p>03</p>,
   },
   {
