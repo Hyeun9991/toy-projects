@@ -1,378 +1,358 @@
+@charset "UTF-8";
 @import './colors.scss';
 
-/****************************
-  nav-section
-****************************/
+/************************[ list ]************************
+  1. nav-section 
+  2. Navbar [Layout] (top + bottom)
+  3. Navbar [hover]
+  4. hidden-menu-box [Layout]
+  5. hidden-menu-box [hover]
+  6. hidden-menu-box [open]
+  7. nav-section [change]
+*********************************************************/
+
+/************************[ 1. nav-section ]************************/
 .nav-section {
-  // background-color: red;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: auto;
+  z-index: 99999;
+}
+
+/************************[ 2. Navbar [Layout] ]************************/
+.navbar {
+  background-color: transparent;
+  transition: all 0.35s;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  /* show-contact-box > contact-item */
+  .contact-item {
+    margin: 0 !important;
+    left: 0 !important;
+    font-size: 18px !important;
+    font-weight: 600;
+    letter-spacing: 0 !important;
+  }
+
+  /* show-logo > logo-text */
+  .logo-text {
+    // font-family: 'Cormorant SC', serif;
+    font-family: 'Petit Formal Script', cursive;
+    color: $color5;
+    font-size: 40px;
+    margin: 0.4rem;
+    position: relative;
+    display: block;
+    text-transform: none;
+  }
+
+  /* a tags */
+  .menu-items {
+    display: block;
+    margin: 1rem;
+    font-size: 14px;
+    color: $color5;
+    position: relative;
+    letter-spacing: 0.5px;
+    font-family: 'Cormorant SC', serif;
+    opacity: 0.7;
+
+    span {
+      position: relative;
+
+      &::before {
+        content: '';
+        background-color: $sec-color4;
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 100%;
+        height: 1px;
+        transition: transform 0.4s;
+        transform: scale(0);
+      }
+    }
+
+    &:hover span::before {
+      transform: scale(1);
+    }
+  }
 
   /****************************
-    Navbar
+    Navbar Top
   ****************************/
-  .navbar {
-    // background-color: $color1;
-    background-color: transparent;
-    transition: all 0.35s;
+  .navbar-top {
     width: 100%;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    height: 75px;
+    position: relative;
+    transition: all 0.35s linear;
 
-    .contact-items {
-      margin: 0 !important;
-      left: 0 !important;
-      font-size: 18px !important;
-      font-weight: 600;
-      letter-spacing: 0 !important;
-    }
-
-    .logo-text {
-      // font-family: 'Cormorant SC', serif;
-      font-family: 'Petit Formal Script', cursive;
-      color: $color5;
-      font-size: 40px;
-      margin: 0.4rem;
-      position: relative;
-      display: block;
-      text-transform: none;
-    }
-
-    .menu-items {
-      display: block;
-      margin: 1rem;
-      font-size: 14px;
-      color: $color5;
-      position: relative;
-      letter-spacing: 0.5px;
-      font-family: 'Cormorant SC', serif;
-      opacity: 0.7;
-
-      span {
-        position: relative;
-
-        &::before {
-          content: '';
-          background-color: $sec-color4;
-          position: absolute;
-          left: 0;
-          bottom: -4px;
-          width: 100%;
-          height: 1px;
-          transition: transform 0.4s;
-          transform: scale(0);
-        }
-      }
-
-      &:hover span::before {
-        transform: scale(1);
-      }
-    }
-
-    /****************************
-      Navbar Top
-    ****************************/
-    .navbar-top {
-      // background-color: rgba($color: #000000, $alpha: 0.2);
-      width: 100%;
-      height: 75px;
-      position: relative;
-      transition: all 0.35s linear;
-
-      &::after {
-        content: '';
-        background-color: $color4;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 97%;
-        height: 1px;
-        transform: translateX(-50%);
-        transition: all 0.35s;
-        opacity: 0.2;
-      }
-
-      .navbar-top-container {
-        // background-color: rgba($color: #000000, $alpha: 0.2);
-        width: 100%;
-        height: 100%;
-        max-width: 1080px;
-        padding: 0 22px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        position: relative;
-
-        .show {
-          // z-index: 7;
-          display: none;
-          .show-icon-box {
-            display: none;
-          }
-          .show-contact-box {
-            display: none;
-          }
-        }
-
-        .link-box {
-          display: flex;
-          align-items: center;
-          position: absolute;
-          top: 50%;
-          left: 0;
-          transform: translateY(-50%);
-
-          li {
-            a {
-              margin: 0.4rem;
-              text-transform: none;
-            }
-          }
-        }
-
-        .logo-box {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          letter-spacing: -3px;
-          font-family: 'Troye';
-        }
-      }
-    }
-
-    /****************************
-      Navbar Bottom
-    ****************************/
-    .navbar-bottom {
-      // background-color: rgba($color: #000000, $alpha: 0.2);
-      width: 100%;
-      height: 45px;
-      transition: all 0.35s linear;
-
-      .navbar-bottom-container {
-        // background-color: rgba($color: #000000, $alpha: 0.4);
-        width: 100%;
-        height: 100%;
-        max-width: 1080px;
-        padding: 0 22px;
-        margin: 0 auto;
-
-        .menu-box {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 14px;
-
-          li {
-            a {
-              // background-color: red;
-              margin: 1rem;
-              font-weight: 600;
-            }
-          }
-        }
-      }
-    }
-
-    /****************************
-      Navbar Hover
-    ****************************/
-    &:hover {
+    /* navbar-top, bottom 구역 나누는 라인 */
+    &::after {
+      content: '';
       background-color: $color4;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 97%;
+      height: 1px;
+      transform: translateX(-50%);
+      transition: all 0.35s;
+      opacity: 0.2;
+    }
 
-      .menu-items:hover {
-        opacity: 1;
-      }
-      a {
-        color: $sec-color4;
-      }
-      .logo-box {
-        a {
-          color: $sec-color4;
+    .navbar-top-container {
+      width: 100%;
+      height: 100%;
+      max-width: 1080px;
+      padding: 0 22px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+
+      .show {
+        display: none;
+        .show-icon-box {
+          display: none;
+        }
+        .show-contact-box {
+          display: none;
         }
       }
-      .hidden-menu-box {
-        background-color: $color4;
+
+      .link-box {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+
         li {
-          p {
-          }
-
           a {
+            margin: 0.4rem;
+            text-transform: none;
           }
         }
       }
-      .navbar-top {
-        &::after {
-          background-color: $color1;
-        }
+
+      .logo-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        letter-spacing: -3px;
+        font-family: 'Troye';
       }
     }
   }
 
   /****************************
-    hidden-menu-box
+    Navbar Bottom
   ****************************/
-  .hidden-menu-box {
-    // background-color: $color1;
-    background-color: $color4;
-    // background-color: blue;
-    position: fixed;
-    bottom: 0;
-    left: -100vw;
-    // left: 0;
-    width: 700px;
-    // height: calc(100vh - 85px);
-    height: 100vh;
-    z-index: 7;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-      rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  .navbar-bottom {
+    width: 100%;
+    height: 45px;
+    transition: all 0.35s linear;
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    transition: all 0.35s;
-
-    li {
-      // background-color: rgba($color: #000000, $alpha: 0.2);
+    .navbar-bottom-container {
       width: 100%;
-      height: 90%;
-      display: flex;
-      align-items: center;
-      justify-content: end;
-      padding: 1rem;
-      font-family: 'Cormorant SC', serif;
-      text-transform: uppercase;
+      height: 100%;
+      max-width: 1080px;
+      padding: 0 22px;
+      margin: 0 auto;
 
-      p {
-        // background-color: rgba($color: #000000, $alpha: 0.2);
-        margin: 1rem;
-        font-size: 1em;
-        color: $sec-color4;
-        opacity: 0.4;
-      }
+      .menu-box {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
 
-      a {
-        // background-color: rgba($color: #000000, $alpha: 0.2);
-        padding: 1rem;
-        font-size: 5em;
-        color: $sec-color4;
-        opacity: 0.4;
-      }
-    }
-
-    .hidden-icon-box {
-      display: flex;
-      align-items: center;
-      align-self: flex-start;
-      width: 100%;
-      height: 85px !important;
-      padding: 1rem;
-
-      .hidden-menu-icon {
-        width: 40px;
-        height: 50px;
-        position: relative;
-        margin: 1rem;
-        cursor: pointer;
-
-        .hidden-icon {
-          background-color: transparent;
-          position: absolute;
-          top: 50%;
-          left: 0;
-          transform: translateY(-50%);
-          width: 100%;
-          height: 2px;
-          transition: all 0.35s linear;
-
-          &::before,
-          &::after {
-            background-color: $sec-color4;
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            transition: all 0.35s linear;
-          }
-
-          &::before {
-            top: 0;
-            rotate: -45deg;
-          }
-          &::after {
-            top: 0;
-            rotate: 45deg;
+        li {
+          a {
+            // background-color: red;
+            margin: 1rem;
+            font-weight: 600;
           }
         }
       }
-
-      .hidden-logo {
-        position: relative;
-
-        &::after {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: -0.4rem;
-          transform: translateY(-50%);
-          width: 1px;
-          height: 70%;
-          background-color: $sec-color4;
-          opacity: 0.2;
-        }
-        .hidden-logo-text {
-          font-family: 'Petit Formal Script', cursive;
-          color: $sec-color4;
-          font-size: 40px;
-          margin: 0.4rem;
-          text-transform: none;
-        }
-      }
-    }
-
-    /****************************
-      hidden-menu-box hover
-    ****************************/
-    &:hover {
-      li:hover {
-        p {
-          opacity: 1;
-          transition: all 0.35s;
-        }
-
-        a {
-          opacity: 1;
-          transition: all 0.35s;
-          margin-right: 2rem;
-        }
-      }
-    }
-
-    /****************************
-      hidden-menu-box open
-    ****************************/
-    &.open {
-      left: 0;
     }
   }
 }
 
-/****************************
-  nav-section change
-****************************/
+/************************[ 3. Navbar [hover] ]************************/
+.navbar:hover {
+  background-color: $color4;
+  .menu-items:hover {
+    opacity: 1;
+  }
+  a {
+    color: $sec-color4;
+  }
+  .navbar-top {
+    &::after {
+      background-color: $color1;
+    }
+  }
+}
+
+/************************[ 4. hidden-menu-box [Layout] ]************************/
+.hidden-menu-box {
+  background-color: $color4;
+  position: fixed;
+  bottom: 0;
+  left: -100vw;
+  width: 700px;
+  height: 100vh;
+  z-index: 7;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  transition: all 0.35s;
+
+  /* allNavItems */
+  li {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 1rem;
+    font-family: 'Cormorant SC', serif;
+    text-transform: uppercase;
+
+    p {
+      margin: 1rem;
+      font-size: 1em;
+      color: $sec-color4;
+      opacity: 0.4;
+    }
+
+    a {
+      padding: 1rem;
+      font-size: 5em;
+      color: $sec-color4;
+      opacity: 0.4;
+    }
+  }
+
+  /* close btn + logo */
+  .hidden-icon-box {
+    width: 150px;
+    height: 85px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    /* close btn box */
+    .hidden-menu-icon {
+      width: 40px;
+      height: 50px;
+      position: relative;
+      margin: 1rem;
+      cursor: pointer;
+
+      &:hover {
+        .hidden-icon::before,
+        .hidden-icon::after {
+          opacity: 1;
+        }
+      }
+
+      /* span */
+      .hidden-icon {
+        background-color: transparent;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 2px;
+        transition: all 0.35s linear;
+
+        &::before,
+        &::after {
+          background-color: $sec-color4;
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          transition: all 0.35s linear;
+          opacity: 0.5;
+        }
+
+        &::before {
+          top: 0;
+          rotate: -45deg;
+        }
+        &::after {
+          top: 0;
+          rotate: 45deg;
+        }
+      }
+    }
+
+    /* logo box */
+    .hidden-logo {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -0.4rem;
+        transform: translateY(-50%);
+        width: 0.5px;
+        height: 70%;
+        background-color: $sec-color4;
+        opacity: 0.3;
+        border-radius: 4px;
+      }
+      .hidden-logo-text {
+        font-family: 'Petit Formal Script', cursive;
+        color: $sec-color4;
+        font-size: 40px;
+        margin: 0.4rem;
+        text-transform: none;
+      }
+    }
+  }
+}
+
+/************************[ 5. hidden-menu-box [hover] ]************************/
+.hidden-menu-box:hover {
+  li:hover {
+    p {
+      opacity: 1;
+      transition: all 0.35s;
+    }
+
+    a {
+      opacity: 1;
+      transition: all 0.35s;
+      margin-right: 2rem;
+    }
+  }
+}
+
+/************************[ 6. hidden-menu-box [open] ]************************/
+.hidden-menu-box.open {
+  left: 0;
+}
+
+/************************[ 7. nav-section change ]************************/
 .nav-section.change {
-  z-index: 99999;
+  // z-index: 99999;
   background-color: $color1;
 
   .navbar:hover {

@@ -19,6 +19,10 @@ const Navbar = () => {
     setClicked(false);
   }, [pathname]);
 
+  /* 2022.10.31
+    scrollY가 40이 되면 scrollYActive state 변경
+    (스크롤 높이가 40일 때 nav-section에 change 클래스 추가) 
+  */
   const changeNavbar = () => {
     if (scrollY > 40) {
       setScrollY(window.pageYOffset);
@@ -28,7 +32,6 @@ const Navbar = () => {
       setScrollYActive(false);
     }
   };
-
   useEffect(() => {
     const scrollListener = () => {
       window.addEventListener('scroll', changeNavbar);
@@ -40,8 +43,11 @@ const Navbar = () => {
   });
 
   return (
+    // nav-section
     <div className={scrollYActive ? 'nav-section change' : 'nav-section'}>
+      {/* hidden-menu-box */}
       <ul className={clicked ? 'hidden-menu-box open' : 'hidden-menu-box'}>
+        {/* hidden-icon-box (menu-icon + logo) */}
         <div className="hidden-icon-box">
           <div className="hidden-menu-icon" onClick={showMenu}>
             <span className="hidden-icon" onClick={showMenu}></span>
@@ -50,6 +56,9 @@ const Navbar = () => {
             <a className="hidden-logo-text">Eh</a>
           </div>
         </div>
+        {/* /hidden-icon-box (menu-icon + logo) */}
+
+        {/* allNavItems */}
         {allNavItems.map((t) => {
           return (
             <li key={t.id}>
@@ -60,10 +69,17 @@ const Navbar = () => {
             </li>
           );
         })}
+        {/* /allNavItems */}
       </ul>
+      {/* /hidden-menu-box */}
+
+      {/* navbar */}
       <div className="navbar">
+        {/* navbar-top */}
         <div className="navbar-top">
+          {/* navbar-top-container */}
           <div className="navbar-top-container">
+            {/* show */}
             <div className="show">
               <div className="show-icon-box">
                 <div
@@ -77,12 +93,14 @@ const Navbar = () => {
                 </div>
               </div>
               <div className="show-contact-box">
-                <a href="#" className="menu-items contact-items">
+                <a href="#" className="menu-items contact-item">
                   Contact
                 </a>
               </div>
             </div>
+            {/* /show */}
 
+            {/* link-box */}
             <ul className="link-box">
               <li>
                 <a
@@ -112,17 +130,25 @@ const Navbar = () => {
                 </a>
               </li>
             </ul>
+            {/* /link-box */}
 
+            {/* logo-box */}
             <div className="logo-box">
               <a href="/" className="logo-text">
                 Eh
               </a>
             </div>
+            {/* /logo-box */}
           </div>
+          {/* /navbar-top-container */}
         </div>
+        {/* /navbar-top */}
 
+        {/* navbar-bottom */}
         <div className="navbar-bottom">
+          {/* navbar-bottom-container */}
           <div className="navbar-bottom-container">
+            {/* menu-box */}
             <ul className="menu-box">
               {FullPageNavItems.map((t) => {
                 return (
@@ -134,10 +160,15 @@ const Navbar = () => {
                 );
               })}
             </ul>
+            {/* /menu-box */}
           </div>
+          {/* /navbar-bottom-container */}
         </div>
+        {/* /navbar-bottom */}
       </div>
+      {/* navbar */}
     </div>
+    // /nav-section
   );
 };
 
