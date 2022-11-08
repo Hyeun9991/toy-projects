@@ -1,490 +1,554 @@
-@charset "UTF-8";
-@import './colors.scss';
+// @charset "UTF-8";
+// @import './colors.scss';
 
-/************************[ list ]************************
-  1. nav-section 
-  2. Navbar [Layout] (top + bottom)
-  3. Navbar [hover]
-  4. hidden-menu-box [Layout]
-  5. hidden-menu-box [hover]
-  6. hidden-menu-box [open]
-  7. nav-section [change]
-*********************************************************/
+// /************************[ list ]************************
+//   1. [colors]
+//   2. nav-section [layout]
+//   3. Navbar [Layout] (top + bottom)
+//   4. Navbar [hover]
+//   5. hidden-menu-box [Layout]
+//   6. hidden-menu-box [hover]
+//   7. hidden-menu-box [open]
+//   8. nav-section [change]
+// *********************************************************/
 
-/************************[ 1. nav-section ]************************/
-.nav-section {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  z-index: 99999;
-}
+// /************************[ colors ]************************/
+// .nav-section {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 150px;
+//   z-index: 99999;
+//   background: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+//   background-color: $nav-back-1;
 
-/************************[ 2. Navbar [Layout] ]************************/
-.navbar {
-  background-color: transparent;
-  transition: all 0.35s;
-  width: 100%;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+//   a {
+//     color: $nav-text-1;
+//   }
+//   // a 태그 밑줄 효과
+//   .menu-items span {
+//     &::before {
+//       content: '';
+//       background-color: $nav-text-1;
+//     }
+//   }
+//   // navbar-top, bottom 구역 나누는 라인
+//   .navbar-top::after {
+//     background-color: $nav-text-1;
+//   }
 
-  /* show-contact-box > contact-item */
-  .contact-item {
-    margin: 0 !important;
-    left: 0 !important;
-    font-size: 18px !important;
-    font-weight: 600;
-    letter-spacing: 0 !important;
-  }
+//   // hidden menu box
+//   .hidden-menu-box {
+//     background-color: $nav-back-1;
+//     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+//       rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 
-  /* show-logo > logo-text */
-  .logo-text {
-    // font-family: 'Cormorant SC', serif;
-    font-family: 'Petit Formal Script', cursive;
-    color: $color5;
-    font-size: 40px;
-    margin: 0.4rem;
-    position: relative;
-    display: block;
-    text-transform: none;
-  }
+//     p,
+//     a {
+//       color: $nav-text-1;
+//     }
 
-  /* a tags */
-  .menu-items {
-    display: block;
-    margin: 1rem;
-    font-size: 14px;
-    color: $color5;
-    position: relative;
-    letter-spacing: 0.5px;
-    font-family: 'Cormorant SC', serif;
-    opacity: 0.7;
+//     /* close btn + logo */
+//     .hidden-icon-box {
+//       /* close btn box */
+//       .hidden-menu-icon {
+//         &:hover {
+//           .hidden-icon::before,
+//           .hidden-icon::after {
+//             opacity: 1;
+//           }
+//         }
 
-    span {
-      position: relative;
+//         /* span */
+//         .hidden-icon {
+//           &::before,
+//           &::after {
+//             background-color: $nav-text-1;
+//             opacity: 0.5;
+//           }
+//         }
+//       }
 
-      &::before {
-        content: '';
-        background-color: $sec-color4;
-        position: absolute;
-        left: 0;
-        bottom: -4px;
-        width: 100%;
-        height: 1px;
-        transition: transform 0.4s;
-        transform: scale(0);
-      }
-    }
+//       /* logo box */
+//       .hidden-logo {
+//         &::after {
+//           content: '';
+//           background-color: $nav-text-1;
+//           opacity: 0.3;
+//         }
+//         .hidden-logo-text {
+//           color: $nav-text-1;
+//         }
+//       }
+//     }
+//   }
+//   .hidden-menu-box:hover {
+//     li:hover {
+//       p,
+//       a {
+//         opacity: 1;
+//       }
+//     }
+//   }
 
-    &:hover span::before {
-      transform: scale(1);
-    }
-  }
+//   // change
+//   &.change {
+//     .show {
+//       // open btn
+//       .show-icon-box {
+//         .show-menu-icon {
+//           .show-icon {
+//             background-color: transparent;
 
-  /****************************
-    Navbar Top
-  ****************************/
-  .navbar-top {
-    width: 100%;
-    height: 75px;
-    position: relative;
-    transition: all 0.35s linear;
+//             &::before,
+//             &::after {
+//               background-color: $nav-text-1;
+//             }
+//           }
+//         }
+//       }
+//       // contact btn
+//       .show-contact-box {
+//         border: 1px solid $nav-text-1;
+//         &:hover {
+//           background-color: $nav-text-1;
+//           a {
+//             color: $nav-back-1;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
-    /* navbar-top, bottom 구역 나누는 라인 */
-    &::after {
-      content: '';
-      background-color: $color4;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 97%;
-      height: 1px;
-      transform: translateX(-50%);
-      transition: all 0.35s;
-      opacity: 0.2;
-    }
+// /************************[ 1. nav-section [layout] ]************************/
+// .nav-section {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 150px;
+//   z-index: 99999;
+// }
 
-    .navbar-top-container {
-      width: 100%;
-      height: 100%;
-      max-width: 1080px;
-      padding: 0 22px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      position: relative;
+// /************************[ 2. Navbar [Layout] ]************************/
+// .navbar {
+//   background-color: transparent;
+//   transition: all 0.35s;
+//   width: 100%;
+//   text-transform: uppercase;
+//   letter-spacing: 1px;
 
-      .show {
-        display: none;
-        .show-icon-box {
-          display: none;
-        }
-        .show-contact-box {
-          display: none;
-        }
-      }
+//   /* show-contact-box > contact-item */
+//   .contact-item {
+//     margin: 0 !important;
+//     left: 0 !important;
+//     font-size: 18px !important;
+//     font-weight: 600;
+//     letter-spacing: 0 !important;
+//   }
 
-      .link-box {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
+//   /* show-logo > logo-text */
+//   .logo-text {
+//     // font-family: 'Cormorant SC', serif;
+//     font-family: 'Petit Formal Script', cursive;
+//     font-size: 40px;
+//     margin: 0.4rem;
+//     position: relative;
+//     display: block;
+//     text-transform: none;
+//   }
 
-        li {
-          a {
-            margin: 0.4rem;
-            text-transform: none;
-          }
-        }
-      }
+//   /* a tags */
+//   .menu-items {
+//     display: block;
+//     margin: 1rem;
+//     font-size: 14px;
+//     position: relative;
+//     letter-spacing: 0.5px;
+//     font-family: 'Cormorant SC', serif;
+//     opacity: 0.7;
 
-      .logo-box {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        letter-spacing: -3px;
-        font-family: 'Troye';
-      }
-    }
-  }
+//     span {
+//       position: relative;
 
-  /****************************
-    Navbar Bottom
-  ****************************/
-  .navbar-bottom {
-    width: 100%;
-    height: 45px;
-    transition: all 0.35s linear;
+//       &::before {
+//         content: '';
+//         // background-color: $nav-text-1;
+//         position: absolute;
+//         left: 0;
+//         bottom: -4px;
+//         width: 100%;
+//         height: 1px;
+//         transition: transform 0.4s;
+//         transform: scale(0);
+//       }
+//     }
 
-    .navbar-bottom-container {
-      width: 100%;
-      height: 100%;
-      max-width: 1080px;
-      padding: 0 22px;
-      margin: 0 auto;
+//     &:hover span::before {
+//       transform: scale(1);
+//     }
+//   }
 
-      .menu-box {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 14px;
+//   /****************************
+//     Navbar Top
+//   ****************************/
+//   .navbar-top {
+//     width: 100%;
+//     height: 75px;
+//     position: relative;
+//     transition: all 0.35s linear;
 
-        li {
-          a {
-            // background-color: red;
-            margin: 1rem;
-            font-weight: 600;
-          }
-        }
-      }
-    }
-  }
-}
+//     /* navbar-top, bottom 구역 나누는 라인 */
+//     &::after {
+//       content: '';
+//       position: absolute;
+//       bottom: 0;
+//       left: 50%;
+//       width: 97%;
+//       height: 1px;
+//       transform: translateX(-50%);
+//       transition: all 0.35s;
+//       opacity: 0.2;
+//     }
 
-/************************[ 3. Navbar [hover] ]************************/
-.navbar:hover {
-  background-color: $color4;
-  .menu-items:hover {
-    opacity: 1;
-  }
-  a {
-    color: $sec-color4;
-  }
-  .navbar-top {
-    &::after {
-      background-color: $color1;
-    }
-  }
-}
+//     .navbar-top-container {
+//       width: 100%;
+//       height: 100%;
+//       max-width: 1080px;
+//       padding: 0 22px;
+//       margin: 0 auto;
+//       display: flex;
+//       justify-content: space-between;
+//       position: relative;
 
-/************************[ 4. hidden-menu-box [Layout] ]************************/
-.hidden-menu-box {
-  background-color: $color4;
-  position: fixed;
-  bottom: 0;
-  left: -100vw;
-  width: 700px;
-  height: 100vh;
-  z-index: 7;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-  transition: all 0.35s;
+//       .show {
+//         display: none;
+//         .show-icon-box {
+//           display: none;
+//         }
+//         .show-contact-box {
+//           display: none;
+//         }
+//       }
 
-  /* allNavItems */
-  li {
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    padding: 1rem;
-    font-family: 'Cormorant SC', serif;
-    text-transform: uppercase;
+//       .link-box {
+//         display: flex;
+//         align-items: center;
+//         position: absolute;
+//         top: 50%;
+//         left: 0;
+//         transform: translateY(-50%);
 
-    p {
-      margin: 1rem;
-      font-size: 1em;
-      color: $sec-color4;
-      opacity: 0.4;
-    }
+//         li {
+//           a {
+//             margin: 0.4rem;
+//             text-transform: none;
+//           }
+//         }
+//       }
 
-    a {
-      padding: 1rem;
-      font-size: 5em;
-      color: $sec-color4;
-      opacity: 0.4;
-    }
-  }
+//       .logo-box {
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//         letter-spacing: -3px;
+//         font-family: 'Troye';
+//       }
+//     }
+//   }
 
-  /* close btn + logo */
-  .hidden-icon-box {
-    width: 150px;
-    height: 85px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+//   /****************************
+//     Navbar Bottom
+//   ****************************/
+//   .navbar-bottom {
+//     width: 100%;
+//     height: 45px;
+//     transition: all 0.35s linear;
 
-    /* close btn box */
-    .hidden-menu-icon {
-      width: 40px;
-      height: 50px;
-      position: relative;
-      margin: 1rem;
-      cursor: pointer;
+//     .navbar-bottom-container {
+//       width: 100%;
+//       height: 100%;
+//       max-width: 1080px;
+//       padding: 0 22px;
+//       margin: 0 auto;
 
-      &:hover {
-        .hidden-icon::before,
-        .hidden-icon::after {
-          opacity: 1;
-        }
-      }
+//       .menu-box {
+//         width: 100%;
+//         height: 100%;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         font-size: 14px;
 
-      /* span */
-      .hidden-icon {
-        background-color: transparent;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
-        width: 100%;
-        height: 2px;
-        transition: all 0.35s linear;
+//         li {
+//           a {
+//             // background-color: red;
+//             margin: 1rem;
+//             font-weight: 600;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
-        &::before,
-        &::after {
-          background-color: $sec-color4;
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 2px;
-          transition: all 0.35s linear;
-          opacity: 0.5;
-        }
+// /************************[ 3. Navbar [hover] ]************************/
+// .navbar:hover {
+//   // background-color: $color4;
+//   .menu-items:hover {
+//     opacity: 1;
+//   }
+//   a {
+//     // color: $sec-color4;
+//   }
+//   .navbar-top {
+//     &::after {
+//       // background-color: $color1;
+//     }
+//   }
+// }
 
-        &::before {
-          top: 0;
-          rotate: -45deg;
-        }
-        &::after {
-          top: 0;
-          rotate: 45deg;
-        }
-      }
-    }
+// /************************[ 4. hidden-menu-box [Layout] ]************************/
+// .hidden-menu-box {
+//   position: fixed;
+//   top: 0;
+//   left: -100vw;
+//   width: 45%;
+//   height: 100vh;
+//   z-index: 7;
+//   transition: all 0.35s;
 
-    /* logo box */
-    .hidden-logo {
-      position: relative;
-      &::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: -0.4rem;
-        transform: translateY(-50%);
-        width: 0.5px;
-        height: 70%;
-        background-color: $sec-color4;
-        opacity: 0.3;
-        border-radius: 4px;
-      }
-      .hidden-logo-text {
-        font-family: 'Petit Formal Script', cursive;
-        color: $sec-color4;
-        font-size: 40px;
-        margin: 0.4rem;
-        text-transform: none;
-      }
-    }
-  }
-}
+//   /* allNavItems */
+//   li {
+//     width: 100%;
+//     height: auto;
+//     display: flex;
+//     align-items: center;
+//     justify-content: end;
+//     padding: 1rem;
+//     font-family: 'Cormorant SC', serif;
+//     text-transform: uppercase;
+//     // background-color: red;
 
-/************************[ 5. hidden-menu-box [hover] ]************************/
-.hidden-menu-box:hover {
-  li:hover {
-    p {
-      opacity: 1;
-      transition: all 0.35s;
-    }
+//     p {
+//       margin: 1rem;
+//       font-size: 1em;
+//       opacity: 0.4;
+//     }
 
-    a {
-      opacity: 1;
-      transition: all 0.35s;
-      margin-right: 2rem;
-    }
-  }
-}
+//     a {
+//       padding: 1rem;
+//       font-size: 3.5em;
+//       opacity: 0.4;
+//     }
+//   }
 
-/************************[ 6. hidden-menu-box [open] ]************************/
-.hidden-menu-box.open {
-  left: 0;
-}
+//   /* close btn + logo */
+//   .hidden-icon-box {
+//     width: 150px;
+//     height: 85px;
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
 
-/************************[ 7. nav-section change ]************************/
-.nav-section.change {
-  // z-index: 99999;
-  background-color: $color1;
+//     /* close btn box */
+//     .hidden-menu-icon {
+//       width: 40px;
+//       height: 50px;
+//       position: relative;
+//       margin: 1rem;
+//       cursor: pointer;
 
-  .navbar:hover {
-    background-color: $color4;
-    .show {
-      .show-icon-box {
-        .show-icon {
-          &::before,
-          &::after {
-            background-color: $sec-color4 !important;
-          }
-        }
-        .show-logo {
-          a {
-            color: $sec-color4;
-          }
-        }
-      }
+//       &:hover {
+//         .hidden-icon::before,
+//         .hidden-icon::after {
+//           opacity: 1;
+//         }
+//       }
 
-      .show-contact-box {
-        border: 1px solid $sec-color4 !important;
-        &:hover {
-          background-color: $sec-color4;
-          a {
-            color: $color4;
-          }
-        }
-      }
-    }
-  }
+//       /* span */
+//       .hidden-icon {
+//         background-color: transparent;
+//         position: absolute;
+//         top: 50%;
+//         left: 0;
+//         transform: translateY(-50%);
+//         width: 100%;
+//         height: 2px;
+//         transition: all 0.35s linear;
 
-  .navbar-top {
-    height: 85px;
-    &::after {
-      background-color: $color5;
-      width: 100%;
-      opacity: 1;
-    }
-    .navbar-top-container {
-      max-width: 100%;
+//         &::before,
+//         &::after {
+//           content: '';
+//           position: absolute;
+//           top: 0;
+//           left: 0;
+//           width: 100%;
+//           height: 2px;
+//           transition: all 0.35s linear;
+//           opacity: 0.5;
+//         }
 
-      .show {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        height: 100%;
+//         &::before {
+//           top: 0;
+//           rotate: -45deg;
+//         }
+//         &::after {
+//           top: 0;
+//           rotate: 45deg;
+//         }
+//       }
+//     }
 
-        .show-icon-box {
-          opacity: 1;
-          display: flex;
-          align-items: center;
+//     /* logo box */
+//     .hidden-logo {
+//       position: relative;
+//       &::after {
+//         content: '';
+//         position: absolute;
+//         top: 50%;
+//         left: -0.4rem;
+//         transform: translateY(-50%);
+//         width: 0.5px;
+//         height: 70%;
+//         background-color: $nav-text-1;
+//         opacity: 0.3;
+//         border-radius: 4px;
+//       }
+//       .hidden-logo-text {
+//         font-family: 'Petit Formal Script', cursive;
+//         color: $nav-text1;
+//         font-size: 40px;
+//         margin: 0.4rem;
+//         text-transform: none;
+//       }
+//     }
+//   }
+// }
 
-          .show-menu-icon {
-            width: 45px;
-            height: 50px;
-            position: relative;
-            margin: 1rem;
-            cursor: pointer;
+// /************************[ 5. hidden-menu-box [hover] ]************************/
+// .hidden-menu-box:hover {
+//   li:hover {
+//     p {
+//       // opacity: 1;
+//       transition: all 0.35s;
+//     }
 
-            .show-icon {
-              background-color: transparent;
-              position: absolute;
-              top: 50%;
-              left: 0;
-              transform: translateY(-50%);
-              width: 100%;
-              height: 2px;
-              // transition: all 0.35s linear;
+//     a {
+//       // opacity: 1;
+//       transition: all 0.35s;
+//       margin-right: 2rem;
+//     }
+//   }
+// }
 
-              &::before,
-              &::after {
-                background-color: black;
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 2px;
-                // transition: all 0.35s linear;
-              }
+// /************************[ 6. hidden-menu-box [open] ]************************/
+// .hidden-menu-box.open {
+//   left: 0;
+// }
 
-              &::before {
-                top: 6px;
-              }
-              &::after {
-                top: -6px;
-              }
-            }
-          }
+// /************************[ 7. nav-section change ]************************/
+// .nav-section.change {
+//   backdrop-filter: blur(14px);
+//   height: 85px;
 
-          .show-logo {
-            font-size: 35px;
-            position: relative;
-            width: 70px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-        }
-        .show-contact-box {
-          display: block;
-          padding: 0.6rem 1rem;
-          border: 1px solid $color4;
-          cursor: pointer;
-          transition: all 0.35s linear;
+//   .navbar-top {
+//     height: 85px;
+//     &::after {
+//       width: 100%;
+//     }
 
-          &:hover {
-            background-color: $sec-color4;
+//     .navbar-top-container {
+//       max-width: 100%;
 
-            a {
-              color: $color4;
-            }
-          }
-        }
-      }
+//       .show {
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-between;
+//         width: 100%;
+//         height: 100%;
 
-      .link-box {
-        display: none;
-      }
+//         .show-icon-box {
+//           opacity: 1;
+//           display: flex;
+//           align-items: center;
 
-      .logo-box {
-        display: none;
+//           .show-menu-icon {
+//             width: 45px;
+//             height: 50px;
+//             position: relative;
+//             margin: 1rem;
+//             cursor: pointer;
 
-        a {
-        }
-      }
-    }
-  }
+//             .show-icon {
+//               background-color: transparent;
+//               position: absolute;
+//               top: 50%;
+//               left: 0;
+//               transform: translateY(-50%);
+//               width: 100%;
+//               height: 2px;
+//               // transition: all 0.35s linear;
 
-  .navbar-bottom {
-    display: none;
-  }
-}
+//               &::before,
+//               &::after {
+//                 content: '';
+//                 position: absolute;
+//                 top: 0;
+//                 left: 0;
+//                 width: 100%;
+//                 height: 2px;
+//                 // transition: all 0.35s linear;
+//               }
+
+//               &::before {
+//                 top: 6px;
+//               }
+//               &::after {
+//                 top: -6px;
+//               }
+//             }
+//           }
+
+//           .show-logo {
+//             font-size: 35px;
+//             position: relative;
+//             width: 70px;
+//             height: 70px;
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//           }
+//         }
+//         .show-contact-box {
+//           display: block;
+//           padding: 0.6rem 1rem;
+//           // border: 1px solid $color4;
+//           cursor: pointer;
+//           transition: all 0.35s linear;
+//         }
+//       }
+
+//       .link-box {
+//         display: none;
+//       }
+
+//       .logo-box {
+//         display: none;
+
+//         a {
+//         }
+//       }
+//     }
+//   }
+
+//   .navbar-bottom {
+//     display: none;
+//   }
+// }

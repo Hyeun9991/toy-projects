@@ -5,14 +5,18 @@ import Projects from './components/Pages/Projects';
 import About from './components/Pages/About';
 import Contact from './components/Pages/Contact';
 import './styles/App.scss';
-import './styles/Navbar.scss';
+import './styles/Navbar2.scss'
 import './styles/Pages.scss';
-import Navbar from './components/Navbar/Navbar';
+import Navbar2 from './components/Navbar/Navbar2';
+// import './styles/Navbar.scss';
+// import Navbar from './components/Navbar/Navbar';
+
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
+      {/* <Navbar /> */}
+      <Navbar2 />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />

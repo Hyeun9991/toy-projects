@@ -1,0 +1,204 @@
+@import '../../styles/App.scss';
+
+.ticket-box {
+  // background-color: rgba($color: #e100ff, $alpha: 0.2);
+  width: 488px;
+  height: 220px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  // rotate: -4deg;
+  z-index: 5;
+  cursor: pointer;
+  display: none;
+
+  &.flip .ticket-inner {
+    transform: rotateY(180deg);
+    transition: all 0.35s;
+
+    .ticket-back {
+      scale: 1.5;
+    }
+  }
+
+  .ticket-inner {
+    // background-color: rgba($color: #e100ff, $alpha: 0.8);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+
+    .ticket-front,
+    .ticket-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .ticket-front {
+      background-color: transparent;
+      display: flex;
+      font-family: 'Petit Formal Script', cursive;
+      rotate: -4deg;
+
+      .ticket-box-1 {
+        background-color: $back-1;
+        width: 88px;
+        height: 100%;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        // box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        //   rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        // box-shadow: -5px 5px 15px -5px rgb(0, 0, 0);
+        box-shadow: -2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+
+        p {
+          // background-color: red;
+          width: auto;
+          height: auto;
+          color: white;
+        }
+        .p-logo {
+          font-size: 18px;
+          opacity: 1;
+          position: absolute;
+          rotate: 90deg;
+          color: white;
+        }
+
+        .p-1 {
+          rotate: 90deg;
+          opacity: 0.1;
+          line-height: 1;
+        }
+        .p-2 {
+          rotate: 90deg;
+          opacity: 0.1;
+          line-height: 1;
+        }
+        .p-3 {
+          rotate: 90deg;
+          opacity: 0.1;
+          line-height: 1;
+        }
+      }
+      .ticket-box-2 {
+        background-color: $back-1;
+        width: 400px;
+        height: 100%;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Cormorant SC', serif;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: white;
+        // box-shadow: 5px 5px 15px -5px rgb(0, 0, 0);
+        box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+        p {
+          font-size: 25px;
+          // opacity: 0.2;
+          color: $back-1;
+          text-shadow: 1px 1px rgba(255, 255, 255, 0.1),
+            -1px -1px rgba(102, 102, 102, 0.1);
+        }
+      }
+    }
+
+    .ticket-back {
+      transform: rotateY(180deg);
+      display: flex;
+      color: white;
+      rotate: 0;
+
+      .ticket-box-1 {
+        background-color: black;
+        width: 400px;
+        height: 100%;
+        border-radius: 8px;
+        display: flex;
+        font-family: 'Abel', sans-serif;
+        box-shadow: -2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+        font-weight: 200;
+
+        h3 {
+          text-transform: uppercase;
+          font-weight: 200;
+        }
+
+        a {
+          color: white;
+        }
+
+        .text-1 {
+          width: 100px;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          padding: 1rem;
+          text-transform: uppercase;
+          opacity: 0.7;
+        }
+        .text-2 {
+          width: 300px;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          padding: 1rem;
+          opacity: 0.9;
+        }
+      }
+      .ticket-box-2 {
+        background-color: black;
+        width: 88px;
+        height: 100%;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column-reverse;
+        box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+
+        .box-left {
+          // background-color: red;
+          width: 100%;
+          height: 20%;
+          position: relative;
+          font-family: 'Petit Formal Script', cursive;
+
+          p {
+            // background-color: blue;
+            position: absolute;
+            top: 10%;
+            left: 80%;
+            transform: translate(-50%, -50%) rotate(270deg);
+          }
+        }
+        .box-right {
+          // background-color: yellow;
+          width: 100%;
+          height: 80%;
+          position: relative;
+          font-family: 'LibreBarcode39Text-Regular';
+
+          p {
+            position: absolute;
+            top: 35%;
+            left: 80%;
+            transform: translate(-50%, -50%) rotate(270deg);
+          }
+        }
+      }
+    }
+  }
+}

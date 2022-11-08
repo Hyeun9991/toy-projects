@@ -19,7 +19,7 @@ export const FullPageNavItems = [
   {
     id: 1,
     title: 'Home',
-    url: '/home',
+    url: '/',
     class: 'menu-items',
   },
   {
