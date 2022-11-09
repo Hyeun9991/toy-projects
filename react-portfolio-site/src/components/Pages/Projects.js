@@ -1,11 +1,8 @@
 import React from 'react';
-import HomeButton from '../Home/HomeButton';
-import '../../styles/projects.scss';
 
 const Projects = () => {
   return (
     <div className="projects page-box">
-      <HomeButton />
       <div className="projects-section1 page-section1">
         <span className="page-title">Projects</span>
         <div className="projects-content-desc-box">

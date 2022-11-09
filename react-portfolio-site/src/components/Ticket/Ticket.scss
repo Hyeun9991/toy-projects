@@ -1,34 +1,30 @@
 @import '../../styles/App.scss';
 
-.ticket-box {
-  // background-color: rgba($color: #e100ff, $alpha: 0.2);
-  width: 488px;
-  height: 220px;
+.ticket {
+  // background-color: rgba($color: #e7ff5d, $alpha: 0.2);
+  width: 150px;
+  height: 320px;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 56%;
+  left: 65%;
   transform: translate(-50%, -50%);
-  // rotate: -4deg;
-  z-index: 5;
-  cursor: pointer;
-  display: none;
+  border-radius: 8px;
 
-  &.flip .ticket-inner {
+  &.ticket-flip .ticket-inner {
     transform: rotateY(180deg);
-    transition: all 0.35s;
 
     .ticket-back {
-      scale: 1.5;
+      scale: 1.4;
     }
   }
 
   .ticket-inner {
-    // background-color: rgba($color: #e100ff, $alpha: 0.8);
-    position: relative;
+    // background-color: rgba($color: #e7ff5d, $alpha: 0.2);
     width: 100%;
     height: 100%;
-    transition: transform 0.8s;
     transform-style: preserve-3d;
+    transition: transform 0.8s;
+    position: relative;
 
     .ticket-front,
     .ticket-back {
@@ -40,162 +36,196 @@
     }
 
     .ticket-front {
-      background-color: transparent;
-      display: flex;
-      font-family: 'Petit Formal Script', cursive;
       rotate: -4deg;
+      background-color: transparent;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
-      .ticket-box-1 {
-        background-color: $back-1;
-        width: 88px;
-        height: 100%;
-        border-radius: 8px;
+      .front-top {
+        background-color: $back-film-1;
+        width: 100%;
+        height: 75%;
+        border-left: 10px dashed $back-film-2;
+        border-right: 10px dashed $back-film-2;
+        outline: 5px solid $back-film-1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+
+        .front-logo {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 8px;
+          color: $text-film-1;
+          line-height: 1;
+          font-family: 'Petit Formal Script';
+        }
+
+        .front-top-box {
+          background-color: $back-film-2;
+          width: 90%;
+          height: 39%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      .front-bottom {
+        background-color: $back-film-1;
+        width: 100%;
+        height: 25%;
+        outline: 5px solid $back-film-1;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
         position: relative;
-        // box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-        //   rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-        // box-shadow: -5px 5px 15px -5px rgb(0, 0, 0);
-        box-shadow: -2px 2px 5px 2px rgba(0, 0, 0, 0.2);
 
         p {
-          // background-color: red;
-          width: auto;
-          height: auto;
-          color: white;
+          font-size: 10px;
+          color: $text-film-1;
+          font-family: 'SSVeryBadHandwriting';
         }
-        .p-logo {
-          font-size: 18px;
-          opacity: 1;
+        .barcode-text {
           position: absolute;
-          rotate: 90deg;
-          color: white;
-        }
-
-        .p-1 {
-          rotate: 90deg;
-          opacity: 0.1;
-          line-height: 1;
-        }
-        .p-2 {
-          rotate: 90deg;
-          opacity: 0.1;
-          line-height: 1;
-        }
-        .p-3 {
-          rotate: 90deg;
-          opacity: 0.1;
-          line-height: 1;
-        }
-      }
-      .ticket-box-2 {
-        background-color: $back-1;
-        width: 400px;
-        height: 100%;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: 'Cormorant SC', serif;
-        text-transform: uppercase;
-        font-weight: 600;
-        color: white;
-        // box-shadow: 5px 5px 15px -5px rgb(0, 0, 0);
-        box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
-        p {
-          font-size: 25px;
-          // opacity: 0.2;
-          color: $back-1;
-          text-shadow: 1px 1px rgba(255, 255, 255, 0.1),
-            -1px -1px rgba(102, 102, 102, 0.1);
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          font-family: 'LibreBarcode39Text-Regular';
+          font-size: 14px;
         }
       }
     }
-
     .ticket-back {
+      background-color: $back-film-1;
       transform: rotateY(180deg);
-      display: flex;
-      color: white;
-      rotate: 0;
-
-      .ticket-box-1 {
-        background-color: black;
-        width: 400px;
-        height: 100%;
-        border-radius: 8px;
-        display: flex;
-        font-family: 'Abel', sans-serif;
-        box-shadow: -2px 2px 5px 2px rgba(0, 0, 0, 0.2);
-        font-weight: 200;
-
-        h3 {
-          text-transform: uppercase;
-          font-weight: 200;
-        }
-
-        a {
-          color: white;
-        }
-
-        .text-1 {
-          width: 100px;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
-          padding: 1rem;
-          text-transform: uppercase;
-          opacity: 0.7;
-        }
-        .text-2 {
-          width: 300px;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
-          padding: 1rem;
-          opacity: 0.9;
-        }
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      // font-family: monospace;
+      font-family: 'HBIOS-SYS';
+      color: $text-film-1;
+      a {
+        color: $text-film-1;
       }
-      .ticket-box-2 {
-        background-color: black;
-        width: 88px;
-        height: 100%;
-        border-radius: 8px;
+
+      .back-top {
+        width: 100%;
+        height: 75%;
+        position: relative;
         display: flex;
-        flex-direction: column-reverse;
-        box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+        flex-direction: column;
+        padding: 0.4rem;
+        // justify-content: center;
 
-        .box-left {
-          // background-color: red;
-          width: 100%;
-          height: 20%;
-          position: relative;
-          font-family: 'Petit Formal Script', cursive;
+        .back-top-1 {
+          // background-color: yellow;
 
-          p {
-            // background-color: blue;
-            position: absolute;
-            top: 10%;
-            left: 80%;
-            transform: translate(-50%, -50%) rotate(270deg);
+          h1 {
+            // background-color: red;
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            padding: 0.4rem;
+          }
+
+          .span-box {
+            padding: 0.2rem;
+            border-top: 0.5px dashed $back-2;
+            border-bottom: 0.5px dashed $back-2;
+
+            span {
+              font-size: 10px;
+              display: flex;
+              line-height: 1.4;
+              p {
+              }
+            }
           }
         }
-        .box-right {
-          // background-color: yellow;
+        .back-top-2 {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          .item-spans {
+            // background-color: purple;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            span {
+              // background-color: red;
+              font-size: 10px;
+              display: flex;
+              justify-content: space-between;
+              line-height: 2;
+              p {
+              }
+            }
+          }
+
+          .total-span {
+            // background-color: blue;
+            padding: 0.2rem;
+            margin-top: 0.2rem;
+            flex-direction: column;
+            border-top: 0.5px dashed $back-2;
+            border-bottom: 0.5px dashed $back-2;
+            font-size: 10px;
+          }
+        }
+      }
+      .back-bottom {
+        width: 100%;
+        height: 25%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        // padding: 1rem;
+        border-top: 2px dashed $back-2;
+
+        .back-logo {
+          position: absolute;
+          top: 4px;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 8px;
+          font-family: 'Petit Formal Script';
+        }
+
+        .back-profile {
           width: 100%;
-          height: 80%;
-          position: relative;
-          font-family: 'LibreBarcode39Text-Regular';
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 0.4rem;
 
           p {
-            position: absolute;
-            top: 35%;
-            left: 80%;
-            transform: translate(-50%, -50%) rotate(270deg);
+            font-size: 14px;
+            font-family: 'LibreBarcode39Text-Regular';
+          }
+
+          ul {
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            li {
+              margin: 0.4rem;
+
+              a:hover {
+                text-decoration: underline;
+              }
+            }
           }
         }
       }
