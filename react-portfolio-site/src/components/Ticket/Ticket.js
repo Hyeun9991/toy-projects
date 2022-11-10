@@ -17,8 +17,8 @@ const Ticket = () => {
         <div className="ticket-front">
           <div className="front-top">
             <p className="front-logo">Eh</p>
-            <div className="front-top-box"></div>
-            <div className="front-top-box"></div>
+            <div className="front-top-box front-box-1"></div>
+            <div className="front-top-box front-box-2"></div>
           </div>
           <div className="front-bottom">
             <p>Welcome To Eh</p>

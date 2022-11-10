@@ -39,15 +39,19 @@
 /**********[ colors ]**********/
 // background colors
 $back-1: #000;
-$back-2: rgb(44, 44, 44);
+$back-5: #411f19;
+$back-4: #c44129;
 $back-3: #959595;
+$back-2: #f3f4e1;
 $back-film-1: #2a2a2a;
 $back-film-2: #888888;
+$back-film-3: #f3f4e1;
+
 
 // text colors
-$text-1: #000;
-$text-2: #dbdbdb;
-$text-film-1: #bdbdbd;
+$text-1: #000; //
+$text-2: #401f19;
+$text-film-1: #afafaf;
 
 /**********[ initialization ]**********/
 * {

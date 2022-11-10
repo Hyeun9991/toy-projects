@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
+/**********[ scss ]**********/
 import '../../styles/Home.scss';
+
+/**********[ components ]**********/
 import Ticket from '../Ticket/Ticket';
+import About from '../Pages/About';
+import Projects from '../Pages/Projects';
+import Footer from '../Footer/Footer';
+import { Link } from 'react-router-dom';
+import Navbar from '../Navbar/Navbar';
 
 const Home = () => {
   // const [scrollY, setScrollY] = useState(0);
@@ -26,35 +34,44 @@ const Home = () => {
   //   };
   // });
 
-  
-
   return (
     <div className="home">
+      <Navbar />
       <div className="home-container">
-        <div className="home-section-1">
+        {/* ticket-section */}
+        <div className="home-section-1 section-n">
           <p className="section-top-right-text">by. eunhye</p>
-          <div className="invitation-ticket">
-            <div className="invitation">
-              <div className="invitation-top">
-                <p className="invitation-title">Welcome</p>
-                <p className="invitation-title-2">
-                  To <b>Eh</b>
-                </p>
+          <div className="ticket-section section-box">
+            <Ticket />
+            <div className="about-link-btn">
+              <div className="about-btn-top">
+                <div className="about-btn-top-content"></div>
               </div>
-              <div className="invitation-bottom">
-                <p className="invitation-text-1 invitation-text">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Tempora amet libero necessitatibus excepturi, perspiciatis
-                  ratione porro quos sapiente tenetur dolorum vel! Fugit
-                  quisquam odio mollitia provident maxime, temporibus similique
-                  exercitationem?
-                </p>
-                <p className="invitation-text-2 invitation-text">by. eunhye</p>
+              <div className="about-btn-bottom">
+                <Link to="/about">About</Link>
               </div>
             </div>
-            <Ticket />
           </div>
         </div>
+        {/* /ticket-section */}
+
+        {/* about-section */}
+        {/* <div className="home-section-2 section-n">
+          <p className="section-top-right-text">About</p>
+          <div className="about-section section-box">
+            <About />
+          </div>
+        </div> */}
+        {/* /about-section */}
+
+        {/* projects-section */}
+        <div className="home-section-3 section-n">
+          <p className="section-top-right-text">Projects</p>
+          <div className="projects-section section-box">
+            <Projects />
+          </div>
+        </div>
+        {/* /projects-section */}
       </div>
     </div>
   );

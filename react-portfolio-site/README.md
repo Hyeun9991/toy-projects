@@ -42,9 +42,7 @@ react를 복습하는 목적으로 만든 프로젝트
 ## 진행 상황
 
 ### 프리뷰
-![2022/11/1](./src/asstes/preview/2022%3A11%3A1.png)
-<!-- - 2022/11/1 -->
-
+![2022/11/10](./src/asstes/preview/preview.png)
 
 
 ### 디자인

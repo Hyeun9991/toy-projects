@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import homeImage from '../../asstes/imgaes/home-image.png';
+import aboutImage from '../../asstes/imgaes/about-imgae.png';
 import '../../styles/Navbar.scss';
 
 const Navbar = () => {
@@ -53,13 +55,18 @@ const Navbar = () => {
           <ul className="film-bg">
             <p className="film-logo film-text-color logo-font">Eh</p>
             <li className="film-box">
-              <Link to="/" className="film-link film-home"></Link>
+              <Link to="/" className="film-link film-home">
+                <img src={homeImage} alt=""  />
+              </Link>
+
               <div className="film-title-box">
                 <p className="film-text-color">home</p>
               </div>
             </li>
             <li className="film-box">
-              <Link to="/about" className="film-link film-about"></Link>
+              <Link to="/about" className="film-link film-about">
+                <img src={aboutImage} alt="" />
+              </Link>
               <div className="film-title-box">
                 <p className="film-text-color">about</p>
               </div>

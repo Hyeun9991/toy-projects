@@ -1,45 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Typical from 'react-typical';
+import '../../styles/About.scss';
 
 const About = () => {
   return (
     <div className="about">
-      <div className="about-section1">
-        <h1>About Page</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-          quisquam, beatae, blanditiis delectus explicabo officiis totam quas
-          dolore nam id quasi tempora at. Dolore praesentium consectetur sed
-          nemo, ratione tempora laudantium qui vel ullam natus odit maxime
-          magnam neque ab dignissimos saepe eius optio doloribus corrupti harum
-          autem debitis eligendi atque. Eveniet quod assumenda dolorum nihil
-          quidem eos perferendis provident deleniti animi amet porro temporibus
-          atque nesciunt fuga magni minus numquam at voluptatibus adipisci sint
-          tempore, ipsam nostrum ducimus. Repudiandae modi ipsa, ut ratione illo
-          quae nam harum quasi cum animi dolorum atque ex soluta iste deleniti.
-          Voluptas omnis architecto culpa obcaecati non quos porro nihil in
-          laudantium exercitationem illum suscipit praesentium mollitia fuga,
-          inventore, nostrum doloribus velit sint fugiat quaerat aliquam
-          necessitatibus nesciunt aperiam. Tenetur recusandae mollitia
-          consequatur similique aperiam maxime eligendi id voluptas assumenda
-          ipsam, eum quam placeat blanditiis sint nemo ratione, quisquam autem
-          deleniti. Totam, delectus veritatis. Repellat commodi magnam
-          consequuntur reprehenderit. Quos possimus nihil vel quas ab hic rem
-          numquam qui? Alias minima, placeat illum in itaque eveniet maxime!
-          Possimus at, libero impedit nihil iste nisi minima vel, quod sit, illo
-          ut deserunt facere animi. Dicta doloremque officiis dolorem quidem rem
-          atque, neque ipsum pariatur, sint nihil veniam. Praesentium illo
-          possimus minima hic, dolores consectetur aperiam, quas animi nisi sint
-          repellendus mollitia aspernatur magni sed dolor suscipit, quidem ipsum
-          nihil earum ad corrupti rerum quod dignissimos non! At asperiores
-          possimus eum distinctio soluta repellat magni earum aperiam itaque
-          illum! Obcaecati, harum deleniti et porro beatae doloribus autem
-          praesentium ab voluptas quae neque corporis libero labore
-          perspiciatis. Magnam unde excepturi illum quia. Similique, ea quis
-          minus natus dolor inventore laboriosam sint, fugit earum molestiae
-          sunt excepturi tempore! Deleniti molestiae nesciunt nam, error fugiat
-          explicabo velit assumenda ipsum. Eaque quis beatae minima ullam
-          voluptatem fugit quae, commodi iure!
+      <div className="about-container">
+        <p className="about-top-right-text">
+          About
         </p>
+        <div className="about-box-1">
+          <div className="about-logo">
+            {/* <Link to='/'>Eh</Link> */}
+            <p className="text-btn-logo">Eh</p>
+          </div>
+        </div>
+        <div className="about-box-2">
+          <div className="about-title">
+            <h1>I'm a&nbsp;</h1>
+            <Typical
+              steps={['Frontend Developer', 'Park Eun Hye', 'Eh']}
+              loop={1}
+              wrapper="h1"
+              className="typical-text"
+            />
+          </div>
+          <div className="about-text-1">
+            <ul className="left-text">
+              <li>name</li>
+              <li>email</li>
+              <li>call phone</li>
+            </ul>
+            <ul className="right-text">
+              <li>Park Eun Hye</li>
+              <li>hyeun9991@gmail.com</li>
+              <li>+82 10 7527 5792</li>
+            </ul>
+          </div>
+          <div className="about-text-2">
+            <p>
+              온라인 비즈니스에서 수요가 높아 밝은 전망을 보이는 웹 개발은
+              프론트엔드 개발자가 되기 위한 계기가 되었습니다. 사용자 경험이
+              좋은 웹 개발을 하기 위해, 가치 있는 아웃풋을 내기 위해 항상
+              고민하는 개발자가 되는 것이 목표입니다.
+            </p>
+          </div>
+        </div>
+        <div className="about-box-3"></div>
+        <div className="about-box-4">
+          <div className="about-home-link">
+            <Link to="/" className="text-btn-logo">
+              Home
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
