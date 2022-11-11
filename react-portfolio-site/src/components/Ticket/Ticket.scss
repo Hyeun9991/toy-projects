@@ -1,7 +1,6 @@
 @import '../../styles/App.scss';
 
 .ticket {
-  // background-color: rgba($color: #e7ff5d, $alpha: 0.2);
   width: 150px;
   height: 320px;
   position: absolute;
@@ -20,7 +19,6 @@
   }
 
   .ticket-inner {
-    // background-color: rgba($color: #e7ff5d, $alpha: 0.2);
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
@@ -49,13 +47,13 @@
       }
 
       .front-top {
-        background-color: $back-film-3;
+        background-color: $dark-back;
         width: 100%;
         height: 75%;
-        border-left: 10px dashed darken(rgba($color: $back-4, $alpha: 0.9), 10%);
+        border-left: 10px dashed darken(rgba($color: $dark-primary1, $alpha: 0.9), 10%);
         border-right: 10px dashed
-          darken(rgba($color: $back-4, $alpha: 0.9), 10%);
-        outline: 5px solid $back-film-3;
+          darken(rgba($color: $dark-primary1, $alpha: 0.9), 10%);
+        outline: 5px solid $dark-back;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -69,13 +67,13 @@
           transform: translateX(-50%);
           font-size: 8px;
           // color: $text-film-1;
-          color: $text-1;
+          color: $dark-text1;
           line-height: 1;
           font-family: 'Petit Formal Script';
         }
 
         .front-top-box {
-          // background-color: $back-1;
+          // background-color: $dark-back;
           width: 90%;
           height: 39%;
           display: flex;
@@ -107,10 +105,10 @@
         }
       }
       .front-bottom {
-        background-color: $back-film-3;
+        background-color: $dark-back;
         width: 100%;
         height: 25%;
-        outline: 5px solid $back-film-3;
+        outline: 5px solid $dark-back;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -119,8 +117,7 @@
 
         p {
           font-size: 10px;
-          // color: $text-film-1;
-          color: $text-1;
+          color: $dark-text1;
           font-family: 'SSVeryBadHandwriting';
         }
         .barcode-text {
@@ -134,15 +131,15 @@
       }
     }
     .ticket-back {
-      background-color: $back-1;
+      background-color: $dark-back;
       transform: rotateY(180deg);
       box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
         rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
         rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
       font-family: 'HBIOS-SYS';
-      color: $text-film-1;
+      color: $dark-text1;
       a {
-        color: $text-film-1;
+        color: $dark-text1;
       }
 
       .back-top {
@@ -152,13 +149,10 @@
         display: flex;
         flex-direction: column;
         padding: 0.4rem;
-        // justify-content: center;
 
         .back-top-1 {
-          // background-color: yellow;
 
           h1 {
-            // background-color: red;
             font-size: 14px;
             display: flex;
             justify-content: center;
@@ -167,8 +161,8 @@
 
           .span-box {
             padding: 0.2rem;
-            border-top: 0.5px dashed $back-2;
-            border-bottom: 0.5px dashed $back-2;
+            border-top: 0.5px dashed $dark-text2;
+            border-bottom: 0.5px dashed $dark-text2;
 
             span {
               font-size: 10px;
@@ -192,7 +186,6 @@
             justify-content: center;
 
             span {
-              // background-color: red;
               font-size: 10px;
               display: flex;
               justify-content: space-between;
@@ -203,12 +196,11 @@
           }
 
           .total-span {
-            // background-color: blue;
             padding: 0.2rem;
             margin-top: 0.2rem;
             flex-direction: column;
-            border-top: 0.5px dashed $back-2;
-            border-bottom: 0.5px dashed $back-2;
+            border-top: 0.5px dashed $dark-text2;
+            border-bottom: 0.5px dashed $dark-text2;
             font-size: 10px;
           }
         }
@@ -221,8 +213,7 @@
         flex-direction: column;
         justify-content: end;
         align-items: center;
-        // padding: 1rem;
-        border-top: 2px dashed $back-2;
+        border-top: 2px dashed $dark-text2;
 
         .back-logo {
           position: absolute;

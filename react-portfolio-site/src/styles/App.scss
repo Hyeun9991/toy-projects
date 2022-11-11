@@ -3,7 +3,7 @@
 /**********[ fonts ]**********/
 // 로고 폰트
 @import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
-//   font-family: 'Petit Formal Script';
+// font-family: 'Petit Formal Script';
 
 // 반듯한 고딕체
 @font-face {
@@ -14,13 +14,17 @@
   font-style: normal;
 }
 
+// 명조 폰트
+@import url('//cdn.jsdelivr.net/font-iropke-batang/1.2/font-iropke-batang.css');
+// font-family: 'Iropke Batang', serif;
+
 // 바코드 폰트
 @font-face {
   font-family: 'LibreBarcode39Text-Regular';
   src: url(../asstes/fonts/LibreBarcode39Text-Regular.ttf);
 }
 
-// 필기체
+// 필기체 폰트
 @font-face {
   font-family: 'SSVeryBadHandwriting';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/SSVeryBadHandwriting.woff')
@@ -28,30 +32,36 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Humanbumsuk';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Humanbumsuk.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 
+// 도트 폰트
 @font-face {
   font-family: 'HBIOS-SYS';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/HBIOS-SYS.woff2') format('woff2');
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/HBIOS-SYS.woff2')
+    format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 /**********[ colors ]**********/
-// background colors
-$back-1: #000;
-$back-5: #411f19;
-$back-4: #c44129;
-$back-3: #959595;
-$back-2: #f3f4e1;
-$back-film-1: #2a2a2a;
-$back-film-2: #888888;
-$back-film-3: #f3f4e1;
+// light mode colors
+$light-back: #e9e4cf;
+$light-text: #000;
+$light-primary: #c44129;
 
-
-// text colors
-$text-1: #000; //
-$text-2: #401f19;
-$text-film-1: #afafaf;
+// dark mode colors
+$dark-back: #1C1C1E;
+$dark-back2: #2C2C2E;
+$dark-text1: #D1D1D6;
+$dark-text2: #E5E5EA;
+$dark-primary1: #a2aaad;
+$dark-primary2: #0A84FF;
 
 /**********[ initialization ]**********/
 * {
@@ -67,16 +77,15 @@ $text-film-1: #afafaf;
 html {
   width: 100%;
   height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  //   Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
 }
 
 body {
   width: 100%;
   height: auto;
-  background-color: $back-2;
   overflow-x: hidden;
-  
+  background-color: $dark-back;
 }
 
 li,
