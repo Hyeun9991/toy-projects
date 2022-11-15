@@ -37,9 +37,10 @@
       width: 100px;
       height: 100%;
       position: absolute;
-      top: 50%;
+      top: 55vh;
       left: 50%;
       transform: translate(-50%, -50%);
+      transition: transform 0.35s;
 
       .logo-link-a {
         font-size: 55px;
@@ -73,12 +74,18 @@
         font-family: 'SUIT-Regular';
         color: $dark-text1;
         transition: all 0.35s;
-        border-radius: 4px;
         outline: 2px solid transparent;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 
         &:hover {
           outline: 2px solid $dark-primary2;
         }
+      }
+      &.btn-clicked p {
+        // box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        // background-color: lighten($dark-back, 20%);
+        background-color: $dark-text1;
+        color: $dark-back;
       }
     }
 
@@ -173,7 +180,7 @@
             outline: 5px solid rgba($color: $dark-primary1, $alpha: 0.5);
             margin: 0.2rem 0;
             isolation: isolate;
-            
+
             &:hover {
               scale: 1.1;
               outline: 5px solid rgba($color: $dark-primary2, $alpha: 1);
@@ -203,12 +210,17 @@
 
 /**********[ navbar change ]**********/
 .navbar.navbar-change {
+  background-color: rgba($color: $dark-back, $alpha: 0.8);
   height: 85px;
+  backdrop-filter: blur(14px);
+
   .navbar-container {
     position: relative;
 
     .logo {
       left: 35px;
+      top: 50%;
+      transition: position 0.35s;
 
       .logo-link-a {
         font-size: 35px;

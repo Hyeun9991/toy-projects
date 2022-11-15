@@ -10,6 +10,11 @@ const ContactMemo = () => {
         <a href='mailto: hyeun9991@gmail.com'>hyeun9991@gmail.com</a>
       </div>
       <div>
+        <p>SMS</p>
+        {/* <a href='mailto: hyeun9991@gmail.com'>hyeun9991@gmail.com</a> */}
+        <a href='sms: 010-7527-5792'>+82 10 7527 5792</a>
+      </div>
+      {/* <div>
         <p>Blog</p>
         <a href="https://github.com/Hyeun9991" target="_blank">
           github.com/Hyeun9991
@@ -18,7 +23,7 @@ const ContactMemo = () => {
       <div>
         <p>Github</p>
         <a href='https://velog.io/@hyeun9991' target="_blank">velog.io/@hyeun9991</a>
-      </div>
+      </div> */}
     </div>
   );
 };

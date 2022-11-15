@@ -1,0 +1,43 @@
+@import '../../styles/App.scss';
+
+.projects-component {
+  background-color: $dark-back2;
+  width: 230px;
+  height: 120px;
+  transform: rotate(12deg);
+  transition: all 0.35s;
+  border-top: 10px dashed darken($dark-back, 3%);
+  border-bottom: 10px dashed darken($dark-back, 3%);
+  // border-top-left-radius: 4px;
+  outline: 5px solid $dark-back2;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+  &:hover {
+    scale: 1.1;
+  }
+
+  .pro-com-logo {
+    rotate: -90deg;
+    font-size: 8px;
+    font-family: 'Petit Formal Script';
+    color: $dark-back4;
+  }
+  .box-1 {
+    background-color: darken($dark-back, 3%);
+    width: 40%;
+    height: 100%;
+    border-radius: 4px;
+  }
+  .box-2 {
+    background-color: darken($dark-back, 3%);
+    width: 40%;
+    height: 100%;
+    border-radius: 4px;
+  }
+}

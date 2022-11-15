@@ -56,12 +56,14 @@ $light-text: #000;
 $light-primary: #c44129;
 
 // dark mode colors
-$dark-back: #1C1C1E;
-$dark-back2: #2C2C2E;
-$dark-text1: #D1D1D6;
-$dark-text2: #E5E5EA;
+$dark-back: #1c1c1e;
+$dark-back2: #2c2c2e;
+$dark-back3: #3f3f42;
+$dark-back4: #989fa1;
+$dark-text1: #d1d1d6;
+$dark-text2: #e5e5ea;
 $dark-primary1: #a2aaad;
-$dark-primary2: #0A84FF;
+$dark-primary2: #0a84ff;
 
 /**********[ initialization ]**********/
 * {
@@ -86,6 +88,16 @@ body {
   height: auto;
   overflow-x: hidden;
   background-color: $dark-back;
+
+  &::-webkit-scrollbar {
+    width: 5px; /*스크롤바의 너비*/
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $dark-back4; /*스크롤바의 색상*/
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $dark-back3; /*스크롤바 트랙 색상*/
+  }
 }
 
 li,

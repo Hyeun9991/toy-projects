@@ -45,7 +45,7 @@ const Navbar = () => {
         {/* /logo */}
 
         {/* menu-btn */}
-        <div className="menu-btn nav-icons" onClick={showMenu}>
+        <div className={btnClick ? "menu-btn nav-icons btn-clicked" : "menu-btn nav-icons"} onClick={showMenu}>
           <p>Film</p>
         </div>
         {/* /menu-btn */}
