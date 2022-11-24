@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import '../../styles/Contact.scss';
+import ToTopButton from '../ToTopButton/ToTopButton';
 
 const Contact = () => {
   const form = useRef();
@@ -27,21 +28,74 @@ const Contact = () => {
 
   return (
     <div className="contact">
+      <ToTopButton />
       <div className="contact-container">
-        <div className='email-box'>
+        {/* email-box */}
+        <div className="email-box">
           <form ref={form} onSubmit={sendEmail}>
             <h1>Get in touch</h1>
-            <label className='label-name label-text'></label>
-            <input type="text" name="user_name" className='input' placeholder='name*' required/>
-            <label className='label-email label-text'></label>
-            <input type="email" name="user_email" className='input' placeholder='email*' required/>
-            <label className='label-message label-text'></label>
-            <textarea name="message" className='textarea' placeholder='message*' required/>
-            <input type="submit" value="Send" className='send-btn'/>
+            <div className="name-input input-box">
+              <label></label>
+              <input
+                type="text"
+                autoCapitalize="off"
+                autoCorrect="off"
+                name="user_name"
+                className="input"
+                placeholder="이름"
+                required
+              />
+            </div>
+            <div className="email-input input-box">
+              <label></label>
+              <input
+                type="email"
+                name="user_email"
+                className="input"
+                placeholder="이메일"
+                required
+              />
+            </div>
+            <div className="msg-textarea textarea-box">
+              <label></label>
+              <textarea
+                name="message"
+                className="textarea"
+                placeholder="메세지를 입력해주세요"
+                required
+              />
+            </div>
+            <input type="submit" value="Send message" className="send-btn" />
           </form>
         </div>
+        {/* /email-box */}
 
-        <div className="profile-box"></div>
+        {/* profile-box */}
+        <div className="profile-box">
+          <div className="profile-1 profile">
+            {/* <h1>profile</h1> */}
+            <span>
+              Address <p>Inchoen Korea</p>
+            </span>
+            <span>
+              email{' '}
+              <a href="mailto: hyeun9991@gmail.com">hyeun9991@gmail.com</a>
+            </span>
+            <span className="span-last">
+              Phone Call <a href="sms: 010-7527-5792">+82 10-7527-5792</a>
+            </span>
+          </div>
+          <div className="profile-2 profile">
+            <h1>social</h1>
+            <a href="https://github.com/Hyeun9991" target="_blank">
+              Github
+            </a>
+            <a href="https://velog.io/@hyeun9991" target="_blank">
+              Blog
+            </a>
+          </div>
+        </div>
+        {/* /profile-box */}
       </div>
     </div>
   );

@@ -52,37 +52,37 @@ $hover-color: rgba(18, 18, 18, 0.06);
   padding: 0;
   outline: 0;
   box-sizing: border-box;
-  user-select: none;
-  -ms-user-select: none;
-  -webkit-tap-highlight-color: rgba($color: #000000, $alpha: 1);
+  // -webkit-tap-highlight-color: rgba($color: #000000, $alpha: 1);
 }
 
-html {
+html, body {
   width: 100%;
-  height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-}
-
-body {
-  width: 100%;
-  height: auto;
   overflow-x: hidden;
   background-color: $background-color;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
 
-  &::-webkit-scrollbar {
-    width: 5px; /*스크롤바의 너비*/
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: $text-color; /*스크롤바의 색상*/
-  }
-  &::-webkit-scrollbar-track {
-    background-color: $background-color; /*스크롤바 트랙 색상*/
-  }
+  // &::-webkit-scrollbar {
+  //   width: 5px; /*스크롤바의 너비*/
+  // }
+  // &::-webkit-scrollbar-thumb {
+  //   background-color: $text-color; /*스크롤바의 색상*/
+  // }
+  // &::-webkit-scrollbar-track {
+  //   background-color: $background-color; /*스크롤바 트랙 색상*/
+  // }
 }
 
 li,
 a {
   list-style: none;
   text-decoration: none;
+}
+
+input,
+textarea {
+  // -moz-user-select: auto;
+  // -webkit-user-select: auto;
+  // -ms-user-select: auto;
+  // user-select: auto;
 }

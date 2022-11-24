@@ -1,19 +1,293 @@
 @import './App.scss';
 
 .projects {
-  background-color: rgba($color: #fff, $alpha: 0.2);
+  // background-color: rgba($color: #000, $alpha: 0.2);
   width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  height: auto;
+  margin-top: 64px;
 
+  /**********[ projects container ]**********/
   .projects-container {
-    background-color: rgba($color: #fff, $alpha: 0.2);
-    position: relative;
+    // background-color: rgba($color: #000, $alpha: 0.2);
     width: 100%;
-    height: 500px;
-    max-width: 1000px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // padding: 5rem;
+
+    /**********[ search box ]**********/
+    .project-search-box {
+      // background-color: rgba($color: #000, $alpha: 0.2);
+      width: 100%;
+      height: 300px;
+      max-width: 1080px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      h1 {
+        // background-color: rgba($color: #000, $alpha: 0.2);
+        // padding: 1rem;
+        margin: 2rem;
+        font-weight: normal;
+        font-size: 24px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .search-input {
+        // background-color: rgba($color: #000, $alpha: 0.2);
+        background-color: $background-color;
+        width: 70%;
+        height: 3rem;
+        border-radius: 0.875rem;
+        outline: none;
+        padding: 1rem;
+        line-height: 1;
+        font-size: 16px;
+        border: 0.125rem rgba(18, 18, 18, 0.06) solid;
+        box-shadow: 0 0 0 4px transparent;
+        -webkit-box-shadow: 0 0 0 4px transparent;
+
+        &:focus {
+          border-color: #f4502f;
+        }
+
+        &::placeholder {
+          opacity: 0.7;
+        }
+      }
+    }
+
+    /**********[ projects list ]**********/
+    .projects-list {
+      // background-color: rgba($color: #000, $alpha: 0.4);
+      width: 100%;
+      height: auto;
+      max-width: 1080px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-bottom: 5rem;
+
+      /**********[ project box ]**********/
+      .project-box {
+        // background-color: rgba($color: #000, $alpha: 0.2);
+        width: 280px;
+        height: 200px;
+        margin: 1rem;
+        margin-bottom: 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 0.85rem;
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        // position: relative;
+
+        &:hover {
+          .project-image {
+            transform: scale(1.1);
+            .project-title-date {
+              opacity: 1;
+            }
+          }
+        }
+
+        /**********[ project image ]**********/
+        .project-image {
+          background-color: rgba($color: #000, $alpha: 0.2);
+          width: 280px;
+          height: 200px;
+          border-radius: 0.85rem;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 0.85rem;
+          transition: all 0.35s;
+          background: url('../asstes/imgaes/dummy-project-image.png') no-repeat;
+          background-size: cover;
+          background-position: center;
+
+          .project-title-date {
+            background-color: rgba($color: #000, $alpha: 0.75);
+            color: white;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            border-radius: 0.85rem;
+            opacity: 0;
+
+            .pro-title {
+              font-weight: 500;
+            }
+            .pro-date {
+              opacity: 0.7;
+            }
+          }
+        }
+        .portfolio-img {
+          background: url('../asstes/imgaes/project-portfolio-image.png');
+          background-size: cover;
+          background-position: center;
+        }
+
+        .pro-modal {
+          background-color: rgba($color: #000, $alpha: 0.2);
+          width: 100vw;
+          height: 100vh;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 100;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          display: none;
+
+          &.pro-show {
+            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          /**********[ project desc ]**********/
+          .project-desc {
+            // background-color: darken($background-color, 3%);
+            // background-color: rgba($color: #000000, $alpha: 0.24);
+            background-color: rgba($color: $background-color, $alpha: 0.24);
+            -webkit-backdrop-filter: blur(135px);
+            backdrop-filter: blur(135px);
+            width: 1080px;
+            height: 600px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+              rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+            border-radius: 0.875rem;
+            padding: 1rem;
+            position: relative;
+            color: $text-color;
+
+            .pro-close-btn {
+              position: absolute;
+              top: 1rem;
+              left: 1rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 0.6rem;
+              border-radius: 0.875rem;
+              font-size: 14px;
+              font-weight: 500;
+              cursor: pointer;
+              text-transform: uppercase;
+
+              &:hover {
+                background-color: $hover-color;
+              }
+            }
+
+            .pro-contents {
+              // background-color: rgba($color: #000000, $alpha: 0.2);
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: space-around;
+              // padding: 1rem;
+
+              .pro-desc-img {
+                background-color: rgba($color: #000000, $alpha: 0.2);
+                width: 450px;
+                height: 300px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 0.875rem;
+
+                .desc-img {
+                  // background: url('../asstes/imgaes/dummy-project-image.png')
+                  //   no-repeat;
+                  // background-size: cover;
+                  // background-position: center;
+                  // width: 100%;
+                  // height: 100%;
+                  // border-radius: 0.875rem;
+                  // box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+                }
+
+                .portfolio-desc-img {
+                  background: url('../asstes/imgaes/project-portfolio-image.png')
+                    no-repeat;
+                  background-size: cover;
+                  background-position: center;
+                  width: 100%;
+                  height: 100%;
+                  border-radius: 0.875rem;
+                  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+                }
+              }
+
+              .pro-desc-text {
+                // background-color: rgba($color: #000000, $alpha: 0.24);
+                background-color: rgba($color: $background-color, $alpha: 0.24);
+                -webkit-backdrop-filter: blur(135px);
+                backdrop-filter: blur(135px);
+                width: 49%;
+                height: 100%;
+                padding: 1rem;
+                line-height: 1.5;
+                font-size: 14px;
+                border-radius: 0.875rem;
+                overflow-y: scroll;
+                -ms-overflow-style: none; /* IE and Edge */
+                scrollbar-width: none; /* 파이어폭스 */
+
+                &::-webkit-scrollbar {
+                  display: none; /* Chrome, Safari, Opera*/
+                }
+
+                span {
+                  // background-color: red;
+                  font-size: 18px;
+                  font-weight: bold;
+                  display: flex;
+                  flex-direction: column;
+                  line-height: 1.8;
+                  color: $text-color;
+                  padding: 1rem;
+                  margin-bottom: 1rem;
+
+                  h3 {
+                    font-size: 14px;
+                    font-weight: normal;
+                  }
+                  p {
+                    font-size: 14px;
+                    font-weight: normal;
+                    line-height: 1.5;
+                  }
+                  a {
+                    font-size: 14px;
+                    font-weight: normal;
+                    color: $text-color;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

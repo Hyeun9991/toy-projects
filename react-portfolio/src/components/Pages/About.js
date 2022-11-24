@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import '../../styles/About.scss';
+import ToTopButton from '../ToTopButton/ToTopButton';
 
 const About = () => {
   return (
     <div className="about">
+      <ToTopButton />
       <div className="about-container">
         <div className="q-a-tab">
           {/* q-a-box-1 */}

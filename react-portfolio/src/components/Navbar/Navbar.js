@@ -82,7 +82,7 @@ const Navbar = () => {
                 </span>
                 <span>
                   Email{' '}
-                  <a href="mailto: hyeun9991@gmail.com">hyeun9991@gmail</a>
+                  <a href="mailto: hyeun9991@gmail.com">hyeun9991@gmail.com</a>
                 </span>
               </div>
             </nav>
