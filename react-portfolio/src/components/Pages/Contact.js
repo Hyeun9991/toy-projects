@@ -51,7 +51,7 @@ const Contact = () => {
               <input
                 type="email"
                 name="user_email"
-                className="input"
+                className="input email-input"
                 placeholder="이메일"
                 required
               />

@@ -2,153 +2,197 @@
 
 /**********[ layout ]**********/
 .home {
-  // background-color: hotpink;
+  // background-color: yellow;
   width: 100%;
   height: auto;
   position: relative;
 
   /**********[ intro text ]**********/
-  .home-welcome-msg {
-    margin-top: 64px;
+  .home-intro {
+    // background-color: hotpink;
+    margin-top: 200px;
     width: 100%;
-    height: calc(100vh - 64px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    height: auto;
+    // height: calc(100vh - 200px);
+    // height: 100vh;
     transition: all 0.35s;
-    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
 
-    p {
-      color: $text-color;
-      text-transform: uppercase;
-      font-size: 25px;
-      font-weight: 200;
-      letter-spacing: 1px;
-    }
-    .welcome-eh {
-      font-family: 'Petit Formal Script';
-      text-transform: none;
-      font-size: 35px;
-      font-weight: normal;
+    .intro-box {
+      // background-color: rgba($color: $hover-purple, $alpha: 0.24);
+      background-color: $hover-purple;
+      border: 0.125rem $hover2-purple solid;
+      -webkit-backdrop-filter: blur(135px);
+      backdrop-filter: blur(135px);
+      width: 280px;
+      height: 220px;
+      margin: 1rem;
+      border-radius: 14px;
+      transition: all 0.35s;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      color: $text-black;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+      &:hover {
+        background-color: rgba($color: $hover-purple, $alpha: 0.24);
+        }
+
+      h3 {
+        // background-color: red;
+        font-size: 16px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        padding: 0.6rem;
+        position: relative;
+        font-weight: normal;
+
+        p {
+          margin-right: 0.6rem;
+          font-size: 12px;
+          opacity: 0.7;
+        }
+      }
+
+      span {
+        // background-color: red;
+        display: flex;
+        padding: 0.6rem;
+        font-size: 14px;
+        opacity: 0.7;
+        text-transform: uppercase;
+      }
     }
   }
 
   /**********[ Link section (About & Projects & Contact Links) ]**********/
-  .home-sections {
-    width: 100%;
-    height: 1200px;
-    transition: all 0.35s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  // .home-sections {
+  //   width: 100%;
+  //   height: 1200px;
+  //   transition: all 0.35s;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
 
-    .menus-sticky-container {
-      width: 80%;
-      height: 100%;
-      display: flex;
-      flex-direction: row;
+  //   .menus-sticky-container {
+  //     width: 80%;
+  //     height: 100%;
+  //     display: flex;
+  //     flex-direction: row;
 
-      .menus-box {
-        width: 50%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
+  //     .menus-box {
+  //       width: 50%;
+  //       height: 100%;
+  //       display: flex;
+  //       flex-direction: column;
+  //       align-items: center;
+  //       justify-content: space-around;
 
-        .menu-box {
-          width: 350px;
-          height: 250px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-          border-radius: 0.85rem;
+  //       .menu-box {
+  //         width: 350px;
+  //         height: 250px;
+  //         display: flex;
+  //         align-items: center;
+  //         justify-content: center;
+  //         overflow: hidden;
+  //         border-radius: 0.85rem;
 
-          .menu-image {
-            width: 350px;
-            height: 250px;
-            border-radius: 0.85rem;
-            transition: all 0.35s;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  //         .menu-image {
+  //           width: 350px;
+  //           height: 250px;
+  //           border-radius: 0.85rem;
+  //           transition: all 0.35s;
+  //           position: relative;
+  //           display: flex;
+  //           align-items: center;
+  //           justify-content: center;
+  //           box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
-            &:hover {
-              transform: scale(1.1);
-              p {
-                opacity: 1;
-              }
-            }
+  //           &:hover {
+  //             transform: scale(1.1);
+  //             p {
+  //               opacity: 1;
+  //             }
+  //           }
 
-            p {
-              width: 100%;
-              height: 100%;
-              background-color: rgba($color: #000, $alpha: 0.65);
-              border-radius: 0.85rem;
-              transition: opacity 0.35s;
-              color: white;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              text-transform: uppercase;
-              font-size: 14px;
-              font-weight: 500;
-              letter-spacing: 1px;
-              opacity: 0;
-            }
-          }
+  //           p {
+  //             width: 100%;
+  //             height: 100%;
+  //             background-color: rgba($color: #000, $alpha: 0.65);
+  //             border-radius: 0.85rem;
+  //             transition: opacity 0.35s;
+  //             color: white;
+  //             display: flex;
+  //             align-items: center;
+  //             justify-content: center;
+  //             text-transform: uppercase;
+  //             font-size: 14px;
+  //             font-weight: 500;
+  //             letter-spacing: 1px;
+  //             opacity: 0;
+  //           }
+  //         }
 
-          .menu-about {
-            background: url('../asstes/imgaes/about-link-image.png') no-repeat;
-            background-size: cover;
-            background-position: center;
-          }
-          .menu-projects {
-            background: url('../asstes/imgaes/projects-link-image.png')
-              no-repeat;
-            background-size: cover;
-            background-position: center;
-          }
-          .menu-contact {
-            background: url('../asstes/imgaes/contact-link-image.png') no-repeat;
-            background-size: cover;
-            background-position: center;
-          }
-        }
-      }
-      .sticky-box {
-        // background-color: purple;
-        width: 50%;
-        height: 100%;
-        position: relative;
-        display: flex;
-        justify-content: center;
+  //         .menu-about {
+  //           background: url('../asstes/imgaes/about-link-image.png') no-repeat;
+  //           background-size: cover;
+  //           background-position: center;
+  //         }
+  //         .menu-projects {
+  //           background: url('../asstes/imgaes/projects-link-image.png')
+  //             no-repeat;
+  //           background-size: cover;
+  //           background-position: center;
+  //         }
+  //         .menu-contact {
+  //           background: url('../asstes/imgaes/contact-link-image.png') no-repeat;
+  //           background-size: cover;
+  //           background-position: center;
+  //         }
+  //       }
+  //     }
+  //     .sticky-box {
+  //       // background-color: purple;
+  //       width: 50%;
+  //       height: 100%;
+  //       position: relative;
+  //       display: flex;
+  //       justify-content: center;
 
-        .sticky-text {
-          width: 90%;
-          height: 30%;
-          position: sticky;
-          top: 100px;
-          left: 0;
-          margin-top: 200px;
-          display: flex;
-          align-items: center;
-          font-size: 14px;
-          padding: 1rem;
-        }
-      }
-    }
-  }
+  //       .sticky-text {
+  //         width: 90%;
+  //         height: 30%;
+  //         position: sticky;
+  //         top: 100px;
+  //         left: 0;
+  //         margin-top: 200px;
+  //         display: flex;
+  //         align-items: center;
+  //         font-size: 14px;
+  //         padding: 1rem;
+  //       }
+  //     }
+  //   }
+  // }
 
   /**********[ Footer Section ]**********/
   .footer-section {
+    // background-color: $hover-purple;
     width: 100%;
-    height: 40vh;
-    margin-top: 60vh;
+    height: auto;
+    margin-top: 30vh;
+    position: relative;
+    // position: absolute;
+    // bottom: 0;
+    // left: 0;
+    // right: 0;
+    // margin-top: 30vh;
   }
 }
 
@@ -157,6 +201,7 @@
   /* 타블렛 */
   .home {
     // background-color: skyblue;
+    // height: auto;
 
     /**********[ section (About & Projects Links) ]**********/
     .home-sections {

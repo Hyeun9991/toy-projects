@@ -17,8 +17,14 @@
   font-family: 'Pretendard-Regular';
   src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
     format('woff');
-  // font-weight: 400;
-  // font-style: normal;
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 // 명조 폰트
@@ -40,11 +46,21 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  // Jadyn Maria
+  font-family: 'Jadyn Maria';
+  src: url('../asstes/fonts/Jadyn\ Maria.ttf');
+}
 
 /**********[ colors ]**********/
 $background-color: #f7f7f2;
 $text-color: #121212;
 $hover-color: rgba(18, 18, 18, 0.06);
+$main-purple: #d3c6ef;
+$hover-purple: #f0e9ff;
+$hover2-purple: #bfb0de;
+$text-black: #272727;
+$text-white: #fbfaff;
 
 /**********[ initialization ]**********/
 * {
@@ -60,24 +76,26 @@ $hover-color: rgba(18, 18, 18, 0.06);
 html {
   width: 100%;
   height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  //   Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  font-family: 'GmarketSansMedium';
 }
 
 body {
   width: 100%;
   height: auto;
   overflow-x: hidden;
-  background-color: $background-color;
+  // background-color: $background-color;
+  background-color: $main-purple;
 
   &::-webkit-scrollbar {
     width: 5px; /*스크롤바의 너비*/
   }
   &::-webkit-scrollbar-thumb {
-    background-color: $text-color; /*스크롤바의 색상*/
+    background-color: darken($hover2-purple, 5%); /*스크롤바의 색상*/
   }
   &::-webkit-scrollbar-track {
-    background-color: $background-color; /*스크롤바 트랙 색상*/
+    background-color: $main-purple; /*스크롤바 트랙 색상*/
   }
 }
 
@@ -86,29 +104,3 @@ a {
   list-style: none;
   text-decoration: none;
 }
-
-// .dark-btn-box {
-//   z-index: 9;
-//   position: fixed;
-//   top: 65vh;
-//   right: 2rem;
-//   width: 50px;
-//   height: 50px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   border-radius: 50%;
-//   font-size: 10px;
-//   text-transform: uppercase;
-//   -webkit-backdrop-filter: blur(135px);
-//   backdrop-filter: blur(135px);
-//   background-color: rgba($color: $dark-back, $alpha: 0.24);
-//   border: none;
-//   color: $dark-text1;
-//   cursor: pointer;
-//   transition: all 0.35s;
-
-//   &:hover {
-//     background-color: rgba(18, 18, 18, 0.06);
-//   }
-// }

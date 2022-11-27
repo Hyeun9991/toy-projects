@@ -8,46 +8,30 @@ import Footer from '../Footer/Footer';
 import ToTopButton from '../ToTopButton/ToTopButton';
 
 const Home = () => {
-  // const [scrollY, setScrollY] = useState(0);
-  // const [scrollYActive, setScrollYActive] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+  const [scrollYActive, setScrollYActive] = useState(false);
 
-  // const WelcomeTextOpa0 = () => {
-  //   if (scrollY > 40) {
-  //     setScrollY(window.pageYOffset);
-  //     setScrollYActive(true);
-  //   } else {
-  //     setScrollY(window.pageYOffset);
-  //     setScrollYActive(false);
-  //   }
-  // };
-  // useEffect(() => {
-  //   const scrollEvent = () => {
-  //     window.addEventListener('scroll', WelcomeTextOpa0);
-  //   };
-  //   scrollEvent();
-  //   return () => {
-  //     window.removeEventListener('scroll', WelcomeTextOpa0);
-  //   };
-  // });
+  // 스크롤값이 40을 초과하면 scrollActive toggle 하는 함수 (2022.11.27)
+  const introFlip = () => {
+    if (scrollY > 40) {
+      setScrollY(window.pageYOffset);
+      setScrollYActive(true);
+    } else {
+      setScrollY(window.pageYOffset);
+      setScrollYActive(false);
+    }
+  };
 
-  // const onScroll = () => {
-  //   setScrollY(window.scrollY); // 윈도우의 스크롤 값 넣어주기
-  // };
-  // useEffect(() => {
-  //   window.addEventListener('scroll', onScroll); // 윈도우 스크롤 이벤트 등록
-  //   // 여기서 끝내면 언마운트되고 스크롤될때마다 onScroll 함수가 계속 실행됨 (메모리 누수)
-  //   return () => {
-  //     window.removeEventListener('scroll', onScroll);
-  //     // 컴포넌트가 언마운트 되기 직전에 onScroll 함수가 제거됨
-  //   };
-  // }, []); // 의존성 배열이 비어있으면 마운트되는 시점에 한번만 실행됨
-
-  // const scrollToTop = () => {
-  //   window.scrollTo({
-  //     top: 0,
-  //     behavior: 'smooth',
-  //   });
-  // };
+  // introFlip 함수를 실행하는 useEffect (2022.11.27)
+  useEffect(() => {
+    const scrollListener = () => {
+      window.addEventListener('scroll', introFlip);
+    };
+    scrollListener();
+    return () => {
+      window.removeEventListener('scroll', introFlip);
+    };
+  });
 
   return (
     <div className="home">
@@ -55,17 +39,40 @@ const Home = () => {
       <ToTopButton />
       {/* /to top button */}
 
-      {/* intro (welcome text) */}
-      <div
-        className='home-welcome-msg'
-      >
-        <p className="welcome-effect">Welcome To </p>
-        <p className="welcome-eh">Eh</p>
+      {/* intro */}
+      <div className={scrollYActive ? 'home-intro flip' : 'home-intro'}>
+        <Link to="/about" className="about-intro intro-box">
+          <h3>
+            <p>01</p> about
+          </h3>
+          <div>
+            <span>&#183; resume</span>
+            <span>&#183; skills</span>
+          </div>
+        </Link>
+        <Link to="/projects" className="projects-intro intro-box">
+          <h3>
+            <p>02</p> projects
+          </h3>
+          <div>
+            <span>&#183; website</span>
+            <span>&#183; javascript</span>
+          </div>
+        </Link>
+        <Link to="/contact" className="contact-intro intro-box">
+          <h3>
+            <p>03</p> contact
+          </h3>
+          <div>
+            <span>&#183; get in touch</span>
+            <span>&#183; social</span>
+          </div>
+        </Link>
       </div>
-      {/* /intro (welcome text) */}
+      {/* /intro */}
 
       {/* home-sections-1 */}
-      <div className="home-sections">
+      {/* <div className="home-sections">
         <div className="menus-sticky-container">
           <div className="menus-box">
             <div className="menu-box">
@@ -96,8 +103,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* /home-sections-1 */}
+
+      {/* <div className="home-section-1">.section-1</div> */}
 
       <div className="footer-section">
         <Footer />

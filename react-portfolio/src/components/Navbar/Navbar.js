@@ -16,8 +16,33 @@ const Navbar = () => {
     setBtnClick(false);
   }, [pathname]);
 
+  const [scrollY, setScrollY] = useState(0);
+  const [scrollYActive, setScrollYActive] = useState(false);
+
+  // 스크롤값이 40을 초과하면 scrollActive toggle 하는 함수 (2022.11.27)
+  const introFlip = () => {
+    if (scrollY > 40) {
+      setScrollY(window.pageYOffset);
+      setScrollYActive(true);
+    } else {
+      setScrollY(window.pageYOffset);
+      setScrollYActive(false);
+    }
+  };
+
+  // introFlip 함수를 실행하는 useEffect (2022.11.27)
+  useEffect(() => {
+    const scrollListener = () => {
+      window.addEventListener('scroll', introFlip);
+    };
+    scrollListener();
+    return () => {
+      window.removeEventListener('scroll', introFlip);
+    };
+  });
+
   return (
-    <div className="navbar">
+    <div className={scrollYActive ? 'navbar flip' : 'navbar'}>
       {/* navbar-container */}
       <div className="navbar-container">
         {/* navbar-wrapper */}
@@ -48,8 +73,19 @@ const Navbar = () => {
                 </ul>
               </div>
               <div className="navbar-primary-center">
-                <Link className="navbar-logo-link" to="/">
+                {/* <Link className="navbar-logo-link" to="/">
                   Eh
+                </Link> */}
+                <Link to='/' className="flip-text">
+                  <div className="flip-text-inner">
+                    <div className="flip-text-front">
+                      <p>Eunhye</p>
+                      <p className='nav-portfolio-text'>portfolio</p>
+                    </div>
+                    <div className="flip-text-back">
+                      <p>Eh</p>
+                    </div>
+                  </div>
                 </Link>
               </div>
               <div className="navbar-primary-end">
