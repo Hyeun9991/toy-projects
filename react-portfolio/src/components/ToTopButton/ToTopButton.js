@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../../styles/ToTopButton.scss';
+import './ToTopButton.scss';
 
 const ToTopButton = () => {
   const [scrollY, setScrollY] = useState(0);

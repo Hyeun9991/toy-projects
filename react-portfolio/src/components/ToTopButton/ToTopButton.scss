@@ -1,0 +1,53 @@
+@import '../../App.scss';
+
+/**********[ to top button ]**********/
+.to-top-btn {
+  z-index: 9;
+  position: fixed;
+  top: 75vh;
+  right: -100%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 10px;
+  text-transform: uppercase;
+  -webkit-backdrop-filter: blur(135px);
+  backdrop-filter: blur(135px);
+  background-color: rgba($color: $background-color, $alpha: 0.24);
+  border: none;
+  color: $text-color;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.8s;
+
+  &.to-top-show {
+    // background-color: red;
+    opacity: 1;
+    right: 2rem;
+  }
+
+  &:hover {
+    background-color: rgba(18, 18, 18, 0.06);
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .to-top-btn {
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .to-top-btn {
+
+    &.to-top-show {
+      opacity: 1;
+      right: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+}

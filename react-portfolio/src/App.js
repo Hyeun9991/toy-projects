@@ -2,24 +2,25 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 /**********[ scss ]**********/
-import './styles/App.scss';
+import './App.scss';
+import './styles/reset.scss';
+import './styles/common.scss';
 
 /**********[ components & routes ]**********/
-import Navbar from './components/Navbar/Navbar';
-import Home from './components/Home/Home';
-import Projects from './components/Pages/Projects';
-import About from './components/Pages/About';
-import Contact from './components/Pages/Contact';
+import HomePage from './pages/HomePage';
+import ProjectPage from './pages/ProjectPage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/project-page" element={<ProjectPage />} />
+        <Route path="/about-page" element={<AboutPage />} />
+        <Route path="/contact-page" element={<ContactPage />} />
       </Routes>
     </div>
   );

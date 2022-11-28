@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+/**********[ initialization ]**********/
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+html,
+body {
+  height: 100%;
+
+  // &::-webkit-scrollbar {
+  //   width: 5px; /*스크롤바의 너비*/
+  // }
+  // &::-webkit-scrollbar-thumb {
+  //   background-color: darken($hover2-purple, 5%); /*스크롤바의 색상*/
+  // }
+  // &::-webkit-scrollbar-track {
+  //   background-color: $main-purple; /*스크롤바 트랙 색상*/
+  // }
+}
+
+button {
+  background-color: none;
+  border: 0;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/**********[ fonts ]**********/
+// 로고 폰트
+@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
+// font-family: 'Petit Formal Script';
+
+// 반듯한 고딕체
+@font-face {
+  font-family: 'SUIT-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// 명조 폰트
+@import url('//cdn.jsdelivr.net/font-iropke-batang/1.2/font-iropke-batang.css');
+// font-family: 'Iropke Batang', serif;
+
+// 필기체 폰트
+@font-face {
+  font-family: 'SSVeryBadHandwriting';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/SSVeryBadHandwriting.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Humanbumsuk';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Humanbumsuk.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  // Jadyn Maria
+  font-family: 'Jadyn Maria';
+  src: url('../assets/fonts/Jadyn\ Maria.ttf');
+}
+
+/**********[ colors ]**********/
+$background-color: #f7f7f2;
+$text-color: #121212;
+$hover-color: rgba(18, 18, 18, 0.06);
+$main-purple: #d3c6ef;
+$hover-purple: #f0e9ff;
+$hover2-purple: #bfb0de;
+$text-black: #272727;
+$text-white: #fbfaff;
