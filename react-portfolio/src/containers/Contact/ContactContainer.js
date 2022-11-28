@@ -72,27 +72,29 @@ const ContactContainer = () => {
 
         {/* profile-box */}
         <div className="profile-box">
-          <div className="profile-1 profile">
-            {/* <h1>profile</h1> */}
-            <span>
-              Address <p>Inchoen Korea</p>
-            </span>
-            <span>
-              email{' '}
-              <a href="mailto: hyeun9991@gmail.com">hyeun9991@gmail.com</a>
-            </span>
-            <span className="span-last">
-              Phone Call <a href="sms: 010-7527-5792">+82 10-7527-5792</a>
-            </span>
+          <div className="profile-contact">
+            <h1>contact</h1>
+            <div className="profile-items">
+              <h2>email</h2>
+              <a href="mailto:hyeun9991@gmail.com">hyeun9991@gmail.com</a>
+            </div>
+            <div className="profile-items">
+              <h2>phone call</h2>
+              <a href="sms:010-7527-5792">+82 10-7527-5792</a>
+            </div>
           </div>
-          <div className="profile-2 profile">
+          <div className="profile-social">
             <h1>social</h1>
-            <a href="https://github.com/Hyeun9991" target="_blank">
-              Github
-            </a>
-            <a href="https://velog.io/@hyeun9991" target="_blank">
-              Blog
-            </a>
+            <div className="profile-items">
+              <a href="https://github.com/Hyeun9991" target="_blank">
+                <h2>github</h2>
+              </a>
+            </div>
+            <div className="profile-items">
+              <a href="https://velog.io/@hyeun9991" target="_blank">
+                <h2>blog</h2>
+              </a>
+            </div>
           </div>
         </div>
         {/* /profile-box */}

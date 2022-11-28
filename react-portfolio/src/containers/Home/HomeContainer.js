@@ -4,7 +4,10 @@ import './HomeContainer.scss';
 const HomeContainer = () => {
   return (
     <div className='home-container'>
-      <h2>This is home container</h2>
+      <div className='dev-section'>
+        <h1><b>Home</b> Page</h1>
+        <p>개발중..</p>
+      </div>
     </div>
   );
 };

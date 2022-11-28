@@ -27,7 +27,7 @@
 
     /**********[ header wrapper]**********/
     .header-wrapper {
-      background-color: rgba($color: $main-purple, $alpha: 0.24);
+      background-color: rgba($color: $main-white, $alpha: 0.24);
       -webkit-backdrop-filter: blur(135px);
       backdrop-filter: blur(135px);
       width: 100%;
@@ -40,7 +40,7 @@
 
       &.wrapper-full {
         height: 100vh;
-        background-color: rgba($color: $hover-purple, $alpha: 0.24);
+        // background-color: rgba($color: $hover-purple, $alpha: 0.24);
       }
 
       /**********[ header wrapper inner]**********/
@@ -66,7 +66,7 @@
           .pri-items {
             padding: 0.8rem;
             border-radius: 0.875rem;
-            font-size: 12px;
+            font-size: 14px;
             text-transform: uppercase;
             line-height: 1;
             display: flex;
@@ -75,7 +75,7 @@
             cursor: pointer;
 
             &:hover {
-              background-color: rgba($color: $hover2-purple, $alpha: 0.24);
+              background-color: rgba($color: $hover-gray, $alpha: 0.24);
               // background-color: $hover2-purple;
             }
           }
@@ -137,8 +137,10 @@
                   flex-direction: column;
 
                   .nav-portfolio-text {
-                    font-family: 'GmarketSansMedium';
-                    font-size: 10px;
+                    // background-color: red;
+                    // font-family: 'GmarketSansMedium';
+                    font-family: 'Pretendard-Regular';
+                    font-size: 8px;
                     text-transform: uppercase;
                     transform: rotate(0deg);
                   }
@@ -176,7 +178,7 @@
           padding: 0 0.25rem;
           display: none;
           align-items: center;
-          font-size: 14px;
+          font-size: 16px;
 
           &.sec-show {
             display: -webkit-box;
@@ -221,23 +223,25 @@
               text-transform: uppercase;
               font-weight: 500;
               letter-spacing: 1px;
-              font-size: 12px;
+              font-size: 14px;
 
               a {
                 text-transform: none;
                 position: relative;
-                margin-left: 1rem;
+                margin-left: 0.8rem;
                 font-weight: normal;
-                line-height: 3;
+                line-height: 2.5;
                 letter-spacing: 0;
                 opacity: 0.7;
                 transition: all 0.35s;
-                padding: 0.5rem;
+                padding: 0.2rem 0.4rem;
                 border-radius: 14px;
 
                 &:hover {
                   opacity: 1;
-                  background-color: rgba($color: $hover2-purple, $alpha: 0.24);
+                  // background-color: rgba($color: $hover2-purple, $alpha: 0.24);
+                  background-color: $primary-gray;
+                  color: $text-white;
                 }
               }
             }

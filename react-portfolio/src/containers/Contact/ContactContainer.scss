@@ -6,6 +6,7 @@
   width: 100%;
   height: calc(100vh - 64px);
   margin-top: 64px;
+  margin-bottom: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,7 +25,9 @@
 
     /**********[ email box ]**********/
     .email-box {
-      // background-color: rgba($color: #000000, $alpha: 0.2);
+      // background-color: $hover-gray;
+      // background-color: rgba($color: white, $alpha: 0.24);
+      border-radius: 14px;
       width: 550px;
       height: 600px;
       display: flex;
@@ -43,7 +46,7 @@
         h1 {
           font-size: 16px;
           text-transform: uppercase;
-          letter-spacing: 1px;
+          // letter-spacing: 1px;
           padding: 1rem;
           font-weight: 500;
           margin-bottom: 1rem;
@@ -75,25 +78,26 @@
           height: 100%;
           padding: 0 1rem;
           border-radius: 0.875rem;
-          background-color: $main-purple;
-          // border: 0.125rem rgba(18, 18, 18, 0.06) solid;
-          border: 0.125rem $hover2-purple solid;
+          background-color: $main-white;
+          border: 0.125rem $primary-gray solid;
           box-shadow: 0 0 0 4px transparent;
           -webkit-box-shadow: 0 0 0 4px transparent;
-          transition: all .35s;
-          font-family: 'GmarketSansMedium';
+          transition: all 0.35s;
 
           &:focus {
-            // border-color: #f4502f;
-            background-color: $hover-purple;
-            border-color: $hover-purple;
+            background-color: $primary-gray;
+            outline: none;
+            color: $text-white;
+
+            &::placeholder {
+              color: $text-white;
+            }
           }
 
           &::placeholder {
             color: $text-black;
             text-transform: uppercase;
             opacity: 0.6;
-            font-family: 'GmarketSansMedium';
           }
         }
 
@@ -114,8 +118,8 @@
           }
         }
         .send-btn {
-          background-color: $hover2-purple;
-          color: $text-black;
+          background-color: $primary-gray;
+          color: $text-white;
           width: 100%;
           height: 3rem;
           padding: 0.6rem;
@@ -126,11 +130,12 @@
           font-weight: 500;
           letter-spacing: 1px;
           cursor: pointer;
-          transition: all .35s;
+          transition: all 0.35s;
           font-family: 'GmarketSansMedium';
 
           &:hover {
-            background-color: $hover-purple;
+            // background-color: $primary-blue;
+            // opacity: 0.7;
           }
         }
       }
@@ -139,81 +144,62 @@
     /**********[ profile box ]**********/
     .profile-box {
       // background-color: rgba($color: #000000, $alpha: 0.4);
-      width: 300px;
-      height: 600px;
+      width: 250px;
+      height: 450px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-around;
-      text-align: center;
 
-      .profile {
-        // background-color: hotpink;
-        // width: 100%;
-        height: 45%;
-        padding: 1rem;
-
-        h1 {
-          font-weight: 500;
-          font-size: 14px;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          margin-bottom: 0.8rem;
-        }
-
-        p,
-        a {
-          // background-color: red;
-          display: block;
-          color: $text-color;
-          letter-spacing: 0;
-          font-weight: normal;
-          font-size: 12px;
-          opacity: 0.7;
-          text-transform: none;
-          margin-top: 0.6rem;
-          transition: all 0.35s;
-          padding: 0.5rem;
-          border-radius: 14px;
-        }
-
-        a:hover {
-          // background-color: rgba($color: $hover2-purple, $alpha: .24);
-          background-color: $hover2-purple;
-          opacity: 1;
-        }
+      h1 {
+        // background-color: red;
+        font-size: 16px;
+        text-transform: uppercase;
+        margin-bottom: 0.8rem;
       }
 
-      .profile-1 {
-        // background-color: hotpink;
+      .profile-items {
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        line-height: 1.8;
+        font-size: 14px;
 
-        span {
+        h2 {
+          // background-color: skyblue;
           text-transform: uppercase;
-          letter-spacing: 1px;
-          font-size: 14px;
-          font-weight: 500;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
+        }
+        a {
+          // background-color: pink;
+          padding: 0 0.4rem;
+          border-radius: 14px;
+          opacity: 0.7;
+          transition: all 0.35s;
 
-          p,
-          a {
+          &:hover {
+            background-color: $primary-gray;
+            color: $text-white;
+            opacity: 1;
           }
         }
       }
-      .profile-2 {
-        // background-color: hotpink;
+
+      .profile-contact {
+        // background-color: rgba($color: #000000, $alpha: 0.2);
+        width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        align-items: center;
+        // margin-bottom: 2rem;
 
         a {
-          display: flex;
-          flex-direction: column;
+          margin-left: 0.8rem;
         }
+      }
+      .profile-social {
+        // background-color: rgba($color: #000000, $alpha: 0.2);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
     }
   }
@@ -234,6 +220,11 @@
 
       .profile-box {
         width: 100%;
+        height: 300px;
+
+        .profile-items {
+          line-height: 2.5;
+        }
       }
     }
   }
@@ -253,6 +244,10 @@
 
         form {
           width: 100%;
+
+          h1 {
+            font-size: 14px;
+          }
 
           .input-box {
             margin-bottom: 0;
@@ -287,13 +282,23 @@
             // font-size: 1rem;
             width: 100%;
             transform: scale(0.86);
-            font-size: 14px;
+            font-size: 12px;
           }
         }
       }
 
       .profile-box {
         width: 100%;
+
+        .profile {
+          h1 {
+            font-size: 14px;
+          }
+          p,
+          a {
+            font-size: 12px;
+          }
+        }
       }
     }
   }

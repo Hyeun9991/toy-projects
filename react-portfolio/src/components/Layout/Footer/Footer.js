@@ -1,11 +1,26 @@
 import React from 'react';
-import './Footer.scss'
+import { Link } from 'react-router-dom';
+import './Footer.scss';
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <h2 className="footer-title">Eh Portfolio Website</h2>
+        <Link to="/" className="footer-logo">
+          <p className="logo-eunhye">Eunhye</p>
+          <p className="portfolio-text">portfolio</p>
+        </Link>
+        <div className="footer-menus">
+          {/* <p>welcome to Eh</p> */}
+          <Link to='/about-page'>about</Link>
+          <Link to='/project-page'>projects</Link>
+        </div>
+        <div className="footer-contact">
+          <p>
+            get in touch<b>&rarr;</b>{' '}
+          </p>
+          <Link to="/contact-page">contact</Link>
+        </div>
       </div>
     </footer>
   );

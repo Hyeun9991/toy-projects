@@ -6,122 +6,35 @@ const AboutContainer = () => {
   return (
     <div className="about-container">
       <ToTopButton />
-      <div className="about">
-        <div className="q-a-tab">
-          {/* q-a-box-1 */}
-          <div className="q-a-box q-a-box-1">
-            {/* q-a-1 */}
-            <div className="q-a-1">
-              <div className="q-a-1-about-me q-a-about-me">
-                <h2>개발자가 되려는 계기</h2>
-                <p>
-                  온라인 비즈니스에서 수요가 높아 밝은 전망을 보이는 웹 개발은
-                  프론트엔드 개발자가 되기 위한 계기가 되었습니다.
-                  <br /> 사용자 경험이 좋은 웹 개발을 하기 위해, 가치 있는
-                  아웃풋을 내기 위해 항상 고민하는 개발자가 되는 것이
-                  목표입니다.
-                </p>
-              </div>
-            </div>
-            {/* /q-a-1 */}
-          </div>
-          {/* /q-a-box-1 */}
-
-          {/* q-a-box-2 */}
-          <div className="q-a-box q-a-box-2">
-            {/* q-a-2 */}
-            <div className="q-a-2">
-              <div className="q-a-2-about-me q-a-about-me">
-                <h2>학습 방향</h2>
-                <p>
-                  생활코딩 이고잉님의 웹 수업 강의를 통해 기초, JavaScript 등 웹
-                  개발에 필요한 내용들을 학습했습니다. <br />
-                  최근에는 더 향상된 사용자 경험을 줄 수 있는 브라우저를
-                  개발하기 위해 React를 공부하고 있습니다. 더 나아가 cs 지식을
-                  꼭 알야아 된다고 판단되어 공부중입니다.
-                </p>
-              </div>
-            </div>
-            {/* /q-a-2 */}
-          </div>
-          {/* /q-a-box-2 */}
-
-          {/* q-a-box-3 */}
-          <div className="q-a-box q-a-box-3">
-            {/* q-a-3 */}
-            <div className="q-a-3">
-              <div className="q-a-3-about-me q-a-about-me">
-                <h2>사용할 수 있는 개발언어는 무엇인가요?</h2>
-                <p>
-                  Html5의 시멘틱 태그사용, SCSS를 사용해 태그들을 적절하게
-                  배치하고 심미성을 높일 수 있습니다.
-                  <br />
-                  JavaScript를 활용해서 정적 사이트에 필수인 이벤트와 DOM을
-                  제어할 수 있습니다.
-                </p>
-              </div>
-            </div>
-            {/* /q-a-3 */}
-          </div>
-          {/* /q-a-box-3 */}
-
-          {/* q-a-box-4 */}
-          <div className="q-a-box q-a-box-4">
-            {/* q-a-4 */}
-            <div className="q-a-4">
-              <div className="q-a-4-about-me q-a-about-me">
-                <h2>Html, CSS 숙련도</h2>
-                <p>
-                  Html5의 시멘틱 태그사용, SCSS를 사용해 태그들을 적절하게
-                  배치하고 심미성을 높일 수 있습니다.
-                  <br />
-                  JavaScript를 활용해서 정적 사이트에 필수인 이벤트와 DOM을
-                  제어할 수 있습니다.
-                </p>
-              </div>
-            </div>
-            {/* /q-a-4 */}
-          </div>
-          {/* /q-a-box-4 */}
-
-          {/* q-a-box-5 */}
-          <div className="q-a-box q-a-box-5">
-            {/* q-a-5 */}
-            <div className="q-a-5">
-              <div className="q-a-5-about-me q-a-about-me">
-                <h2>JavaScript 숙련도</h2>
-                <p>
-                  Html5의 시멘틱 태그사용, SCSS를 사용해 태그들을 적절하게
-                  배치하고 심미성을 높일 수 있습니다.
-                  <br />
-                  JavaScript를 활용해서 정적 사이트에 필수인 이벤트와 DOM을
-                  제어할 수 있습니다.
-                </p>
-              </div>
-            </div>
-            {/* /q-a-5 */}
-          </div>
-          {/* /q-a-box-5 */}
-
-          {/* q-a-box-6 */}
-          <div className="q-a-box q-a-box-6">
-            {/* q-a-6 */}
-            <div className="q-a-6">
-              <div className="q-a-6-about-me q-a-about-me">
-                <h2>Tools</h2>
-                <p>
-                  Html5의 시멘틱 태그사용, SCSS를 사용해 태그들을 적절하게
-                  배치하고 심미성을 높일 수 있습니다.
-                  <br />
-                  JavaScript를 활용해서 정적 사이트에 필수인 이벤트와 DOM을
-                  제어할 수 있습니다.
-                </p>
-              </div>
-            </div>
-            {/* /q-a-6 */}
-          </div>
-          {/* /q-a-box-6 */}
+      <div className="about-resume about-section">
+        <h1 className="about-title">Resume</h1>
+        <div className="resume-img"></div>
+        <div className="resume-text">
+          <h2>
+            &#34; 컴퓨터랑 일하는 건 엄청 멋있다. 누구랑 싸우지도 않고, 모든
+            것을 대신 기억해주고, 내 맥주를 뺏어 마시지도 않는다. &#34;
+            <p>by. Paul Leary</p>
+          </h2>
+          <span>
+            <b className="underline-b">웹개발에 대한 꾸준한 수요증가</b>는
+            웹프론트 개발자가 되기위한 <b className="underline-b">동기</b>로
+            충분했습니다. <br />
+            컴퓨터의 <b className="underline-b">입력과 아웃풋이 명확함</b>에
+            매력을 느끼고 <b className="underline-b">즐기면서</b> 개발하고
+            있습니다.
+            <br />
+            <p className="background-p">
+              모든 프로젝트에 애정을 갖고 사용자에게 좋은 경험을 줄 수 있는
+              개발자로 거듭나기 위해 공부 중 입니다.
+            </p>
+          </span>
         </div>
+      </div>
+      <div className="about-skills about-section">
+        <h1 className="about-title">skills</h1>
+      </div>
+      <div className="about-profile about-section">
+        <h1 className="about-title">profile</h1>
       </div>
     </div>
   );

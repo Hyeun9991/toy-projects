@@ -22,7 +22,8 @@
 }
 @font-face {
   font-family: 'GmarketSansMedium';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -53,12 +54,33 @@
 }
 
 /**********[ colors ]**********/
+
+// background color & main color
 $background-color: #f7f7f2;
-$text-color: #121212;
-$hover-color: rgba(18, 18, 18, 0.06);
+$main-white: #f0f0f0;
 $main-purple: #d3c6ef;
+
+// hover color & primary color
+$hover-color: rgba(18, 18, 18, 0.06);
+$hover-gray: rgba(
+  $color: #bebebe,
+  $alpha: 0.24,
+);
+$hover-blue: rgba(
+  $color: #126ded,
+  $alpha: 0.24,
+);
+$hover-white: rgba(
+  $color: #f0f0f0,
+  $alpha: 0.24,
+);
 $hover-purple: #f0e9ff;
 $hover2-purple: #bfb0de;
+$primary-blue: #126ded;
+$primary-gray: #242424;
+
+// text color
+$text-color: #121212;
 $text-black: #272727;
 $text-white: #fbfaff;
 
@@ -66,41 +88,37 @@ $text-white: #fbfaff;
 * {
   margin: 0;
   padding: 0;
-  outline: 0;
+  font: inherit;
+  color: inherit;
+}
+
+*,
+::after,
+::before {
   box-sizing: border-box;
-  user-select: none;
-  -ms-user-select: none;
-  -webkit-tap-highlight-color: rgba($color: #000000, $alpha: 1);
+  flex-shrink: 0;
 }
 
-html {
-  width: 100%;
-  height: 100%;
-  // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-  //   Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-  font-family: 'GmarketSansMedium';
-}
-
+html,
 body {
-  width: 100%;
   height: auto;
-  overflow-x: hidden;
-  // background-color: $background-color;
-  background-color: $main-purple;
-
-  &::-webkit-scrollbar {
-    width: 5px; /*스크롤바의 너비*/
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: darken($hover2-purple, 5%); /*스크롤바의 색상*/
-  }
-  &::-webkit-scrollbar-track {
-    background-color: $main-purple; /*스크롤바 트랙 색상*/
-  }
+  background-color: $main-white;
+  // font-family: 'GmarketSansMedium';
+  font-family: 'Pretendard-Regular';
 }
 
-li,
-a {
+
+button {
+  background-color: none;
+  border: 0;
+  cursor: pointer;
+}
+
+ul,
+ol {
   list-style: none;
+}
+
+a {
   text-decoration: none;
 }

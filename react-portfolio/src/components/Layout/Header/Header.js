@@ -105,10 +105,10 @@ const Header = () => {
               <div className="header-sec-start">
                 <ul>
                   <li>
-                    <Link to="/about">about</Link>
+                    <Link to="/about-page">about</Link>
                   </li>
                   <li>
-                    <Link to="/projects">projects</Link>
+                    <Link to="/project-page">projects</Link>
                   </li>
                 </ul>
               </div>

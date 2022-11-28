@@ -11,7 +11,10 @@ const ProjectContainer = () => {
   return (
     <div className="project-container">
       <ToTopButton />
-      <h2>This is Project</h2>
+      <div className='dev-section'>
+        <h1><b>Project</b> Page</h1>
+        <p>개발중..</p>
+      </div>
     </div>
   );
 };
