@@ -64,7 +64,7 @@ $main-purple: #d3c6ef;
 $hover-color: rgba(18, 18, 18, 0.06);
 $hover-gray: rgba(
   $color: #bebebe,
-  $alpha: 0.24,
+  $alpha: 0.4,
 );
 $hover-blue: rgba(
   $color: #126ded,
@@ -105,6 +105,17 @@ body {
   background-color: $main-white;
   // font-family: 'GmarketSansMedium';
   font-family: 'Pretendard-Regular';
+
+  &::-webkit-scrollbar {
+    width: 6px; /*스크롤바의 너비*/
+  }
+  &::-webkit-scrollbar-thumb {
+    // background-color: darken($hover2-purple, 5%); /*스크롤바의 색상*/
+    background-color: $primary-gray;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $main-white; /*스크롤바 트랙 색상*/
+  }
 }
 
 
