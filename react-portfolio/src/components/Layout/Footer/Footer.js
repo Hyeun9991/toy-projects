@@ -15,12 +15,12 @@ const Footer = () => {
           <Link to='/about-page'>about</Link>
           <Link to='/project-page'>projects</Link>
         </div>
-        <div className="footer-contact">
+        <Link className="footer-contact" to="/contact-page">
           <p>
             get in touch<b>&rarr;</b>{' '}
           </p>
-          <Link to="/contact-page">contact</Link>
-        </div>
+          <p className='contact-link'>contact</p>
+        </Link>
       </div>
     </footer>
   );

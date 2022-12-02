@@ -1,55 +1,71 @@
 @import '../../App.scss';
 
 .contact {
-  // background-color: rgba($color: #000000, $alpha: 0.2);
-  // background-color: yellow;
+  margin: 6rem 0;
   width: 100%;
-  height: calc(100vh - 64px);
-  margin-top: 64px;
-  margin-bottom: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   /**********[ contact container ]**********/
   .contact-container {
-    // background-color: rgba($color: #000000, $alpha: 0.2);
-    // background-color: green;
-    width: 100%;
-    height: auto;
-    max-width: 1080px;
-    max-height: 100%;
+    background-color: $hover-gray;
+    -webkit-backdrop-filter: blur(135px);
+    backdrop-filter: blur(135px);
+    width: 80%;
+    height: 650px;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    border-radius: 14px;
+    position: relative;
+    margin: 0 auto;
+    padding: 2rem 0;
+
+    /**********[ contact title ]**********/
+    .contact-title {
+      position: absolute;
+      top: -3.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Jadyn Maria';
+      font-size: 35px;
+      color: $text-black;
+      // font-weight: 700;
+    }
 
     /**********[ email box ]**********/
     .email-box {
-      // background-color: $hover-gray;
-      // background-color: rgba($color: white, $alpha: 0.24);
-      border-radius: 14px;
-      width: 550px;
-      height: 600px;
+      // background-color: hotpink;
+      // width: 35%;
+      width: 500px;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 1rem;
 
       form {
-        // background-color: hotpink;
-        width: 80%;
+        background-color: $hover-gray;
+        -webkit-backdrop-filter: blur(135px);
+        backdrop-filter: blur(135px);
+        border-radius: 14px;
+        width: 100%;
         height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding: 1rem;
+        position: relative;
 
-        h1 {
-          font-size: 16px;
-          text-transform: uppercase;
-          // letter-spacing: 1px;
-          padding: 1rem;
-          font-weight: 500;
-          margin-bottom: 1rem;
+        /**********[ email title ]**********/
+        .email-title {
+          position: absolute;
+          top: -1rem;
+          left: 50%;
+          transform: translateX(-50%);
+          font-family: 'Jadyn Maria';
+          font-size: 25px;
+          font-weight: 700;
+          color: $text-black;
         }
 
         .input-box {
@@ -101,22 +117,12 @@
           }
         }
 
-        .input {
-          // background-color: red;
-          &:focus {
-          }
-        }
-
-        .email-input {
-          // ime-mode: disabled;
-        }
-
         .textarea {
           padding: 1rem;
           resize: none;
-          &::placeholder {
-          }
         }
+
+        /**********[ send button ]**********/
         .send-btn {
           background-color: $primary-gray;
           color: $text-white;
@@ -126,51 +132,46 @@
           border: none;
           border-radius: 0.875rem;
           text-transform: uppercase;
-          font-size: 12px;
+          font-size: 16px;
           font-weight: 500;
           letter-spacing: 1px;
           cursor: pointer;
           transition: all 0.35s;
-          font-family: 'GmarketSansMedium';
-
-          &:hover {
-            // background-color: $primary-blue;
-            // opacity: 0.7;
-          }
         }
       }
     }
 
     /**********[ profile box ]**********/
     .profile-box {
-      // background-color: rgba($color: #000000, $alpha: 0.4);
-      width: 250px;
-      height: 450px;
+      // background-color: hotpink;
+      border-radius: 14px;
+      // width: 35%;
+      width: 500px;
+      height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-around;
-
-      h1 {
-        // background-color: red;
-        font-size: 16px;
-        text-transform: uppercase;
-        margin-bottom: 0.8rem;
-      }
+      justify-content: space-between;
+      position: relative;
+      padding: 1rem;
 
       .profile-items {
         display: flex;
-        line-height: 1.8;
-        font-size: 14px;
+        align-items: center;
+        line-height: 2.8;
+        font-size: 16px;
 
         h2 {
-          // background-color: skyblue;
           text-transform: uppercase;
+          letter-spacing: 1px;
         }
+
         a {
-          // background-color: pink;
-          padding: 0 0.4rem;
+          margin-left: 0.4rem;
+          padding: 0.2rem 0.4rem;
           border-radius: 14px;
+          letter-spacing: 0;
+          text-transform: none;
           opacity: 0.7;
           transition: all 0.35s;
 
@@ -181,25 +182,54 @@
           }
         }
       }
-
       .profile-contact {
-        // background-color: rgba($color: #000000, $alpha: 0.2);
+        background-color: $hover-gray;
+        -webkit-backdrop-filter: blur(135px);
+        backdrop-filter: blur(135px);
         width: 100%;
+        height: 45%;
+        border-radius: 14px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        // margin-bottom: 2rem;
+        justify-content: center;
+        position: relative;
 
-        a {
-          margin-left: 0.8rem;
+        .profile-contact-title {
+          position: absolute;
+          top: -1rem;
+          left: 50%;
+          transform: translateX(-50%);
+          font-family: 'Jadyn Maria';
+          font-size: 25px;
+          font-weight: 700;
+          color: $text-black;
         }
       }
       .profile-social {
         // background-color: rgba($color: #000000, $alpha: 0.2);
+        background-color: $hover-gray;
+        -webkit-backdrop-filter: blur(135px);
+        backdrop-filter: blur(135px);
         width: 100%;
+        height: 45%;
+        border-radius: 14px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        position: relative;
+
+        .profile-social-title {
+          position: absolute;
+          top: -1rem;
+          left: 50%;
+          transform: translateX(-50%);
+          font-family: 'Jadyn Maria';
+          font-size: 25px;
+          font-weight: 700;
+          color: $text-black;
+        }
       }
     }
   }
@@ -207,99 +237,102 @@
 
 @media screen and (max-width: 1023px) {
   .contact {
-    height: auto;
-
+    /**********[ contact container ]**********/
     .contact-container {
-      flex-direction: column;
-      height: auto;
-      max-height: auto;
+      width: 96%;
+      padding: 1rem 0;
+      position: relative;
 
-      .email-box {
-        margin-bottom: 5rem;
+      /**********[ contact title ]**********/
+      .contact-title {
+        font-size: 30px;
       }
 
+      /**********[ email box ]**********/
+      .email-box {
+        width: 50%;
+
+        form {
+          /**********[ email title ]**********/
+          .email-title {
+          }
+
+          /**********[ send button ]**********/
+          .send-btn {
+            font-size: 14px;
+          }
+        }
+      }
+
+      /**********[ profile box ]**********/
       .profile-box {
-        width: 100%;
-        height: 300px;
+        width: 50%;
 
         .profile-items {
-          line-height: 2.5;
+          font-size: 14px;
+
+          a {
+            padding: 0.4rem 0.4rem;
+          }
         }
       }
     }
   }
 }
 @media screen and (max-width: 640px) {
-}
-
-@media screen and (max-width: 460px) {
   .contact {
-    margin-top: 120px;
+    /**********[ contact container ]**********/
     .contact-container {
+      width: 96%;
+      height: 1200px;
+      // padding: 1rem 0;
+      padding: 0;
+      position: relative;
+      flex-wrap: wrap;
+
+      /**********[ email box ]**********/
       .email-box {
-        // background-color: hotpink;
+        // background-color: skyblue;
         width: 100%;
-        margin-bottom: 5rem;
-        font-size: 1rem;
+        height: 49%;
 
         form {
-          width: 100%;
-
-          h1 {
-            font-size: 16px;
+          /**********[ email title ]**********/
+          .email-title {
+            font-size: 20px;
           }
 
-          .input-box {
-            margin-bottom: 0;
-          }
-          .name-input {
-            margin-bottom: 0.8rem;
-          }
-          .textarea-box {
-            width: 100%;
-            height: 250px;
-            margin-bottom: 0.4rem;
-          }
-
-          .input,
-          .textarea {
-            transform: scale(0.86);
-          }
-
-          .input {
-            &::placeholder {
-              // font-size: 1rem;
-            }
-          }
-          .textarea {
-            &::placeholder {
-              // font-size: 1rem;
-            }
-          }
-
+          /**********[ send button ]**********/
           .send-btn {
-            // transform: scale(0.86);
-            // font-size: 1rem;
-            width: 100%;
-            transform: scale(0.86);
-            font-size: 12px;
+            font-size: 14px;
           }
         }
       }
 
+      /**********[ profile box ]**********/
       .profile-box {
+        // background-color: sienna;
         width: 100%;
+        height: 45%;
 
-        .profile {
-          h1 {
-            font-size: 14px;
-          }
-          p,
+        .profile-items {
+          font-size: 14px;
+
           a {
-            font-size: 12px;
+            padding: 0.4rem 0.4rem;
           }
+        }
+
+        .profile-contact-title {
+          font-size: 20px !important;
+        }
+        .profile-social-title {
+          font-size: 20px !important;
         }
       }
     }
   }
+}
+
+@media screen and (max-width: 460px) {
 }

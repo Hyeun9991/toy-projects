@@ -79,14 +79,14 @@
           margin-right: 0;
         }
 
-        a {
+        .contact-link {
           background-color: $main-white;
           color: $text-black;
         }
       }
 
       p,
-      a {
+      .contact-link {
         color: white;
         font-size: 14px;
         text-transform: uppercase;
@@ -102,8 +102,7 @@
         }
       }
 
-      a {
-        // background-color: skyblue;
+      .contact-link {
         display: flex;
         padding: 0.4rem;
         border-radius: 14px;
