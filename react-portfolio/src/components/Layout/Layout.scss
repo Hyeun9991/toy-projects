@@ -3,7 +3,7 @@
 }
 
 .main {
-  min-height: calc(100vh - 124px);
+  min-height: calc(100vh - 314px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,6 +11,6 @@
 
 @media screen and (max-width: 640px) {
   .main {
-    min-height: calc(100vh - 284px);
+    min-height: calc(100vh - 464px);
   }
 }

@@ -34,7 +34,7 @@ const ContactContainer = () => {
         {/* email-box */}
         <div className="email-box">
           <form ref={form} onSubmit={sendEmail}>
-            <p className="email-title">Get in touch</p>
+            {/* <p className="email-title">Get in touch</p> */}
             <div className="name-input input-box">
               <label></label>
               <input
@@ -75,7 +75,7 @@ const ContactContainer = () => {
         <div className="profile-box">
           {/* <p className='profile-title'>Profile</p> */}
           <div className="profile-contact">
-            <p className="profile-contact-title">Contact</p>
+            {/* <p className="profile-contact-title">Contact</p> */}
             <div className="profile-items">
               <h2>
                 email
@@ -90,7 +90,7 @@ const ContactContainer = () => {
             </div>
           </div>
           <div className="profile-social">
-            <p className="profile-social-title">Social</p>
+            {/* <p className="profile-social-title">Social</p> */}
             <div className="profile-items">
               <h2>
                 github

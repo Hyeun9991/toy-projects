@@ -9,7 +9,7 @@ const ProjectContainer = () => {
       <div className="projects-list">
         <p className="project-title">Projects List</p>
         <div className="project-section">
-          <p className="project-item-title">Portfolio</p>
+          {/* <p className="project-item-title">Portfolio</p> */}
           <div className="project-img-section">
             <div className="project-img"></div>
           </div>
@@ -53,7 +53,7 @@ const ProjectContainer = () => {
           </div>
         </div>
         <div className="project-section">
-          <p className="project-item-title">Project Title</p>
+          {/* <p className="project-item-title">Project Title</p> */}
           <div className="project-img-section">
             <div className="project-img"></div>
           </div>

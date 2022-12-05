@@ -1,180 +1,107 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ToTopButton from '../../components/ToTopButton/ToTopButton';
 import './HomeContainer.scss';
 
 const HomeContainer = () => {
+  const [clicked, setClicked] = useState(false);
+  const showLink = () => {
+    setClicked(!clicked);
+  };
+
   return (
     <div className="home-container">
       <ToTopButton />
+
       <div className="home-section-wrapper">
         <p className="home-title">Welcome to Eh</p>
-        <div className="home-section">
-          <a
-            href="https://github.com/Hyeun9991/toy-projects/tree/main/react-portfolio"
-            target="_blank"
-            className="section-start"
-          >
-            <div className="intro-link"></div>
-            <p># github source code</p>
-          </a>
-          <div className="section-end">
-            <div className="intro-text">
-              <p>
-                안녕하세요 저는 웹개발자{' '}
-                <Link to="/about-page" title="about 페이지 바로가기">
-                  # 박은혜
-                </Link>{' '}
-                입니다.
-              </p>
-              <p>이 사이트는 리액트를 통해 제작되었으며</p>
-              <p>
-                <Link to="/project-page" title="projects 페이지 바로가기">
-                  # 프로젝트
-                </Link>{' '}
-                를 모아 둘 목적으로 개발을 진행했습니다.
-              </p>
-              <p>다시 한번 제 사이트에 방문해주셔서 감사드립니다.</p>
-              <p>
-                이 사이트의 자세한 소스는{' '}
-                <a
-                  href="https://github.com/Hyeun9991/toy-projects/tree/main/react-portfolio"
-                  target="_blank"
-                  title="github 페이지 바로가기"
-                >
-                  # 깃허브
-                </a>{' '}
-                를 참고해주세요
-              </p>
+
+        {/* home-section1 */}
+        <div className="home-section home-section1">
+          <div className="section-start">
+            <div className="text-start">
+              <h1 className="intro-title">I'm Web developer</h1>
+              <span>
+                안녕하세요 저는 웹 프론트개발자 <p>박은혜</p> 입니다.
+              </span>
+              <span>
+                자세한 내용은 <p>About</p> 페이지에서 확인해주세요.
+              </span>
+            </div>
+            <div className="link">
+              <Link to="/about-page" className="about-link">
+                # about
+              </Link>
             </div>
           </div>
         </div>
-        <div className="home-section"></div>
-        <div className="home-section"></div>
+        {/* /home-section1 */}
 
-        {/* <div className="home-section-1 home-section-item">
-          <div className="home-intro">
-            <div className="intro-start">
+        {/* home-section2 */}
+        <div className="home-section home-section2">
+          <div className="section-end">
+            <div className="text-end">
+              <h1 className="intro-title">This site is a portfolio site</h1>
+              <span>
+                이 사이트는 저의 <p>프로젝트</p> 들을 기록하기 위해 <br />
+                개발된 사이트이며 저의 첫 번째 프로젝트입니다.
+              </span>
+              <span>
+                이 사이트에 관한 소스코드는 <p>깃허브</p> 를 참고해주세요.
+              </span>
+            </div>
+            <div className="link">
+              <Link to="/project-page" className="projects-link">
+                # projects
+              </Link>
               <a
                 href="https://github.com/Hyeun9991/toy-projects/tree/main/react-portfolio"
-                target='_blank'
-                className="intro-github-link intro-menu-link"
+                className="github-link"
+                target="_blank"
               >
-                <p className="menu-link-title">Portfolio</p>
-                <div className="link-img"></div>
-                <div className="link-text">
-                  <p>Eh Portfolio Website</p>
-                </div>
-                <p className="hidden-text">github 바로가기</p>
+                # github
               </a>
             </div>
+          </div>
+        </div>
+        {/* /home-section2 */}
 
-            <div className="intro-end">
-              <div className="intro-text">
-                <p>
-                  안녕하세요 저는 웹개발자{' '}
-                  <Link to="/about-page" title="about 페이지 바로가기">
-                    # 박은혜
-                  </Link>
-                  입니다.
-                </p>
-                <p>이 사이트는 리액트를 통해 제작되었으며</p>
-                <p>
-                  저의{' '}
-                  <Link to="/project-page" title="projects 페이지 바로가기">
-                    # 프로젝트
-                  </Link>
-                  를 모아 둘 목적으로 개발을 진행했습니다.
-                </p>
-                <p>다시 한번 제 사이트에 방문해주셔서 감사드립니다.</p>
-                <p>
-                  이 사이트의 자세한 소스는 제{' '}
-                  <a
-                    href="https://github.com/Hyeun9991/toy-projects/tree/main/react-portfolio"
-                    target="_blank"
-                    title="github 페이지 바로가기"
-                  >
-                    # 깃허브
-                  </a>
-                  를 참고해주세요
-                </p>
-              </div>
+        {/* home-section3 */}
+        <div className="home-section home-section3">
+          <div className="section-end">
+            <div className="text-end">
+              <h1 className="intro-title">Get in touch?</h1>
+              <span>제 사이트에 방문해주셔서 감사드립니다.</span>
+              <span>
+                여러분의 <p>소중한 피드백</p> 은 <br />제 사이트 발전에 도움이
+                됩니다
+              </span>
+              <span>
+                연락은 <p>Contact</p> 페이지를 참고해주세요.
+              </span>
+            </div>
+            <div className="link">
+              <Link to="/contact-page" className="contact-link">
+                # contact
+              </Link>
+              <a
+                href="https://github.com/Hyeun9991/toy-projects/tree/main/react-portfolio"
+                className="github-link"
+                target="_blank"
+              >
+                # github
+              </a>
+              <a
+                href="https://velog.io/@hyeun9991"
+                className="blog-link"
+                target="_blank"
+              >
+                # blog
+              </a>
             </div>
           </div>
         </div>
-        <div className="home-section-2 home-section-item">
-          <div className="home-intro">
-            <div className="intro-end">
-              <div className="intro-text">
-                <p>About text</p>
-              </div>
-            </div>
-            <div className="intro-start">
-              <div className="intro-github-link intro-menu-link">
-                <p className="menu-link-title">About</p>
-                <div className="link-img"></div>
-                <div className="link-text">
-                  <a
-                    href="https://github.com/Hyeun9991/toy-projects/tree/main/react-portfolio"
-                    target="_blank"
-                    title="github 페이지 바로가기"
-                  >
-                    About
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="home-section-3 home-section-item">
-          <div className="home-intro">
-            <div className="intro-start">
-              <div className="intro-github-link intro-menu-link">
-                <p className="menu-link-title">Projects</p>
-                <div className="link-img"></div>
-                <div className="link-text">
-                  <a
-                    href="https://github.com/Hyeun9991/toy-projects/tree/main/react-portfolio"
-                    target="_blank"
-                    title="github 페이지 바로가기"
-                  >
-                    Projects
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="intro-end">
-              <div className="intro-text">
-                <p>Projects text</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="home-section-4 home-section-item">
-          <div className="home-intro">
-            <div className="intro-end">
-              <div className="intro-text">
-                <p>contact text</p>
-              </div>
-            </div>
-            <div className="intro-start">
-              <div className="intro-github-link intro-menu-link">
-                <p className="menu-link-title">Contact</p>
-                <div className="link-img"></div>
-                <div className="link-text">
-                  <a
-                    href="https://github.com/Hyeun9991/toy-projects/tree/main/react-portfolio"
-                    target="_blank"
-                    title="github 페이지 바로가기"
-                  >
-                    Contact
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
+        {/* /home-section3 */}
       </div>
     </div>
   );

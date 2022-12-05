@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
 /**********[ fonts ]**********/
-// 로고 폰트
+// 로고
 @import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
 // font-family: 'Petit Formal Script';
 
-// 반듯한 고딕체
+// 고딕체
 @font-face {
   font-family: 'Pretendard-Regular';
   src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
@@ -14,7 +14,7 @@
   font-style: normal;
 }
 
-// 필기체 폰트
+// 필기체
 @font-face {
   font-family: 'Jadyn Maria';
   src: url('./assets/fonts/Jadyn\ Maria.ttf');

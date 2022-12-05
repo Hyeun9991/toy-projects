@@ -127,7 +127,7 @@
                     font-size: 30px;
                     transform: rotate(-12deg);
                     font-family: 'Jadyn Maria';
-                    letter-spacing: 3px;
+                    // letter-spacing: 3px;
                     transition: all 0.35s;
                   }
                 }
@@ -137,12 +137,11 @@
                   flex-direction: column;
 
                   .nav-portfolio-text {
-                    // background-color: red;
-                    // font-family: 'GmarketSansMedium';
                     font-family: 'Pretendard-Regular';
                     font-size: 8px;
                     text-transform: uppercase;
                     transform: rotate(0deg);
+                    letter-spacing: 3px;
                   }
                 }
                 .flip-text-back {
