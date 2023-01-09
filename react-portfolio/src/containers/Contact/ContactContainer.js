@@ -1,10 +1,15 @@
-import React, { useRef } from 'react';
-import ToTopButton from '../../components/ToTopButton/ToTopButton';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { TbGps } from 'react-icons/tb';
+import { BsGithub } from 'react-icons/bs';
+import { MdAlternateEmail } from 'react-icons/md';
+import { SiBloglovin } from 'react-icons/si';
+import { AiOutlineMessage } from 'react-icons/ai';
 import './ContactContainer.scss';
 
 const ContactContainer = () => {
   const form = useRef();
+  const [toggleState, setToggleState] = useState(1);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -19,6 +24,7 @@ const ContactContainer = () => {
       .then(
         (result) => {
           console.log(result.text);
+          form.current.reset(); // 전송 버튼 누르면 form 초기화
         },
         (error) => {
           console.log(error.text);
@@ -26,90 +32,131 @@ const ContactContainer = () => {
       );
   };
 
+  const toggleTab = (index) => {
+    setToggleState(index);
+  };
+
   return (
     <div className="contact">
-      <ToTopButton />
-      <div className="contact-container">
-        <p className="contact-title">Contact</p>
-        {/* email-box */}
-        <div className="email-box">
-          <form ref={form} onSubmit={sendEmail}>
-            {/* <p className="email-title">Get in touch</p> */}
-            <div className="name-input input-box">
-              <label></label>
-              <input
-                type="text"
-                autoCapitalize="off"
-                autoCorrect="off"
-                name="user_name"
-                className="input"
-                placeholder="이름"
-                required
-              />
-            </div>
-            <div className="email-input input-box">
-              <label></label>
-              <input
-                type="email"
-                name="user_email"
-                className="input email-input"
-                placeholder="이메일"
-                required
-              />
-            </div>
-            <div className="msg-textarea textarea-box">
-              <label></label>
-              <textarea
-                name="message"
-                className="textarea"
-                placeholder="메세지를 입력해주세요"
-                required
-              />
-            </div>
-            <input type="submit" value="Send message" className="send-btn" />
-          </form>
+      <div className="tab-menu-container">
+        <div className="contact-title">
+          <h1 className="title-small">
+            Eh 포트폴리오에 방문해주셔서 감사합니다.
+          </h1>
+          <p className="secondary-title">
+            소중한 피드백은 제사이트 발전에 큰 도움이 됩니다.
+          </p>
         </div>
-        {/* /email-box */}
-
-        {/* profile-box */}
-        <div className="profile-box">
-          {/* <p className='profile-title'>Profile</p> */}
-          <div className="profile-contact">
-            {/* <p className="profile-contact-title">Contact</p> */}
-            <div className="profile-items">
-              <h2>
-                email
-                <a href="mailto:hyeun9991@gmail.com">hyeun9991@gmail.com</a>
-              </h2>
-            </div>
-            <div className="profile-items">
-              <h2>
-                phone call
-                <a href="sms:010-7527-5792">+82 10-7527-5792</a>
-              </h2>
-            </div>
+        <div className="tabs">
+          <div
+            className={
+              toggleState === 1 ? 'tab bold-text active-tab' : 'tab bold-text'
+            }
+            onClick={() => toggleTab(1)}
+          >
+            email
           </div>
-          <div className="profile-social">
-            {/* <p className="profile-social-title">Social</p> */}
-            <div className="profile-items">
-              <h2>
-                github
-                <a href="https://github.com/hyeun9991" target="_blank">
-                  github.com/hyeun9991
+          <div
+            className={
+              toggleState === 2 ? 'tab bold-text active-tab' : 'tab bold-text'
+            }
+            onClick={() => toggleTab(2)}
+          >
+            social
+          </div>
+        </div>
+
+        <div className="content-tabs">
+          <div
+            className={toggleState === 1 ? 'content active-content' : 'content'}
+          >
+            <form ref={form} onSubmit={sendEmail} className="email-form">
+              <div className="label-input input-form">
+                <label htmlFor="name"></label>
+                <input
+                  type="text"
+                  id="name"
+                  name="user_name"
+                  placeholder="이름"
+                />
+              </div>
+              <div className="label-input input-form">
+                <label htmlFor="email"></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="user_email"
+                  placeholder="이메일"
+                />
+              </div>
+              <div className="label-input">
+                <label htmlFor="message"></label>
+                <textarea name="message" id="message" placeholder="메세지" />
+              </div>
+              <div className="submit-btn">
+                <input type="submit" value="Send" className="send-btn" />
+              </div>
+            </form>
+          </div>
+
+          <div
+            className={toggleState === 2 ? 'content active-content' : 'content'}
+          >
+            <ul className="social-content">
+              <li>
+                <TbGps />
+                <a
+                  href="https://www.google.co.kr/maps/place/%EC%9D%B8%EC%B2%9C%EA%B4%91%EC%97%AD%EC%8B%9C+%EB%82%A8%EB%8F%99%EA%B5%AC+%EB%85%BC%ED%98%84%EB%8F%99/data=!3m1!4b1!4m5!3m4!1s0x357b7a41e0fec225:0x692a71578d11b1e5!8m2!3d37.4075188!4d126.7056?hl=ko"
+                  className="bold-text"
+                  target="_blank"
+                >
+                  {/* incheon Korea */}
+                  인천광역시 남동구
                 </a>
-              </h2>
-            </div>
-            <div className="profile-items">
-              <h2>
-                blog
-                <a href="https://velog.io/@hyeun9991" target="_blank">
+              </li>
+              <li>
+                <MdAlternateEmail />
+                <a
+                  href="mailto: hyeun9991@gmail.com"
+                  target="_blank"
+                  className="bold-text"
+                >
+                  hyeun999@gmail.com
+                </a>
+              </li>
+              <li>
+                <AiOutlineMessage />
+                <a
+                  href="sms: 010-7527-5792"
+                  className="bold-text"
+                  target="_blank"
+                >
+                  +82 10-7527-5792
+                </a>
+              </li>
+              <li>
+                <BsGithub />
+                <a
+                  href="https://github.com/Hyeun9991"
+                  className="bold-text"
+                  target="_blank"
+                >
+                  github.com/Hyeun9991
+                </a>
+              </li>
+              <li>
+                <SiBloglovin />
+                <a
+                  href="https://velog.io/@hyeun9991"
+                  className="bold-text"
+                  target="_blank"
+                >
                   velog.io/@hyeun9991
                 </a>
-              </h2>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
-        {/* /profile-box */}
       </div>
     </div>
   );

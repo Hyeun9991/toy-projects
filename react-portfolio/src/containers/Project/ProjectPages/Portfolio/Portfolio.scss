@@ -1,0 +1,225 @@
+@import '../../../../styles/variable';
+
+.project-container {
+  width: 100%;
+  height: 100vh;
+  cursor: default;
+
+  /**********[ project header ]**********/
+  .project-header {
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    border-top: 0.5rem solid $main-black;
+
+    .title-small {
+      font-size: $font-size-sm;
+    }
+    .underline-button {
+      &::before {
+        opacity: 0.4;
+        background-color: $main-white;
+      }
+
+      &:hover {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+
+    .ph-left {
+      background-color: $main-black;
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+    }
+    .ph-right {
+      background-color: $main-white;
+      width: 50%;
+      height: 100%;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+
+  .project-content-wrapper {
+    width: 100%;
+    height: calc(100vh - 7vh);
+    display: flex;
+
+    /**********[ content start ]**********/
+    .content-start {
+      background-color: $main-black;
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-left: 10vh;
+      padding-right: 10vh;
+
+      .project-img {
+        width: 100%;
+      }
+
+      .title-middle {
+        margin-bottom: 2rem;
+      }
+      .secondary-title {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    /**********[ content end ]**********/
+    .content-end {
+      background-color: $main-white;
+      width: 50%;
+      height: 100%;
+      padding-left: 10vh;
+      padding-right: 10vh;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+
+      .title {
+        margin-bottom: 3rem;
+      }
+
+      .secondary-title {
+        font-size: $font-size-sm;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        // background-color: hotpink;
+      }
+
+      .text {
+        letter-spacing: 0;
+      }
+
+      .project-link {
+        margin-top: 1rem;
+      }
+
+
+      .content-item {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .project-container {
+    height: auto;
+    .project-header {
+      border: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      .ph-left {
+        width: 100%;
+      }
+      .ph-right {
+        display: none;
+      }
+    }
+
+    .project-content-wrapper {
+      height: auto;
+      flex-direction: column;
+
+      .content-start {
+        width: 100%;
+        height: 100vh;
+        // padding-left: 10vh;
+        // padding-right: 10vh;
+      }
+      .content-end {
+        width: 100%;
+        height: 100vh;
+        // padding-left: 10vh;
+        // padding-right: 10vh;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .project-container {
+    height: auto;
+    .project-header {
+      border: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+
+      .ph-left {
+        width: 100%;
+      }
+      .ph-right {
+        display: none;
+      }
+    }
+
+    .project-content-wrapper {
+      height: auto;
+      flex-direction: column;
+      margin-top: 60px;
+
+      .content-start {
+        padding-left: 5vh;
+        padding-right: 5vh;
+        height: 80vh;
+      }
+      .content-end {
+        padding-left: 5vh;
+        padding-right: 5vh;
+      }
+    }
+  }
+}
+@media screen and (max-width: 460px) {
+  .project-container {
+    height: auto;
+    .project-header {
+      border: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      .ph-left {
+        width: 100%;
+      }
+      .ph-right {
+        display: none;
+      }
+    }
+
+    .project-content-wrapper {
+      height: auto;
+      flex-direction: column;
+
+      .content-start {
+        height: 60vh;
+      }
+      .content-end {
+        height: auto;
+        // height: 750px;
+        padding-top: 7vh;
+        padding-bottom: 7vh;
+        padding-left: 5vh;
+        padding-right: 5vh;
+      }
+    }
+  }
+}

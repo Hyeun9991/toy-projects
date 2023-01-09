@@ -1,107 +1,128 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import ToTopButton from '../../components/ToTopButton/ToTopButton';
+import React, { useState, useEffect } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { BiRightArrowAlt } from 'react-icons/bi';
 import './HomeContainer.scss';
 
 const HomeContainer = () => {
-  const [clicked, setClicked] = useState(false);
-  const showLink = () => {
-    setClicked(!clicked);
-  };
-
+  const secondaryTitleList = [
+    {
+      id: 1,
+      word: 'p',
+    },
+    {
+      id: 2,
+      word: 'o',
+    },
+    {
+      id: 3,
+      word: 'r',
+    },
+    {
+      id: 4,
+      word: 't',
+    },
+    {
+      id: 5,
+      word: 'f',
+    },
+    {
+      id: 6,
+      word: 'l',
+    },
+    {
+      id: 7,
+      word: 'i',
+    },
+    {
+      id: 8,
+      word: 'o',
+    },
+  ];
   return (
-    <div className="home-container">
-      <ToTopButton />
-
-      <div className="home-section-wrapper">
-        <p className="home-title">Welcome to Eh</p>
-
-        {/* home-section1 */}
-        <div className="home-section home-section1">
-          <div className="section-start">
-            <div className="text-start">
-              <h1 className="intro-title">I'm Web developer</h1>
-              <span>
-                안녕하세요 저는 웹 프론트개발자 <p>박은혜</p> 입니다.
-              </span>
-              <span>
-                자세한 내용은 <p>About</p> 페이지에서 확인해주세요.
-              </span>
-            </div>
-            <div className="link">
-              <Link to="/about-page" className="about-link">
-                # about
+    <div className="home">
+      <div className="home-section-container">
+        <section className="intro-section">
+          <div className="intro-title-container">
+            <h1 className="intro-title">eunhye</h1>
+          </div>
+          <div className="secondary-title-container">
+            {secondaryTitleList.map((t) => {
+              return (
+                <p key={t.id} className="intro-secondary-title">
+                  {t.word}
+                </p>
+              );
+            })}
+          </div>
+        </section>
+        <section className="home-content-section has-section">
+          <div className="content-container">
+            <div className="content-start">
+              <Link to="/about" className="content-title-container">
+                <h2 className="content-title">about</h2>
+                <BiRightArrowAlt className="arrow-text" />
               </Link>
+
+              <div className="content-content-container">
+                <div className="content-secondary-title">
+                  <h3>"시야가 넓은 개발자"</h3>
+                </div>
+                <p className="content-text">사용자 측면에서 사고하는</p>
+                <p className="content-text">고객의 니즈와 트렌드를 파악하는</p>
+                <p className="content-text">시장성있는 아웃풋을 낼 수 있는</p>
+                <p className="content-text">
+                  개발자가 되기위해 고민하는 신입 개발자 박은혜입니다.
+                </p>
+              </div>
+            </div>
+            <div className="content-end">
+              <Link to="/skills" className="content-title-container">
+                <h2 className="content-title">skills</h2>
+                <BiRightArrowAlt className="arrow-text" />
+              </Link>
+
+              <div className="content-content-container">
+                <p className="content-text">
+                  html5 <b>/</b> css <b>&</b> scss <b>/</b> javascript <b>/</b>{' '}
+                  react.js
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        {/* /home-section1 */}
-
-        {/* home-section2 */}
-        <div className="home-section home-section2">
-          <div className="section-end">
-            <div className="text-end">
-              <h1 className="intro-title">This site is a portfolio site</h1>
-              <span>
-                이 사이트는 저의 <p>프로젝트</p> 들을 기록하기 위해 <br />
-                개발된 사이트이며 저의 첫 번째 프로젝트입니다.
-              </span>
-              <span>
-                이 사이트에 관한 소스코드는 <p>깃허브</p> 를 참고해주세요.
-              </span>
-            </div>
-            <div className="link">
-              <Link to="/project-page" className="projects-link">
-                # projects
-              </Link>
-              <a
-                href="https://github.com/Hyeun9991/toy-projects/tree/main/react-portfolio"
-                className="github-link"
-                target="_blank"
-              >
-                # github
-              </a>
-            </div>
+        </section>
+        <section className="home-content-section projects-section">
+          <Link to="/projects" className="content-title">
+            my projects
+          </Link>
+          <div className="projects-container">
+            <Link to="/projects/portfolio" className="project-item">
+              <div className="project-content-container">
+                <h3 className="project-title">eh portfolio</h3>
+                <p className="desc-text">React로 개발된 포트폴리오 웹사이트</p>
+                <p className="secondary-desc-text">ux & ui, Web development</p>
+              </div>
+              <div className="project-image-wrapper">
+                <img
+                  src={require('../../assets/images/eh-portfolio-image.png')}
+                  className="project-image"
+                ></img>
+              </div>
+            </Link>
+            <Link to="/projects/portfolio" className="project-item right-item">
+              <div className="project-image-wrapper">
+                <img
+                  src={require('../../assets/images/eh-portfolio-image.png')}
+                  className="project-image"
+                ></img>
+              </div>
+              <div className="project-content-container">
+                <h3 className="project-title">eh portfolio</h3>
+                <p className="desc-text">React로 개발된 포트폴리오 웹사이트</p>
+                <p className="secondary-desc-text">ux & ui, Web development</p>
+              </div>
+            </Link>
           </div>
-        </div>
-        {/* /home-section2 */}
-
-        {/* home-section3 */}
-        <div className="home-section home-section3">
-          <div className="section-end">
-            <div className="text-end">
-              <h1 className="intro-title">Get in touch?</h1>
-              <span>제 사이트에 방문해주셔서 감사드립니다.</span>
-              <span>
-                여러분의 <p>소중한 피드백</p> 은 <br />제 사이트 발전에 도움이
-                됩니다
-              </span>
-              <span>
-                연락은 <p>Contact</p> 페이지를 참고해주세요.
-              </span>
-            </div>
-            <div className="link">
-              <Link to="/contact-page" className="contact-link">
-                # contact
-              </Link>
-              <a
-                href="https://github.com/Hyeun9991/toy-projects/tree/main/react-portfolio"
-                className="github-link"
-                target="_blank"
-              >
-                # github
-              </a>
-              <a
-                href="https://velog.io/@hyeun9991"
-                className="blog-link"
-                target="_blank"
-              >
-                # blog
-              </a>
-            </div>
-          </div>
-        </div>
-        {/* /home-section3 */}
+        </section>
       </div>
     </div>
   );

@@ -1,48 +1,18 @@
 @charset "UTF-8";
+@import './styles/variable';
 
 /**********[ fonts ]**********/
-// 로고
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,600&family=Homemade+Apple&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
-// font-family: 'Petit Formal Script';
 
-// 고딕체
 @font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
-    format('woff');
-  font-weight: 400;
-  font-style: normal;
+  font-family: 'NewYork';
+  src: url('./assets/fonts/NewYork.otf') format('truetype');
 }
-
-// 필기체
 @font-face {
-  font-family: 'Jadyn Maria';
-  src: url('./assets/fonts/Jadyn\ Maria.ttf');
+  font-family: 'MADE';
+  src: url('./assets/fonts/MADE\ SAONARA\ PERSONAL\ USE.otf') format('truetype');
 }
-
-/**********[ colors ]**********/
-
-// main color & primary color
-$main-white: #f0f0f0;
-$primary-gray: #242424;
-
-// hover color
-$hover-gray: rgba(
-  $color: #bebebe,
-  $alpha: 0.24,
-);
-$hover-blue: rgba(
-  $color: #126ded,
-  $alpha: 0.24,
-);
-$hover-white: rgba(
-  $color: #f0f0f0,
-  $alpha: 0.24,
-);
-
-// text color
-$text-black: #272727;
-$text-white: #fbfaff;
 
 /**********[ initialization ]**********/
 * {
@@ -61,24 +31,31 @@ $text-white: #fbfaff;
 
 html,
 body {
-  height: auto;
-  background-color: $main-white;
-  font-family: 'Pretendard-Regular';
+  background-color: $light-brown;
+  font-family: 'SF Pro KR', 'SF Pro Text', 'Yoon Gothic', 'Myriad Set Pro',
+    'SF Pro Icons', 'Apple Gothic', 'HY Gulim', 'MalgunGothic', 'HY Dotum',
+    'Lexi Gulim', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: auto;
 
   &::-webkit-scrollbar {
-    width: 6px; /*스크롤바의 너비*/
+    width: 0.8rem; /*스크롤바의 너비*/
   }
   &::-webkit-scrollbar-thumb {
-    // background-color: darken($hover2-purple, 5%); /*스크롤바의 색상*/
-    background-color: $primary-gray;
+    background-color: rgba($color: $white, $alpha: 0.4);
+    background-clip: padding-box;
+    border: 0.2rem solid transparent;
+    border-radius: 20px;
   }
   &::-webkit-scrollbar-track {
-    background-color: $main-white; /*스크롤바 트랙 색상*/
+    margin: 0.3rem;
   }
 }
 
 button {
-  background-color: none;
+  background-color: transparent;
   border: 0;
   cursor: pointer;
 }
@@ -90,4 +67,309 @@ ol {
 
 a {
   text-decoration: none;
+}
+
+/**********[ logo ]**********/
+.logo {
+  font-family: 'Petit Formal Script';
+  color: $text-white;
+  font-size: $font-size-xl;
+  font-weight: 600;
+}
+
+.logo-small {
+  color: $text-black;
+  font-size: $font-size-sm;
+  font-family: $bodoni-moda;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.25rem;
+}
+
+/**********[ about cursive fonts ]**********/
+.cursive-text {
+  font-size: $font-size-xxxl;
+  font-size: 4vw;
+  color: $text-black;
+  font-family: 'Homemade Apple', cursive;
+}
+
+/**********[ title ]**********/
+.title {
+  color: $text-black;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: $font-size-xxl;
+  line-height: 1;
+
+  b {
+    font-weight: lighter;
+  }
+}
+.title-middle {
+  color: $text-black;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: $font-size-xl;
+  line-height: 1;
+
+  b {
+    font-weight: lighter;
+  }
+}
+.title-small {
+  color: $text-black;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: $font-size-base;
+  line-height: 1;
+  font-weight: 600;
+
+  b {
+    font-weight: lighter;
+  }
+}
+.secondary-title {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: $font-size-xs;
+  line-height: 1;
+  font-weight: 300;
+  color: $text-black;
+}
+
+/**********[ bold & normal text, color-white ]**********/
+.bold-text {
+  text-transform: uppercase;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  line-height: 2rem;
+  color: $text-black;
+}
+.thin-text {
+  color: rgba($color: $text-black, $alpha: 1);
+  font-size: $font-size-sm;
+  line-height: 2rem;
+  font-weight: 300;
+
+  b {
+    font-weight: 600;
+  }
+}
+.color-white {
+  color: rgba($color: $text-white, $alpha: 0.9) !important;
+
+  // &::before {
+  //   background-color: rgba($color: $main-white, $alpha: 0.7) !important;
+  // }
+
+  // &:hover {
+  //   &::before {
+  //     background-color: $main-white;
+  //   }
+  // }
+}
+
+/**********[ link ]**********/
+.base-link {
+  text-transform: uppercase;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: $text-black;
+}
+.base-link-small {
+  text-transform: uppercase;
+  font-size: $font-size-xs;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: $text-black;
+}
+.base-underline-link-small {
+  text-transform: uppercase;
+  font-size: $font-size-xs;
+  font-weight: 300;
+  letter-spacing: 0.05rem;
+  color: rgba($color: $text-black, $alpha: 0.4);
+  position: relative;
+  transition: all 0.35s;
+
+  &::before {
+    content: '';
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 0.05rem;
+    border-radius: 2px;
+    transition: all 0.1s;
+  }
+
+  &:hover {
+    color: $text-black;
+
+    &::before {
+      background-color: rgba($color: $main-black, $alpha: 0.4);
+    }
+  }
+}
+.underline-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: $font-size-sm;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  position: relative;
+  color: $text-black;
+
+  &::before {
+    content: '';
+    background-color: $main-black;
+    position: absolute;
+    bottom: 0;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 0.1rem;
+    transition: all 0.35s;
+    opacity: 0.2;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}
+.underline-link-small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: $font-size-xs;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  color: $text-white;
+  position: relative;
+
+  &::before {
+    content: '';
+    background-color: $main-white !important;
+    position: absolute;
+    bottom: -0.2rem;
+    left: 0;
+    width: 100%;
+    height: 0.05rem;
+    transition: all 0.35s;
+    opacity: 0.4;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: $text-black;
+
+    &::before {
+      background-color: $main-white;
+      opacity: 1;
+      height: 130%;
+    }
+  }
+}
+.box-link {
+  border: 0.05rem solid $main-black;
+  color: $text-black;
+  width: 100px;
+  height: 50px;
+  font-size: $font-size-xs;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.35s;
+
+  &:hover {
+    background-color: $main-black !important;
+    color: $text-white !important;
+  }
+}
+
+/**********[ button ]**********/
+.underline-button {
+  font-size: $font-size-xs;
+  color: $text-black;
+  line-height: 1;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    background-color: $main-black;
+    position: absolute;
+    bottom: -0.3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 1.5px;
+    transition: all 0.35s;
+    z-index: -1;
+    opacity: 0.2;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1 !important;
+    }
+  }
+}
+.circle-button {
+  background-color: $main-white;
+  border: 0.3rem solid $main-black;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  z-index: 9999;
+
+  p {
+    font-size: $font-size-xxs;
+    color: $text-black;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  &:hover {
+    background-color: $main-black;
+    p {
+      color: $text-white;
+    }
+  }
+}
+
+/**********[ animation ]**********/
+@keyframes fadeInUp {
+  0% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  95% {
+    transform: translateY(0%);
+  }
+  100% {
+    clip-path: polygon(0% 00%, 100% 0%, 100% 100%, 0% 100%);
+    opacity: 1;
+  }
 }

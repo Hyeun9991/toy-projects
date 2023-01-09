@@ -1,129 +1,104 @@
-@import '../../App.scss';
+@import '../../styles/variable';
 
-.project-container {
-  // background-color: hotpink;
-  width: 100%;
-  margin: 6rem 0;
+.projects {
+  background-color: $main-white;
+  cursor: default;
 
-  .projects-list {
-    background-color: $hover-gray;
-    -webkit-backdrop-filter: blur(135px);
-    backdrop-filter: blur(135px);
-    width: 80%;
-    height: 1310px;
-    margin: 0 auto;
-    position: relative;
-    border-radius: 14px;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  /**********[ projects navigator ]**********/
+  .projects-navigator {
+    background-color: transparent;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 35vh;
+    transform: translateY(-50%);
+    left: 5%;
+    width: 10%;
+    height: 200px;
+    z-index: 9999;
 
-    .project-title {
-      position: absolute;
-      top: -3.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: 'Jadyn Maria';
-      font-size: 35px;
-    }
-
-    .project-section {
-      background-color: $hover-gray;
-      -webkit-backdrop-filter: blur(135px);
-      backdrop-filter: blur(135px);
-      border-radius: 14px;
-      width: 100%;
-      height: 600px;
-      margin: 0 auto;
+    .project-menus {
       display: flex;
-      justify-content: space-around;
-      position: relative;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      width: 100%;
+      height: 100%;
 
-      .project-item-title {
-        // background-color: hotpink;
-        position: absolute;
-        top: -1rem;
-        left: 1rem;
-        font-family: 'Jadyn Maria';
-        font-size: 25px;
-      }
-
-      .project-img-section {
-        width: 50%;
-        height: 100%;
-        padding: 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        .project-img {
-          background: url('../../assets/images/dummy-project-image.png');
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-          width: 370px;
-          height: 250px;
-          border-radius: 14px;
+      .underline-link-small {
+        &:hover {
+          color: $text-black !important;
         }
       }
-      .project-desc-section {
-        width: 50%;
-        height: 100%;
-        padding: 1rem;
+    }
+  }
 
-        .project-desc {
-          border-radius: 14px;
+  /**********[ projects list container ]**********/
+  .projects-list-container {
+    background-color: $main-gray;
+    width: 100%;
+    height: auto;
+    margin-top: -200px;
+
+    /**********[ all projects ]**********/
+    .project-link {
+      width: 100%;
+      height: 100vh;
+
+      .content-container {
+        width: 70%;
+        height: 100vh;
+        margin: 0 auto;
+        display: flex;
+        position: relative;
+
+        // project title
+        .title-link-position {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .title {
           width: 100%;
           height: 100%;
-          padding: 1rem;
-          line-height: 1.8;
           display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          overflow: auto;
+          align-items: center;
+          justify-content: center;
+          font-size: 8vw;
+          font-weight: 600;
+          z-index: 999;
+          color: $text-white !important;
+        }
+        .preview-img {
+          filter: brightness(65%);
+          width: 100%;
+          position: relative;
+          overflow: hidden;
+          -moz-animation: fadeInUp 0.7s ease-in-out; /* Firefox */
+          -webkit-animation: fadeInUp 0.7s ease-in-out; /* Safari and Chrome */
+          -o-animation: fadeInUp 0.7s ease-in-out; /* Opera */
+          animation: fadeInUp 0.7s ease-in-out;
+        }
+      }
+    }
 
-          &::-webkit-scrollbar {
-            width: 14px; /*스크롤바의 너비*/
-          }
-          &::-webkit-scrollbar-thumb {
-            background-color: darken($hover-gray, 30%); /*스크롤바의 색상*/
-            background-clip: padding-box;
-            border-radius: 14px;
-            border: 4px solid transparent;
-          }
-          &::-webkit-scrollbar-track {
-            background-color: transparent; /*스크롤바 트랙 색상*/
-            border-radius: 14px;
-            margin: 0.4rem 0;
-          }
-          h2 {
-            font-size: 18px;
-            // font-weight: 900;
-          }
-          a,
-          p {
-            opacity: 0.7;
-            font-size: 16px;
-          }
-          a {
-            padding: 0.2rem 0.4rem;
-            border-radius: 14px;
-            transition: all 0.35s;
+    /**********[ project 1 ]**********/
+    .project-link-1 {
+      .content-container {
+        align-items: center;
 
-            &:hover {
-              background-color: $primary-gray;
-              color: $text-white;
-              opacity: 1;
-            }
-          }
-
-          .decs-title {
-            margin-bottom: 0.8rem;
-          }
-          .decs-text {
-            margin-bottom: 0.8rem;
-          }
+        .left-img-wrapper {
+          width: 50%;
+          height: 70%;
+          display: flex;
+          align-items: flex-start;
+        }
+        .right-img-wrapper {
+          width: 50%;
+          height: 70%;
+          display: flex;
+          align-items: flex-end;
         }
       }
     }
@@ -131,97 +106,88 @@
 }
 
 @media screen and (max-width: 1023px) {
-  .project-container {
-    .projects-list {
-      width: 96%;
-      .project-title {
-        // font-size: 35px;
-        font-size: 30px;
-      }
-  
-      .project-section {
-        width: 100%;
-        flex-direction: column;
-        
-  
-        .project-item-title {
-          // font-size: 25px;
-        }
-  
-        .project-img-section {
-          width: 100%;
-          height: 50%;
+  .projects {
+    .projects-navigator {
+      display: none;
+    }
+    .projects-list-container {
+      margin-top: 0;
 
-          .project-img {}
+      .project-link {
+        height: auto;
+
+        .content-container {
+          width: 80%;
+          height: 600px;
+
+          .title {
+            font-size: 10vw;
+          }
         }
-        .project-desc-section {
-          width: 100%;
-          height: 50%;
-  
-          .project-desc {
-            padding: 0;
-            border-radius: 0;
-  
-            h2 {
-              font-size: 16px;
-            }
-            a,
-            p {
-              font-size: 14px;
-            }
-            .decs-title {
-            }
-            .decs-text {
-            }
+      }
+
+      /**********[ project 1 ]**********/
+      .project-link-1 {
+        .content-container {
+          .left-img-wrapper {
+            height: 400px;
+          }
+          .right-img-wrapper {
+            height: 400px;
           }
         }
       }
     }
   }
-  
 }
-@media screen and (max-width: 640px) {
-  .project-container {
-    .projects-list {
-      .project-title {
-        // font-size: 35px;
-      }
-  
-      .project-section {
-  
-        .project-item-title {
-          // font-size: 25px;
-          font-size: 20px;
-        }
-  
-        .project-img-section {
+@media screen and (max-width: 767px) {
+  .projects {
+    .projects-list-container {
+      .project-link {
+        .content-container {
+          width: 90%;
 
-          .project-img {
-            width: 280px;
+          .title {
+            font-size: 11vw;
+          }
+        }
+      }
+
+      /**********[ project 1 ]**********/
+      .project-link-1 {
+        .content-container {
+          .left-img-wrapper {
+            height: 350px;
+          }
+          .right-img-wrapper {
+            height: 350px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .projects {
+    .projects-list-container {
+      .project-link {
+        .content-container {
+          height: 400px;
+        }
+      }
+
+      /**********[ project 1 ]**********/
+      .project-link-1 {
+        .content-container {
+          .left-img-wrapper {
+            height: 200px;
+          }
+          .right-img-wrapper {
             height: 200px;
           }
         }
-        .project-desc-section {
-  
-          .project-desc {
-            padding: 0;
-            border-radius: 0;
-  
-            h2 {
-              font-size: 16px;
-            }
-            a,
-            p {
-              font-size: 14px;
-            }
-            .decs-title {
-            }
-            .decs-text {
-            }
-          }
-        }
       }
     }
   }
 }
-

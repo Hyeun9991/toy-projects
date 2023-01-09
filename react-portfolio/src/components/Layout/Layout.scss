@@ -1,16 +1,14 @@
+@import '../../App.scss';
+
 .layout {
-  margin-top: 64px;
 }
 
 .main {
-  min-height: calc(100vh - 314px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  
 }
 
-@media screen and (max-width: 640px) {
-  .main {
-    min-height: calc(100vh - 464px);
-  }
+@media screen and (max-width: 1023px) {
+}
+
+@media screen and (max-width: 767px) {
 }

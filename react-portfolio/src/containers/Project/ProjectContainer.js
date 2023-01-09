@@ -1,67 +1,91 @@
-import React from 'react';
-import ToTopButton from '../../components/ToTopButton/ToTopButton';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './ProjectContainer.scss';
 
 const ProjectContainer = () => {
+  const [btnClick, setBtnClick] = useState(false);
+  const openMenu = () => {
+    setBtnClick(!btnClick);
+  };
+
+  const projectList = [
+    {
+      id: 1,
+      title: 'Eh Portfolio',
+      url: '#1',
+      class: 'underline-link-small color-white',
+    },
+    {
+      id: 2,
+      title: 'Eh Blog',
+      url: '#2',
+      class: 'underline-link-small color-white',
+    },
+    {
+      id: 3,
+      title: 'Eh Diary',
+      url: '#3',
+      class: 'underline-link-small color-white',
+    },
+  ];
+
   return (
-    <div className="project-container">
-      <ToTopButton />
-      <div className="projects-list">
-        <p className="project-title">Projects List</p>
-        <div className="project-section">
-          {/* <p className="project-item-title">Portfolio</p> */}
-          <div className="project-img-section">
-            <div className="project-img"></div>
-          </div>
-          <div className="project-desc-section">
-            <div className="project-desc">
-              <div className="decs-title">
-                <h2>프로젝트 제목</h2>
-                <p>
-                &bull; [ Website ] Portfolio Website
-                </p>
-              </div>
-              <div className="decs-text">
-                <h2>프로젝트 설명</h2>
-                <p>&bull; 배웠던 내용들을 토대로 만든 웹사이트</p>
-                <p>&bull; resume, project들을 볼 수 있는 웹사이트</p>
-                <p>&bull; react로 만든 웹사이트</p>
-              </div>
-              <div className="decs-text">
-                <h2>프로젝트에서 맡은 역할</h2>
-                <p>&bull; 각각의 스크린 사이즈에 대응하는 반응형 사이트 구현</p>
-                <p>&bull; Email.js API를 활용해서 이메일 폼 구현</p>
-              </div>
-              <div className="decs-text">
-                <h2>개발 도구</h2>
-                <p>&bull; HTML5, SCSS, JavaScript, React(react-router)</p>
-                <p>&bull; Email.js</p>
-                <p>&bull; VSCode (Visual Studio Code)</p>
-                <p>&bull; 크롬 개발자 도구</p>
-                <p>&bull; figma (포트폴리오 구성,디자인 기획)</p>
-              </div>
-              <div className="decs-text">
-                <h2>프로젝트 링크</h2>
-                <a
-                  href="https://github.com/Hyeun9991/toy-projects/tree/main/react-portfolio"
-                  target="_blank"
-                >
-                  &bull; github.com/Hyeun9991/toy-projects/tree/main/react-portfolio
+    <div className="projects">
+      {/* projects-navigator */}
+      <nav className="projects-navigator">
+        <ul
+          className={btnClick ? 'project-menus open-menu' : 'project-menus'}
+          onClick={openMenu}
+        >
+          {projectList.map((t) => {
+            return (
+              <li key={t.id}>
+                <a href={t.url} className={t.class}>
+                  {t.title}
                 </a>
-              </div>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+      {/* /projects-navigator */}
+
+      <ul className="projects-list-container">
+        <li className="project-link project-link-1" id="1">
+          <div className="content-container">
+            <Link
+              to="/projects/portfolio"
+              className="title color-white title-link-position"
+            >
+              eh portfolio
+            </Link>
+            <div className="left-img-wrapper">
+              <img
+                src={require('../../assets/images/portfolio_preview_01.png')}
+                alt="portfolio 프리뷰 이미지 01"
+                className="portfolio-preview-img-1 preview-img"
+              />
+            </div>
+            <div className="right-img-wrapper">
+              <img
+                src={require('../../assets/images/portfolio_preview_02.png')}
+                alt="portfolio 프리뷰 이미지 02"
+                className="portfolio-preview-img-2 preview-img"
+              />
             </div>
           </div>
-        </div>
-        <div className="project-section">
-          {/* <p className="project-item-title">Project Title</p> */}
-          <div className="project-img-section">
-            <div className="project-img"></div>
+        </li>
+        <li className="project-link project-link-2" id="2">
+          <div className="content-container">
+            <p className="title-link-position title color-white">eh blog</p>
           </div>
-          <div className="project-desc-section">
-            <div className="project-desc"></div>
+        </li>
+        <li className="project-link project-link-3" id="3">
+          <div className="content-container">
+            <p className="title-link-position title color-white">eh diary</p>
           </div>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
   );
 };

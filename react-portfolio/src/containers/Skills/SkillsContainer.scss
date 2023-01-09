@@ -1,0 +1,25 @@
+.skills {
+  background-color: hotpink;
+  width: 100%;
+  height: 100vh;
+  height: auto;
+
+  .skill-section-container {
+    background-color: skyblue;
+    width: 100%;
+    height: 100%;
+    max-width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+
+    .skill-section {
+      background-color: khaki;
+      width: 100%;
+      height: 400px;
+    }
+  }
+}

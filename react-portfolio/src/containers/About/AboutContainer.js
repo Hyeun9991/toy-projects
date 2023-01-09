@@ -1,163 +1,165 @@
 import React from 'react';
-import { AiFillHtml5 } from 'react-icons/ai';
-import { DiCss3 } from 'react-icons/di';
-import { GrReactjs } from 'react-icons/gr';
-import { IoLogoJavascript } from 'react-icons/io';
-import ToTopButton from '../../components/ToTopButton/ToTopButton';
+import { Link } from 'react-router-dom';
 import './AboutContainer.scss';
 
 const AboutContainer = () => {
   return (
     <div className="about-container">
-      <ToTopButton />
-
-      {/* about-resume */}
-      <div className="about-resume">
-        <p className="about-resume-title">Resume</p>
-        {/* resume-overview */}
-        <div className="resume-overview resume-section">
-          {/* overview-start */}
-          <div className="overview-start start-section">
-            <div className="overview-img"></div>
-          </div>
-          {/* /overview-start */}
-
-          {/* overview-end */}
-          <div className="overview-end end-section">
-            <div className="overview-text">
-              <h2>
-                {/* &#34; */}
-                “컴퓨터랑 일하는 건 엄청 멋있다. 누구랑 싸우지도 않고, 모든 것을
-                대신 기억해주고, 내 맥주를 뺏어 마시지도 않는다. ”
-                <p>by. Paul Leary</p>
-              </h2>
-              <span>
-                <b className="underline-b">웹개발에 대한 꾸준한 수요증가</b>는
-                웹프론트 개발자가 되기위한 <b className="underline-b">동기</b>로
-                충분했습니다. <br />
-                컴퓨터의 <b className="underline-b">입력과 아웃풋이 명확함</b>에
-                매력을 느끼고 <b className="underline-b">즐기면서</b> 개발하고
-                있습니다.
-                <br />
-                <p className="background-p">
-                  모든 프로젝트에 애정을 갖고 사용자에게 좋은 경험을 줄 수 있는
-                  개발자로 거듭나기 위해 공부 중 입니다.
+      <div className="about-section-wrapper">
+        {/* about-section-1 overview*/}
+        <section className="about-section-1 about-section">
+          <div className="content-wrapper">
+            <div className="about-intro-image">
+              <p className="cursive-text">i love </p>
+              <img
+                src={require('../../assets/images/home-about-img.png')}
+                alt="profile image"
+                className="profile-img"
+              />
+              <p className="cursive-text">coding</p>
+            </div>
+            <div className="about-overview">
+              <h1 className="title overview-title">
+                "시야가 넓은 개발자"
+              </h1>
+              <div className="overview-text">
+                <p className="thin-text">사용자 측면에서 사고하는</p>
+                <p className="thin-text">고객의 니즈와 트렌드를 파악하는</p>
+                <p className="thin-text">시장성있는 아웃풋을 낼 수 있는</p>
+                <p className="thin-text">
+                  개발자가 되기위해 고민하는 신입 개발자 박은혜입니다.
                 </p>
-              </span>
+              </div>
+              <Link to="/resume" className="box-link" target="_blank">
+                resume
+              </Link>
             </div>
           </div>
-          {/* /overview-end */}
-        </div>
-        {/* /resume-overview */}
+        </section>
+        {/* /about-section-1 */}
 
-        {/* resume-skills */}
-        <div className="resume-skills resume-section">
-          <div className="skills-start start-section">
-            {/* skill-item-section */}
-            <div className="skill-item-section">
-              <div className="skill-item">
-                <div className="item-title">HTML5</div>
-              </div>
-              <div className="skill-item">
-                <div className="item-title">CSS</div>
-              </div>
-              <div className="skill-item">
-                <div className="item-title">SCSS</div>
-              </div>
-              <div className="skill-item">
-                <div className="item-title">JavaScript</div>
-              </div>
-              <div className="skill-item">
-                <div className="item-title">React</div>
-              </div>
+        {/* about-section-2 way*/}
+        <section className="about-section-2 about-section dark-section">
+          <div className="content-wrapper">
+            <div className="section-title">
+              <h2 className="title color-white">
+                Scalability <b>&</b> Way
+              </h2>
             </div>
-            {/* /skill-item-section */}
-
-            {/* skill-desc-section */}
-            <div className="skill-desc-section">
-              <div className="desc-item">
-                <h2>html5</h2>
-                <p>‑ dom 조작</p>
-                <p>‑ dom 조작</p>
-                <p>‑ dom 조작</p>
-              </div>
-              <div className="desc-item">
-                <h2>css, scss</h2>
-                <p>‑ dom 조작</p>
-              </div>
-              <div className="desc-item">
-                <h2>javascript</h2>
-                <p>‑ dom 조작</p>
-              </div>
-              <div className="desc-item">
-                <h2>react</h2>
-                <p>‑ dom 조작</p>
-              </div>
-            </div>
-            {/* /skill-desc-section */}
-          </div>
-        </div>
-        {/* /resume-profile */}
-
-        {/* resume-contact */}
-        <div className="resume-profile resume-section">
-          {/* profile-start */}
-          <div className="profile-start">
-            <div className="resume-profile-item">
-              <h2>name</h2>
-              <div className="item-tags">
-                <p># 박은혜</p>
-                <p># Park Eun Hye</p>
-                <p># Eh</p>
-              </div>
-            </div>
-            <div className="resume-profile-item">
-              <h2>Occupation</h2>
-              <div className="item-tags">
-                <p># Web Developer</p>
-                <p># Frontend</p>
-              </div>
-            </div>
-            <div className="resume-profile-item">
-              <h2>address</h2>
-              <p># Incheon Korea</p>
+            <div className="section-content">
+              <p className="thin-text color-white">
+                온라인으로 일처리하는 시대가 오면서 
+                <b>온라인의 핵심 플랫폼인 웹,앱</b>의 프론트 부분을 개발하는
+                프론트엔드 개발자는 온라인 비즈니스 산업 종류에 얽매이지 않고
+                필요로 하다는 것에 웹 개발의 전망이 밝다고 판단했습니다.
+              </p>
+              <p className="thin-text color-white">
+                먼저 적성에 맞는지{' '}
+                <b>
+                  생활코딩을 비롯해 인터넷 강의를 통해 웹의 동작 원리부터 기초,
+                  JavaScript 등 웹 개발에 필요한 내용들을 학습
+                </b>
+                했습니다. 공부하는 과정에서 개발에 대해 흥미를 느껴 
+                <b>kamranahmedse의 프론트엔드 개발자 로드맵</b>을 따라 단계별로
+                학습하고 중요하거나 배운 내용을 <b>깃허브</b>와 
+                <b>블로그</b>에 올리는 방식으로 공부했습니다.
+              </p>
+              <p className="thin-text color-white">
+                수업 과정을 따라가면서 나온 아웃풋과 그 과정에서 발생한{' '}
+                <b>오류를 해석하고 해결 방법을 찾아 해결한 시간이 성취감을</b>{' '}
+                가져왔습니다. 현재는 React (react-router)를 학습하고 복습하는
+                시간을 갖기 위해 반응형 포트폴리오 웹사이트를 개발하고 있습니다.
+              </p>
             </div>
           </div>
-          {/* /profile-start */}
+        </section>
+        {/* /about-section-2 */}
 
-          {/* contact-center */}
-          <div className="contact-center start-section">
-            <div className="resume-contact-item">
-              <h2>email</h2>
-              <a href="mailto:hyeun9991@gmail.com"># hyeun9991@gmail.com</a>
+        {/* about-section-3 hobby */}
+        {/* <section className="about-section-3 about-section">
+          <div className="content-wrapper">
+            <div className="section-title">
+              <span className="secondary-title">my hobby</span>
+              <h2 className="title">
+                Coffee <b>&</b> Watch Movie
+              </h2>
             </div>
-            <div className="resume-contact-item">
-              <h2>phone call</h2>
-              <a href="sms:010-7527-5792"># +82 10-7527-5792</a>
+            <div className="section-content">
+              <p className="thin-text">
+                제 취미는 <b>커피</b>와 <b>영화</b>를 보는것입니다.
+              </p>
             </div>
           </div>
-          {/* /contact-center */}
+        </section> */}
+        {/* /about-section-3 */}
 
-          {/* social-end */}
-          <div className="social-end end-section">
-            <div className="resume-social-item">
-              <h2>blog</h2>
-              <a href="https://velog.io/@hyeun9991" target="_blank">
-                # velog.io/@hyeun9991
-              </a>
+        {/* about-section-4 skills */}
+        {/* <section className="about-section-4 about-section dark-section">
+          <div className="content-wrapper">
+            <div className="section-title">
+              <h2 className="title color-white">my skills</h2>
             </div>
-            <div className="resume-social-item">
-              <h2>github</h2>
-              <a href="https://github.com/hyeun9991" target="_blank">
-                # github.com/hyeun9991
-              </a>
+            <div className="section-content">
+              <ul className="skill-list">
+                <li className="skill-item">
+                  <div className="skill-title">
+                    <span className="secondary-title color-white">3</span>
+                    <p className="title-middle color-white">html</p>
+                  </div>
+                  <div className="skill-desc">
+                    <p className="thin-text color-white">
+                      웹접근성과 SEO를 고려하여 적절한 태그사용
+                    </p>
+                  </div>
+                </li>
+                <li className="skill-item right-item">
+                  <div className="skill-title">
+                    <span className="secondary-title color-white">3</span>
+                    <p className="title-middle color-white">css & scss</p>
+                  </div>
+                  <div className="skill-desc">
+                    <p className="thin-text color-white">
+                      @media query를 사용해 반응형 웹사이트 개발
+                    </p>
+                  </div>
+                </li>
+                <li className="skill-item">
+                  <div className="skill-title">
+                    <span className="secondary-title color-white">2</span>
+                    <p className="title-middle color-white">JavaScript</p>
+                  </div>
+                  <div className="skill-desc">
+                    <p className="thin-text color-white">
+                      DOM 조작과 EventListener를 활용해 간단한 기능 구현
+                    </p>
+                    <p className="thin-text color-white">
+                      RESTful API를 활용하여 외부 API 연동{' '}
+                    </p>
+                    <p className="thin-text color-white">
+                      스크린 높이값을 구해 Parallax Scrolling 구현{' '}
+                    </p>
+                  </div>
+                </li>
+                <li className="skill-item right-item">
+                  <div className="skill-title">
+                    <span className="secondary-title color-white">2</span>
+                    <p className="title-middle color-white">react</p>
+                  </div>
+                  <div className="skill-desc">
+                    <p className="thin-text color-white">
+                      Hooks의 State를 활용해 간단한 기능 구현
+                    </p>
+                    <p className="thin-text color-white">
+                      CRA, React-Router로 SPA 웹사이트 구현{' '}
+                    </p>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
-          {/* /social-end */}
-        </div>
-        {/* /resume-contact */}
+        </section> */}
+        {/* /about-section-4 */}
       </div>
-      {/* /about-resume */}
     </div>
   );
 };

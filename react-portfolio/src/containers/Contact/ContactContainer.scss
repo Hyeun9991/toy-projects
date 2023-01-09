@@ -1,235 +1,206 @@
-@import '../../App.scss';
+@import '../../styles/variable';
 
 .contact {
-  margin: 6rem 0;
-  width: 100%;
+  background-color: $main-white;
+  height: calc(100vh - 140px);
+  cursor: default;
 
-  /**********[ contact container ]**********/
-  .contact-container {
-    background-color: $hover-gray;
-    -webkit-backdrop-filter: blur(135px);
-    backdrop-filter: blur(135px);
-    width: 80%;
-    height: 650px;
+  .tab-menu-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    border-radius: 14px;
-    position: relative;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
     margin: 0 auto;
-    padding: 2rem 0;
 
-    /**********[ contact title ]**********/
+    /**********[ title ]**********/
     .contact-title {
-      position: absolute;
-      top: -3.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: 'Jadyn Maria';
-      font-size: 35px;
-      color: $text-black;
-      // font-weight: 700;
-    }
-
-    /**********[ email box ]**********/
-    .email-box {
-      // background-color: hotpink;
-      // width: 35%;
-      width: 500px;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-
-      form {
-        background-color: $hover-gray;
-        -webkit-backdrop-filter: blur(135px);
-        backdrop-filter: blur(135px);
-        border-radius: 14px;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 1rem;
-        position: relative;
-
-        /**********[ email title ]**********/
-        .email-title {
-          position: absolute;
-          top: -1rem;
-          left: 50%;
-          transform: translateX(-50%);
-          font-family: 'Jadyn Maria';
-          font-size: 25px;
-          font-weight: 700;
-          color: $text-black;
-        }
-
-        .input-box {
-          width: 100%;
-          height: 3rem;
-          margin-bottom: 0.4rem;
-        }
-        .textarea-box {
-          width: 100%;
-          height: 250px;
-          margin-bottom: 0.4rem;
-        }
-
-        .input,
-        .textarea,
-        select {
-          -moz-user-select: auto;
-          -webkit-user-select: auto;
-          -ms-user-select: auto;
-          user-select: auto;
-          line-height: 1.5;
-          font-size: 16px;
-          font-weight: 500;
-          color: $text-black;
-          width: 100%;
-          height: 100%;
-          padding: 0 1rem;
-          border-radius: 0.875rem;
-          background-color: $main-white;
-          border: 0.125rem $primary-gray solid;
-          box-shadow: 0 0 0 4px transparent;
-          -webkit-box-shadow: 0 0 0 4px transparent;
-          transition: all 0.35s;
-
-          &:focus {
-            background-color: $primary-gray;
-            outline: none;
-            color: $text-white;
-
-            &::placeholder {
-              color: $text-white;
-            }
-          }
-
-          &::placeholder {
-            color: $text-black;
-            text-transform: uppercase;
-            opacity: 0.6;
-          }
-        }
-
-        .textarea {
-          padding: 1rem;
-          resize: none;
-        }
-
-        /**********[ send button ]**********/
-        .send-btn {
-          background-color: $primary-gray;
-          color: $text-white;
-          width: 100%;
-          height: 3rem;
-          padding: 0.6rem;
-          border: none;
-          border-radius: 0.875rem;
-          text-transform: uppercase;
-          font-size: 16px;
-          font-weight: 500;
-          letter-spacing: 1px;
-          cursor: pointer;
-          transition: all 0.35s;
-        }
-      }
-    }
-
-    /**********[ profile box ]**********/
-    .profile-box {
-      // background-color: hotpink;
-      border-radius: 14px;
-      // width: 35%;
-      width: 500px;
-      height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      position: relative;
-      padding: 1rem;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
 
-      .profile-items {
+    /**********[ tabs ]**********/
+    .tabs {
+      width: 400px;
+      height: 50px;
+      display: flex;
+
+      .tab {
+        background-color: $main-white;
+        width: 50%;
+        height: 100%;
         display: flex;
         align-items: center;
-        line-height: 2.8;
-        font-size: 16px;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0.4;
+      }
 
-        h2 {
-          text-transform: uppercase;
-          letter-spacing: 1px;
+      .bold-text {
+        font-size: $font-size-xs;
+      }
+
+      .active-tab {
+        position: relative;
+        opacity: 1;
+
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;
+          height: 0.2rem;
+          background-color: $main-black;
+        }
+      }
+    }
+
+    /**********[ contents ]**********/
+    .content-tabs {
+      width: 400px;
+      height: 300px;
+
+      .content {
+        width: 100%;
+        height: 100%;
+        display: none;
+
+        .email-form {
+          display: flex;
+          flex-direction: column;
+          padding: 1rem;
+
+          .input-form {
+            margin-bottom: 1rem;
+          }
+
+          .label-input {
+            height: 40px;
+            display: flex;
+            align-items: center;
+
+            input,
+            textarea {
+              background-color: transparent;
+              border: none;
+              border-radius: 0;
+              width: 100%;
+              padding: 0.4rem 0.2rem;
+              outline: none;
+              font-size: $font-size-sm;
+              border-bottom: 0.05rem solid
+                rgba($color: $main-black, $alpha: 0.2);
+              transition: all 0.35s;
+              resize: none;
+
+              &::placeholder {
+                font-weight: 300;
+              }
+
+              &:hover {
+                border-bottom: 0.05rem solid $main-black;
+              }
+
+              &:focus {
+                border-bottom: 0.2rem solid $main-black;
+
+                &::placeholder {
+                  font-weight: 600;
+                }
+              }
+            }
+
+            textarea {
+              padding-bottom: 0;
+              height: 40px;
+              transition: height 0.35s;
+              margin-top: 3rem;
+
+              &:focus {
+                height: 80px;
+              }
+            }
+          }
+
+          .submit-btn {
+            width: 100%;
+            height: 3rem;
+            outline: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $main-black;
+            position: relative;
+            margin-top: 15%;
+
+            &::before {
+              content: '';
+              background-color: $main-white;
+              position: absolute;
+              bottom: 0.6rem;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 40px;
+              height: 0.05rem;
+              opacity: 0;
+              transition: all 0.35s;
+            }
+
+            .send-btn {
+              border: none;
+              background-color: transparent;
+              color: $main-white;
+              text-transform: uppercase;
+              font-size: $font-size-xs;
+              font-weight: 600;
+              letter-spacing: 0.1rem;
+              width: 100%;
+              height: 100%;
+              cursor: pointer;
+            }
+
+            &:hover {
+              &::before {
+                opacity: 1;
+              }
+            }
+          }
         }
 
-        a {
-          margin-left: 0.4rem;
-          padding: 0.2rem 0.4rem;
-          border-radius: 14px;
-          letter-spacing: 0;
-          text-transform: none;
-          opacity: 0.7;
-          transition: all 0.35s;
+        .social-content {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: .5rem;
+          font-size: $font-size-sm;
 
-          &:hover {
-            background-color: $primary-gray;
-            color: $text-white;
-            opacity: 1;
+          li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0.4;
+            transition: all 0.35s;
+
+            &:hover {
+              opacity: 1;
+            }
           }
         }
       }
-      .profile-contact {
-        background-color: $hover-gray;
-        -webkit-backdrop-filter: blur(135px);
-        backdrop-filter: blur(135px);
-        width: 100%;
-        height: 45%;
-        border-radius: 14px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        position: relative;
 
-        .profile-contact-title {
-          position: absolute;
-          top: -1rem;
-          left: 50%;
-          transform: translateX(-50%);
-          font-family: 'Jadyn Maria';
-          font-size: 25px;
-          font-weight: 700;
-          color: $text-black;
-        }
-      }
-      .profile-social {
-        // background-color: rgba($color: #000000, $alpha: 0.2);
-        background-color: $hover-gray;
-        -webkit-backdrop-filter: blur(135px);
-        backdrop-filter: blur(135px);
-        width: 100%;
-        height: 45%;
-        border-radius: 14px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-
-        .profile-social-title {
-          position: absolute;
-          top: -1rem;
-          left: 50%;
-          transform: translateX(-50%);
-          font-family: 'Jadyn Maria';
-          font-size: 25px;
-          font-weight: 700;
-          color: $text-black;
-        }
+      .active-content {
+        display: block;
       }
     }
   }
@@ -237,102 +208,33 @@
 
 @media screen and (max-width: 1023px) {
   .contact {
-    /**********[ contact container ]**********/
-    .contact-container {
-      width: 96%;
-      padding: 1rem 0;
-      position: relative;
+    height: auto;
+    margin-top: 10rem;
 
-      /**********[ contact title ]**********/
-      .contact-title {
-        font-size: 30px;
-      }
-
-      /**********[ email box ]**********/
-      .email-box {
-        width: 50%;
-
-        form {
-          /**********[ email title ]**********/
-          .email-title {
-          }
-
-          /**********[ send button ]**********/
-          .send-btn {
-            font-size: 14px;
-          }
-        }
-      }
-
-      /**********[ profile box ]**********/
-      .profile-box {
-        width: 50%;
-
-        .profile-items {
-          font-size: 14px;
-
-          a {
-            padding: 0.4rem 0.4rem;
-          }
-        }
-      }
+    .tab-menu-container {
+      max-width: 80%;
     }
   }
 }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 767px) {
   .contact {
-    /**********[ contact container ]**********/
-    .contact-container {
-      width: 96%;
-      height: 1200px;
-      // padding: 1rem 0;
-      padding: 0;
-      position: relative;
-      flex-wrap: wrap;
+    margin-top: 4.5rem;
 
-      /**********[ email box ]**********/
-      .email-box {
-        // background-color: skyblue;
+    .tab-menu-container {
+      max-width: 90%;
+
+      /**********[ tabs ]**********/
+      .tabs {
         width: 100%;
-        height: 49%;
-
-        form {
-          /**********[ email title ]**********/
-          .email-title {
-            font-size: 20px;
-          }
-
-          /**********[ send button ]**********/
-          .send-btn {
-            font-size: 14px;
-          }
-        }
+        height: 3rem;
       }
 
-      /**********[ profile box ]**********/
-      .profile-box {
-        // background-color: sienna;
+      /**********[ contents ]**********/
+      .content-tabs {
         width: 100%;
-        height: 45%;
-
-        .profile-items {
-          font-size: 14px;
-
-          a {
-            padding: 0.4rem 0.4rem;
-          }
-        }
-
-        .profile-contact-title {
-          font-size: 20px !important;
-        }
-        .profile-social-title {
-          font-size: 20px !important;
-        }
       }
     }
   }
 }
-
 @media screen and (max-width: 460px) {
 }

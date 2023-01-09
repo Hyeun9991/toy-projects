@@ -3,24 +3,29 @@ import { Routes, Route } from 'react-router-dom';
 
 /**********[ scss ]**********/
 import './App.scss';
-import './styles/reset.scss';
-import './styles/common.scss';
 
 /**********[ components & routes ]**********/
 import HomePage from './pages/HomePage';
 import ProjectPage from './pages/ProjectPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import Portfolio from './containers/Project/ProjectPages/Portfolio/Portfolio';
+import Resume from './containers/About/Resume';
+import ToTopButton from './components/ToTopButton/ToTopButton';
+import SKillsPage from './pages/SkillsPage';
 
 function App() {
   return (
     <div className="App">
-      {/* <Navbar /> */}
+      <ToTopButton />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/project-page" element={<ProjectPage />} />
-        <Route path="/about-page" element={<AboutPage />} />
-        <Route path="/contact-page" element={<ContactPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/resume" element={<Resume />} />
+        <Route path="/skills" element={<SKillsPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/projects" element={<ProjectPage />} />
+        <Route path="/projects/portfolio" element={<Portfolio />} />
       </Routes>
     </div>
   );
