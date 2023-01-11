@@ -1,7 +1,7 @@
 @import '../../styles/variable';
 
 .to-top-btn {
-  background-color: rgba($color: $light-brown, $alpha: 0.007);
+  background-color: rgba($color: $primary-color, $alpha: 0.007);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   position: fixed;
@@ -24,7 +24,7 @@
   }
 
   &:hover {
-    background-color: $light-brown;
+    background-color: $primary-color;
   }
 }
 

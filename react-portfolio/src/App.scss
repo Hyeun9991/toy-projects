@@ -5,6 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,600&family=Homemade+Apple&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
 
+// 필기체
+@import url('https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&display=swap');
+
 @font-face {
   font-family: 'NewYork';
   src: url('./assets/fonts/NewYork.otf') format('truetype');
@@ -12,6 +15,10 @@
 @font-face {
   font-family: 'MADE';
   src: url('./assets/fonts/MADE\ SAONARA\ PERSONAL\ USE.otf') format('truetype');
+}
+@font-face {
+  font-family: 'daniel';
+  src: url('./assets/fonts/daniel.ttf') format('truetype');
 }
 
 /**********[ initialization ]**********/
@@ -31,7 +38,7 @@
 
 html,
 body {
-  background-color: $light-brown;
+  background-color: $primary-color;
   font-family: 'SF Pro KR', 'SF Pro Text', 'Yoon Gothic', 'Myriad Set Pro',
     'SF Pro Icons', 'Apple Gothic', 'HY Gulim', 'MalgunGothic', 'HY Dotum',
     'Lexi Gulim', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
@@ -136,6 +143,14 @@ a {
   line-height: 1;
   font-weight: 300;
   color: $text-black;
+}
+.background-title {
+  color: $text-white;
+  font-family: 'NewYork';
+  text-transform: uppercase;
+  font-size: 150px;
+  transition: all 0.35s;
+  line-height: 0.7;
 }
 
 /**********[ bold & normal text, color-white ]**********/
@@ -355,6 +370,22 @@ a {
     p {
       color: $text-white;
     }
+  }
+}
+
+/**********[ page footer title ]**********/
+.page-footer-title {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .pf-title {
+    text-transform: uppercase;
+    color: $primary-color;
+    font-weight: 500;
+    font-size: $font-size-xs;
   }
 }
 

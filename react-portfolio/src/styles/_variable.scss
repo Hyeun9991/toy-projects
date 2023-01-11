@@ -7,30 +7,34 @@ $homemade-apple: 'Homemade Apple', cursive;
 // main color & primary color
 $main-white: #ffffff;
 $main-black: #000000;
-$main-black: #f1ede4;
 $main-gray: #1d1d1d;
-$main-light-gray: rgb(244, 244, 244);
 
-$background-color: #ebded5;
-$primary-color: #ac480d;
-$light-beige: #f4ede5;
-$light-beige-2: #dac9be;
-$dark-beige: #c79c7c;
-$light-brown: #b38069;
-$brown: #654e48;
+// primary color & secondary
+$primary-color: #191d1b;
+$secondary-color: #2d2d2d;
+$secondary-color-02: #e5dfd5;
+
+// primary color & secondary
+$primary-color: #7aaccd;
+$secondary-color: #e4f0f9;
+$secondary-color-02: #a9c5db;
+
+// light color
+$light-color: #f3ede5;
+$light-color-02: #dac9be;
+
+// dark color
+$dark-color: #3c1b12;
+$dark-color-02: #c79c7c;
+
+// basic color
 $white: #ffffff;
-
-$light-color: #baae9e;
-$normal-color: #b7a090;
-$darked-color: rgb(123, 57, 15);
-
-$light-color2: #9d9988;
-$normal-color2: #636456;
+$white-color: #ffffff;
+$black-color: #000000;
 
 // text color
 $text-black: #272727;
 $text-white: #fbfaff;
-$text-purple: #f9f8ff;
 
 // font sizes
 $font-size-xxs: 0.625rem; /* 10px */

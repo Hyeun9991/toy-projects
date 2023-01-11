@@ -71,7 +71,7 @@ const Footer = () => {
           <div className="sf-end">
             <div className="sc-menu">
               <Link className="footer-title" to="/contact">
-                social & content
+                social & contact
               </Link>
               <ul>
                 {socialList.map((t) => {

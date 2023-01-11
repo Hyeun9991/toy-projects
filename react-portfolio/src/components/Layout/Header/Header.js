@@ -124,57 +124,49 @@ const Header = () => {
         {/* secondary-header */}
         <div className="secondary-header">
           {/* <IoIosArrowForward /> */}
+          <p className="background-title">navigate</p>
           <nav className="secondary-nav">
-            {/* <ul>
-              {headerMenuList.map((t) => {
-                return (
-                  <li>
-                    <Link to={t.url} className="secondary-menu-item">{t.title}</Link>
-                  </li>
-                );
-              })}
-            </ul> */}
-            <ul className="sn-menu">
-              <p className=" sn-title">menu</p>
-              {headerMenuList.map((t) => {
-                return (
-                  <li key={t.id}>
-                    <Link to={t.url} className=" sn-item">
-                      {t.title}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-            <div className="sn-contact ">
-              <p className=" sn-title">get in touch</p>
-              <Link to="/contact" className="sn-item">
-                contact
-              </Link>
+            <div className="sn-container">
+              <ul className="sn-menu">
+                <p className=" sn-title">menu</p>
+                {headerMenuList.map((t) => {
+                  return (
+                    <li key={t.id}>
+                      <Link to={t.url} className=" sn-item">
+                        {t.title}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+              <div className="sn-contact">
+                <p className=" sn-title">get in touch</p>
+                <Link to="/contact" className="sn-item">
+                  contact
+                </Link>
+              </div>
+              <ul className="sn-social">
+                <p className=" sn-title">social</p>
+                <li>
+                  <a
+                    href="https://github.com/Hyeun9991"
+                    className="sn-item"
+                    target="_blank"
+                  >
+                    github
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://velog.io/@hyeun9991"
+                    className="sn-item"
+                    target="_blank"
+                  >
+                    blog
+                  </a>
+                </li>
+              </ul>
             </div>
-            <ul className="sn-social ">
-              <p className=" sn-title">social</p>
-              <li>
-                <a
-                  href="https://github.com/Hyeun9991"
-                  className="sn-item"
-                  target="_blank"
-                >
-                  github
-                </a>
-                <BsArrowUpRight className="sn-arrow" />
-              </li>
-              <li>
-                <a
-                  href="https://velog.io/@hyeun9991"
-                  className="sn-item"
-                  target="_blank"
-                >
-                  blog
-                </a>
-                <BsArrowUpRight className="sn-arrow" />
-              </li>
-            </ul>
           </nav>
         </div>
         {/* /secondary-header */}
