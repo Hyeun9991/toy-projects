@@ -1,4 +1,4 @@
-@import '../../styles/variable';
+@import '../../App.scss';
 
 .to-top-btn {
   background-color: rgba($color: $primary-color, $alpha: 0.007);
@@ -12,11 +12,11 @@
   width: 45px;
   height: 45px;
   border: none;
-  
-  p {
-    color: $text-white;
-    font-size: $font-size-xxs;
-  }
+  border-radius: 50%;
+  color: $text-white;
+  font-size: $font-size-xxs;
+  text-transform: uppercase;
+  z-index: 9999;
 
   &.to-top-show {
     opacity: 1;

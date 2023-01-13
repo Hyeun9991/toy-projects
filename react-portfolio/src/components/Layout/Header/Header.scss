@@ -20,7 +20,7 @@
     transition: all 0.35s ease-in-out;
 
     &:hover {
-      background-color: rgba($color: $primary-color, $alpha: 0.1);
+      background-color: rgba($color: $primary-color, $alpha: 0.5);
       backdrop-filter: blur(135px);
       -webkit-backdrop-filter: blur(135px);
 
@@ -126,6 +126,7 @@
       height: 100px;
 
       &.open {
+        background-color: rgba($color: $primary-color, $alpha: 0.5);
         position: fixed;
         top: 0;
         left: 0;
@@ -138,6 +139,16 @@
 
         .main-header {
           z-index: 1;
+
+          .header-logo {
+            .logo {
+              // color: $primary-color;
+            }
+          }
+
+          .open-menu-btn span {
+            background-color: $primary-color;
+          }
         }
 
         .secondary-header {
@@ -157,7 +168,7 @@
           }
 
           .secondary-nav {
-            background-color: rgba($color: $secondary-color-02, $alpha: 0.9);
+            background-color: rgba($color: $secondary-color, $alpha: 0.9);
             width: 50%;
             height: 100vh;
             opacity: 1;
@@ -179,11 +190,13 @@
               font-size: $font-size-xs;
               margin-bottom: 0.5rem;
               color: $text-white;
+              color: $primary-color;
             }
             .sn-item {
               text-transform: uppercase;
               font-size: $font-size-xl;
               color: $text-white;
+              color: $primary-color;
               line-height: 2.5rem;
               opacity: 0.8;
               font-weight: 500;
@@ -335,14 +348,19 @@
       height: 60px;
 
       &.open {
+        .main-header {
+          .header-logo {
+            .logo {
+              color: $primary-color;
+            }
+          }
+        }
         .secondary-header {
-          // height: 100vh;
-
           .background-title {
             display: none;
           }
           .secondary-nav {
-            background-color: rgba($color: $secondary-color-02, $alpha: 1);
+            background-color: $secondary-color;
             width: 100%;
             height: auto;
             align-items: flex-start;

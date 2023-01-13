@@ -43,7 +43,7 @@ const Portfolio = () => {
           </p>
           <h1 className="title-middle color-white">eh portfolio</h1>
           <img
-            src={require('../../../../assets/images/homepage_preview.png')}
+            src={require('../../../../assets/images/portfolio_preview_01.png')}
             alt="포트폴리오 웹사이트 프리뷰"
             className="project-img"
           />

@@ -2,23 +2,20 @@
 @import './styles/variable';
 
 /**********[ fonts ]**********/
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,600&family=Homemade+Apple&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
-
-// 필기체
-@import url('https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&display=swap');
-
 @font-face {
   font-family: 'NewYork';
   src: url('./assets/fonts/NewYork.otf') format('truetype');
 }
 @font-face {
-  font-family: 'MADE';
-  src: url('./assets/fonts/MADE\ SAONARA\ PERSONAL\ USE.otf') format('truetype');
-}
-@font-face {
   font-family: 'daniel';
   src: url('./assets/fonts/daniel.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Future_tree';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_04@1.0/Future_tree.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 /**********[ initialization ]**********/
@@ -76,6 +73,79 @@ a {
   text-decoration: none;
 }
 
+/**********[ 2023.01.12 ]**********/
+.content-main-title {
+  color: $text-black;
+  font-size: $font-size-xxxl;
+  font-weight: 500;
+  line-height: 1.8rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.content-side-title {
+  text-transform: uppercase;
+  font-size: $font-size-xs;
+  color: $text-black;
+}
+.content-text {
+  color: $text-black;
+  font-size: $font-size-sm;
+  line-height: 2rem;
+  text-transform: uppercase;
+
+  b {
+    opacity: 0.4;
+    font-weight: 300;
+  }
+}
+.content-link {
+  padding: 0.8rem 1.2rem;
+  text-transform: uppercase;
+  font-size: $font-size-xs;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  color: rgba($color: $text-black, $alpha: 0.7);
+  border: 0.05rem solid $black-color;
+  transition: all 0.35s;
+
+  &:hover {
+    background-color: $black-color;
+    color: $text-white;
+  }
+}
+.sign-text {
+  // font-family: 'Future_tree';
+  font-family: 'daniel';
+  font-size: 1.5vw;
+  color: $text-white;
+}
+.handwriting-text {
+  font-family: 'Future_tree';
+  font-size: $font-size-xl;
+}
+.background-title {
+  color: $text-white;
+  font-family: 'NewYork';
+  text-transform: uppercase;
+  font-size: 150px;
+  transition: all 0.35s;
+  line-height: 0.7;
+}
+.page-footer-title {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .pf-title {
+    text-transform: uppercase;
+    color: $primary-color;
+    font-weight: 500;
+    font-size: $font-size-xs;
+  }
+}
+
 /**********[ logo ]**********/
 .logo {
   font-family: 'Petit Formal Script';
@@ -83,7 +153,6 @@ a {
   font-size: $font-size-xl;
   font-weight: 600;
 }
-
 .logo-small {
   color: $text-black;
   font-size: $font-size-sm;
@@ -93,7 +162,7 @@ a {
   letter-spacing: 0.25rem;
 }
 
-/**********[ about cursive fonts ]**********/
+/**********[ cursive fonts ]**********/
 .cursive-text {
   font-size: $font-size-xxxl;
   font-size: 4vw;
@@ -143,14 +212,6 @@ a {
   line-height: 1;
   font-weight: 300;
   color: $text-black;
-}
-.background-title {
-  color: $text-white;
-  font-family: 'NewYork';
-  text-transform: uppercase;
-  font-size: 150px;
-  transition: all 0.35s;
-  line-height: 0.7;
 }
 
 /**********[ bold & normal text, color-white ]**********/
@@ -370,22 +431,6 @@ a {
     p {
       color: $text-white;
     }
-  }
-}
-
-/**********[ page footer title ]**********/
-.page-footer-title {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .pf-title {
-    text-transform: uppercase;
-    color: $primary-color;
-    font-weight: 500;
-    font-size: $font-size-xs;
   }
 }
 

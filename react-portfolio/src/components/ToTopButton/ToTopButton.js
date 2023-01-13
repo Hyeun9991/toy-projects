@@ -36,9 +36,9 @@ const ToTopButton = () => {
   return (
     <button
       onClick={scrollToTop}
-      className={scrollYActive ? "to-top-btn circle-button to-top-show" : "to-top-btn circle-button"}
+      className={scrollYActive ? 'to-top-btn  to-top-show' : 'to-top-btn '}
     >
-      <p>top</p>
+      top
     </button>
   );
 };

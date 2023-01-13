@@ -55,12 +55,7 @@ const HomeContainer = () => {
           </div>
         </section>
         <section className="home-content-section has-section">
-          <p className="background-title">
-            Eh portfolio
-            <br />
-            front-end
-            <br /> *Developer
-          </p>
+          <p className="background-title">Eh portfolio front-end *Developer</p>
           <div className="content-container">
             <div className="content-start">
               <div className="c-container">
@@ -104,7 +99,7 @@ const HomeContainer = () => {
             </div>
           </div>
         </section>
-        <section className="home-content-section center-section">
+        <section className="home-content-section greetings-section">
           <p className="background-title">welcome to EH</p>
           <div className="content-container">
             <p className="content-side-title">welcome to eh</p>
@@ -115,11 +110,29 @@ const HomeContainer = () => {
                 <br /> 박은혜입니다.
               </h2>
             </div>
-            <div className="content-text-wrapper">
-              <p className="content-text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Provident inventore et reprehenderit. Temporibus saepe itaque,
-              </p>
+            <div className="content-text-container">
+              <div className="text-item">
+                <p className="content-text">
+                  제 사이트에 방문해주신 모든 분들께 감사드립니다
+                </p>
+                <p className="content-text">
+                  다음은 제 사이트에서 확인하실 수 있는 컨텐츠 목록입니다.
+                </p>
+              </div>
+              <div className="text-item">
+                <p className="content-text">
+                  <Link to="/about">about</Link>
+                </p>
+                <p className="content-text">
+                  <Link to="/skills">skills</Link>
+                </p>
+                <p className="content-text">
+                  <Link to="/projects">Projects</Link>
+                </p>
+                <p className="content-text">
+                  <Link to="/contact">contact</Link>
+                </p>
+              </div>
             </div>
           </div>
           <div className="sign">
@@ -190,6 +203,14 @@ const HomeContainer = () => {
               </div>
             </div>
           </div>
+        </section>
+        <section className="home-content-section outro-section">
+          <p className="sign-text">Eunhye . Portolio</p>
+          <p className="background-title">thank you !</p>
+          <p className="content-text">EH에 방문해주셔서 감사드립니다.</p>
+          <Link to="/contact" className="content-link">
+            연락하기
+          </Link>
         </section>
       </div>
       <div className="page-footer-title">

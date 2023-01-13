@@ -50,57 +50,60 @@ const Footer = () => {
 
   return (
     <div className="footer">
+      <p className="background-title">eunhye</p>
       <div className="footer-container">
+        {/* secondary-footer */}
         <div className="secondary-footer">
-          <div className="sf-start">
-            <nav className="menu-nav">
-              <p className="footer-title">menu</p>
-              <ul>
-                {menuList.map((t) => {
-                  return (
-                    <li key={t.id}>
-                      <Link to={t.url} className="link-item">
-                        {t.title}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </nav>
+          <div className="sf-start sf-container">
+            <p className="footer-item">navigate</p>
+            <ul>
+              {menuList.map((t) => {
+                return (
+                  <li key={t.id}>
+                    <Link to={t.url} className="footer-active-item">
+                      {t.title}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
-          <div className="sf-end">
-            <div className="sc-menu">
-              <Link className="footer-title" to="/contact">
-                social & contact
-              </Link>
-              <ul>
-                {socialList.map((t) => {
-                  return (
-                    <li key={t.id}>
-                      <a href={t.url} target="_blank" className="link-item">
-                        {t.title}
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
+          <div className="sf-end sf-container">
+            <p className="footer-item">connection</p>
+            <ul>
+              {socialList.map((t) => {
+                return (
+                  <li key={t.id}>
+                    <a
+                      href={t.url}
+                      target="_blank"
+                      className="footer-active-item"
+                    >
+                      {t.title}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </div>
+        {/* /secondary-footer */}
+        {/* main-footer */}
         <div className="main-footer">
-          <div className="footer-version">
-            <p className="main-footer-text">ver.01</p>
-            <p className="main-footer-text">last update 2022.01.09</p>
+          <div className="footer-info-01">
+            <p className="footer-item">ver.01</p>
+            <p className="footer-item">last update 2023.01.12</p>
+          </div>
+          <div className="footer-info-02">
+            <p className="footer-item">eh portfolio</p>
           </div>
           <div className="footer-logo">
-            <Link className="logo" to="/">
+            <Link to="/" className="logo">
               Eh
             </Link>
           </div>
-          <div className="footer-info">
-            <p className="main-footer-text">eh portfolio</p>
-          </div>
         </div>
+        {/* /main-footer */}
       </div>
     </div>
   );
