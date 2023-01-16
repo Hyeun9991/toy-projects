@@ -84,7 +84,7 @@ const HomeContainer = () => {
               <div className="c-container">
                 <p className="content-side-title">my skills</p>
                 <div className="skill">
-                  <h2 className="content-main-title">front-end developer</h2>
+                  <h2 className="content-main-title">front-end skills</h2>
                   <div className="content-text-wrapper">
                     <p className="content-text">
                       html5 <b>/</b> css <b>&</b> scss <b>/</b> javascript{' '}
@@ -145,22 +145,22 @@ const HomeContainer = () => {
             <div className="project-preview-line">
               <div className="img-container">
                 <img
-                  src={require('../../assets/images/portfolio_preview_01.png')}
+                  src={require('../../assets/images/portfolio_cover.png')}
                   alt="포트폴리오 이미지 01"
                   className="preview-img"
                 />
                 <img
-                  src={require('../../assets/images/portfolio_preview_02.png')}
+                  src={require('../../assets/images/home_01.png')}
                   alt="포트폴리오 이미지 02"
                   className="preview-img"
                 />
                 <img
-                  src={require('../../assets/images/portfolio_preview_03.png')}
+                  src={require('../../assets/images/home_02.png')}
                   alt="포트폴리오 이미지 03"
                   className="preview-img"
                 />
                 <img
-                  src={require('../../assets/images/portfolio_preview_04.png')}
+                  src={require('../../assets/images/home_03.png')}
                   alt="포트폴리오 이미지 04"
                   className="preview-img"
                 />
@@ -169,7 +169,7 @@ const HomeContainer = () => {
             <div className="project-info">
               <div className="project-thumbnail">
                 <img
-                  src={require('../../assets/images/portfolio_preview_01.png')}
+                  src={require('../../assets/images/portfolio_cover.png')}
                   alt="project thumbnail"
                   className="thumbnail-img"
                 />

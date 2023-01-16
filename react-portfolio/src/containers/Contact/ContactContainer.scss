@@ -1,9 +1,14 @@
 @import '../../styles/variable';
 
 .contact {
-  background-color: $main-white;
-  height: calc(100vh - 140px);
+  background-color: $secondary-color-02;
   cursor: default;
+
+  .page-footer-title {
+    .pf-title {
+      color: $text-white;
+    }
+  }
 
   .tab-menu-container {
     display: flex;
@@ -11,196 +16,208 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 1200px;
-    height: 100%;
+    height: calc(100vh - 100px);
+    padding-top: 100px;
     margin: 0 auto;
+    position: relative;
+    overflow: hidden;
 
-    /**********[ title ]**********/
-    .contact-title {
+    .background-title {
+      opacity: 0.4;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      font-size: 12vw;
+    }
+
+    .contact-container {
+      width: 450px;
+      height: 500px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
-      margin-bottom: 2.5rem;
-    }
+      justify-content: center;
+      border-radius: 14px;
+      background-color: rgba($color: $secondary-color, $alpha: 0.2);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border: 0.25px solid rgba($color: $secondary-color, $alpha: 0.5);
 
-    /**********[ tabs ]**********/
-    .tabs {
-      width: 400px;
-      height: 50px;
-      display: flex;
-
-      .tab {
-        background-color: $main-white;
-        width: 50%;
-        height: 100%;
+      .side-title-container {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        opacity: 0.4;
-      }
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
 
-      .bold-text {
-        font-size: $font-size-xs;
-      }
-
-      .active-tab {
-        position: relative;
-        opacity: 1;
-
-        &::before {
-          content: '';
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 100%;
-          height: 0.2rem;
-          background-color: $main-black;
+        .content-side-title {
+          color: $text-white;
         }
       }
-    }
+      /**********[ tabs ]**********/
+      .tabs {
+        width: 400px;
+        height: 50px;
+        display: flex;
 
-    /**********[ contents ]**********/
-    .content-tabs {
-      width: 400px;
-      height: 300px;
-
-      .content {
-        width: 100%;
-        height: 100%;
-        display: none;
-
-        .email-form {
+        .tab {
+          // background-color: $main-white;
+          width: 50%;
+          height: 100%;
           display: flex;
-          flex-direction: column;
-          padding: 1rem;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          opacity: 0.4;
+          color: $text-white;
+          text-transform: uppercase;
+          font-size: $font-size-sm;
+          font-weight: 500;
+        }
 
-          .input-form {
-            margin-bottom: 1rem;
-          }
+        .active-tab {
+          position: relative;
+          opacity: 1;
+        }
+      }
+      /**********[ contents ]**********/
+      .content-tabs {
+        width: 400px;
+        height: 300px;
 
-          .label-input {
-            height: 40px;
+        .content {
+          width: 100%;
+          height: 100%;
+          display: none;
+
+          .email-form {
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            padding: 1rem;
 
-            input,
-            textarea {
-              background-color: transparent;
-              border: none;
-              border-radius: 0;
-              width: 100%;
-              padding: 0.4rem 0.2rem;
-              outline: none;
-              font-size: $font-size-sm;
-              border-bottom: 0.05rem solid
-                rgba($color: $main-black, $alpha: 0.2);
-              transition: all 0.35s;
-              resize: none;
+            .input-form {
+              margin-bottom: 1rem;
+            }
 
-              &::placeholder {
-                font-weight: 300;
-              }
+            .label-input {
+              height: 40px;
+              display: flex;
+              align-items: center;
 
-              &:hover {
-                border-bottom: 0.05rem solid $main-black;
-              }
-
-              &:focus {
-                border-bottom: 0.2rem solid $main-black;
+              input,
+              textarea {
+                background-color: transparent;
+                border: none;
+                border-radius: 0;
+                width: 100%;
+                padding: 0.4rem 0.2rem;
+                outline: none;
+                font-size: $font-size-sm;
+                border-bottom: 0.05rem solid
+                  rgba($color: $white-color, $alpha: 0.4);
+                transition: all 0.35s;
+                resize: none;
 
                 &::placeholder {
-                  font-weight: 600;
+                  font-weight: 300;
+                  color: $text-white;
+                }
+
+                &:hover {
+                  border-bottom: 0.05rem solid $white-color;
+                }
+
+                &:focus {
+                  border-bottom: 0.2rem solid $white-color;
+
+                  &::placeholder {
+                    font-weight: 600;
+                  }
+                }
+              }
+
+              textarea {
+                padding-bottom: 0;
+                height: 40px;
+                transition: height 0.35s;
+                margin-top: 3rem;
+
+                &:focus {
+                  height: 80px;
                 }
               }
             }
 
-            textarea {
-              padding-bottom: 0;
-              height: 40px;
-              transition: height 0.35s;
-              margin-top: 3rem;
+            .submit-btn {
+              width: 100%;
+              height: 3rem;
+              outline: none;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: transparent;
+              border: 0.05rem solid $white-color;
+              position: relative;
+              margin-top: 15%;
+              transition: all 0.35s;
 
-              &:focus {
-                height: 80px;
+              .send-btn {
+                border: none;
+                background-color: transparent;
+                color: $text-white;
+                text-transform: uppercase;
+                font-size: $font-size-xs;
+                font-weight: 600;
+                letter-spacing: 0.1rem;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+                transition: all 0.35s;
+              }
+
+              &:hover {
+                background-color: $white-color;
+
+                .send-btn {
+                  color: $text-black;
+                }
               }
             }
           }
 
-          .submit-btn {
+          .social-content {
             width: 100%;
-            height: 3rem;
-            outline: none;
+            height: 100%;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-color: $main-black;
-            position: relative;
-            margin-top: 15%;
+            gap: 0.5rem;
 
-            &::before {
-              content: '';
-              background-color: $main-white;
-              position: absolute;
-              bottom: 0.6rem;
-              left: 50%;
-              transform: translateX(-50%);
-              width: 40px;
-              height: 0.05rem;
-              opacity: 0;
+            li {
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              opacity: 0.7;
               transition: all 0.35s;
-            }
 
-            .send-btn {
-              border: none;
-              background-color: transparent;
-              color: $main-white;
-              text-transform: uppercase;
-              font-size: $font-size-xs;
-              font-weight: 600;
-              letter-spacing: 0.1rem;
-              width: 100%;
-              height: 100%;
-              cursor: pointer;
-            }
+              .content-text {
+                color: $text-white;
+                font-weight: 500;
+              }
 
-            &:hover {
-              &::before {
+              &:hover {
                 opacity: 1;
               }
             }
           }
         }
 
-        .social-content {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          gap: .5rem;
-          font-size: $font-size-sm;
-
-          li {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            opacity: 0.4;
-            transition: all 0.35s;
-
-            &:hover {
-              opacity: 1;
-            }
-          }
+        .active-content {
+          display: block;
         }
-      }
-
-      .active-content {
-        display: block;
       }
     }
   }
@@ -209,29 +226,43 @@
 @media screen and (max-width: 1023px) {
   .contact {
     height: auto;
-    margin-top: 10rem;
 
     .tab-menu-container {
-      max-width: 80%;
+      // max-width: 80%;
+
+      .background-title {
+        font-size: 17vw;
+      }
     }
   }
 }
 @media screen and (max-width: 767px) {
   .contact {
-    margin-top: 4.5rem;
-
     .tab-menu-container {
-      max-width: 90%;
+      height: auto;
+      padding-top: 20vh;
+      padding-bottom: 15vh;
 
-      /**********[ tabs ]**********/
-      .tabs {
-        width: 100%;
-        height: 3rem;
+      .background-title {
+        font-size: 24vw;
       }
 
-      /**********[ contents ]**********/
-      .content-tabs {
-        width: 100%;
+      .contact-container {
+        width: 90%;
+        height: auto;
+        padding-top: 7vh;
+        padding-bottom: 7vh;
+
+        /**********[ tabs ]**********/
+        .tabs {
+          width: 100%;
+          height: 3rem;
+        }
+
+        /**********[ contents ]**********/
+        .content-tabs {
+          width: 100%;
+        }
       }
     }
   }

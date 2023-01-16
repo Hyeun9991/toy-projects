@@ -37,8 +37,12 @@ const useScrollDirection = () => {
 const Header = () => {
   const [scrollY, setScrollY] = useState(0);
   const [scrollYActive, setScrollYActive] = useState(false);
-  const [btnClick, setBtnClick] = useState(false);
   const scrollDirection = useScrollDirection();
+
+  /**
+   * 토글을 닫아두기 위해 초기값을 false로 설정
+   */
+  const [btnClick, setBtnClick] = useState(false);
 
   const headerMenuList = [
     {
@@ -58,6 +62,9 @@ const Header = () => {
     },
   ];
 
+  /**
+   * state(false) true/false 토글 함수
+   */
   const showMenu = () => {
     setBtnClick(!btnClick);
   };
@@ -123,7 +130,6 @@ const Header = () => {
         {/* /main-header */}
         {/* secondary-header */}
         <div className="secondary-header">
-          {/* <IoIosArrowForward /> */}
           <p className="background-title">navigate</p>
           <nav className="secondary-nav">
             <div className="sn-container">
@@ -132,7 +138,7 @@ const Header = () => {
                 {headerMenuList.map((t) => {
                   return (
                     <li key={t.id}>
-                      <Link to={t.url} className=" sn-item">
+                      <Link to={t.url} className="sn-item">
                         {t.title}
                       </Link>
                     </li>

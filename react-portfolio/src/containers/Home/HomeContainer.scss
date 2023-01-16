@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30vh;
+    // gap: 30vh;
 
     /**********[ intro section ]**********/
     .intro-section {
@@ -156,6 +156,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-bottom: 30vh;
 
       .background-title {
         position: absolute;
@@ -227,6 +228,7 @@
       display: flex;
       flex-direction: column;
       gap: 15vh;
+      margin-bottom: 30vh;
 
       /**********[ projects item ]**********/
       .project-item {
@@ -373,7 +375,7 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px)  {
   /**********[ home ]**********/
   .home {
     .home-section-container {
@@ -524,8 +526,7 @@
     }
   }
 }
-
-@media screen and (max-width: 767px) {
+@media screen and (max-width:767px) {
   /**********[ home ]**********/
   .home {
     .home-section-container {
@@ -566,6 +567,7 @@
       /**********[ about & skills section ]**********/
       .has-section {
         overflow-x: hidden;
+        height: auto;
 
         .background-title {
           font-size: 18vw;
@@ -577,7 +579,9 @@
         }
 
         .content-container {
-          gap: 0;
+          // background-color: hotpink;
+          // gap: 15vh;
+
           .c-container {
             flex-direction: column;
             align-items: center;
@@ -719,12 +723,11 @@
     }
   }
 }
-
 @media screen and (max-width: 460px) {
   /**********[ home ]**********/
   .home {
     .home-section-container {
-      gap: 15vh;
+      // gap: 15vh;
       /**********[ intro section ]**********/
       .intro-section {
         gap: 1rem;

@@ -5,7 +5,9 @@ const ToTopButton = () => {
   const [scrollY, setScrollY] = useState(0);
   const [scrollYActive, setScrollYActive] = useState(false);
 
-  // 클릭 시 스크롤을 맨 위로 옮기는 함수 (2022.11.23)
+  /**
+   * 클릭 시 스크롤을 맨 위로 옮기는 함수, 부드럽게 전환
+   */
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -13,7 +15,9 @@ const ToTopButton = () => {
     });
   };
 
-  // 스크롤이 120이 되면 to top btn이 화면에 나오게 하는 함수 (2022.11.23)
+  /**
+   * 스크롤이 120이 되면 to-top-btn이 화면에 나오게 하는 함수
+   */
   const toTopBtnEffect = () => {
     if (scrollY > 120) {
       setScrollY(window.pageYOffset);
@@ -36,7 +40,7 @@ const ToTopButton = () => {
   return (
     <button
       onClick={scrollToTop}
-      className={scrollYActive ? 'to-top-btn  to-top-show' : 'to-top-btn '}
+      className={`to-top-btn ${scrollYActive ? 'to-top-show' : ''}`}
     >
       top
     </button>

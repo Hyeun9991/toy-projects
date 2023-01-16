@@ -92,10 +92,10 @@ const Footer = () => {
         <div className="main-footer">
           <div className="footer-info-01">
             <p className="footer-item">ver.01</p>
-            <p className="footer-item">last update 2023.01.12</p>
+            <p className="footer-item">last update 2023.01.16</p>
           </div>
           <div className="footer-info-02">
-            <p className="footer-item">eh portfolio</p>
+            <p className="footer-item">eh: eunhye Hangout</p>
           </div>
           <div className="footer-logo">
             <Link to="/" className="logo">
