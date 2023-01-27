@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { menuItems, socialItems } from './menuItems';
+import { menuItems, socialItems, sideItems } from './menuItems';
 import './Header.scss';
 
 const Header = () => {
@@ -15,84 +15,64 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className={`header-container ${btnClick ? 'open' : ''}`}>
-        {/* main-header */}
-        <div className="main-header">
-          <div className="header-logo">
-            <h1>
-              <Link to="/" className="logo">
-                Eh
-              </Link>
-            </h1>
-          </div>
-          <nav className="main-nav" role="navigation">
-            <ul>
-              {menuItems.map((t) => {
+      <nav role="navigation" className="header-container">
+        <div className="h-logo">
+          <h1 className="logo active-item">
+            <NavLink to="/">Eh</NavLink>
+          </h1>
+        </div>
+        <ul className="h-menu">
+          {menuItems.map((t) => {
+            return (
+              <li key={t.id}>
+                <NavLink to={t.url} className="h-item active-item">
+                  {t.title}
+                </NavLink>
+              </li>
+            );
+          })}
+        </ul>
+        <div className="h-contact">
+          <NavLink to="/contact" className="h-item active-item">
+            get in touch
+          </NavLink>
+        </div>
+        <div
+          className={`h-open-btn ${btnClick ? 'clicked' : ''}`}
+          onClick={showMenu}
+          type="button"
+        >
+          <span className="first-bar"></span>
+          <span className="second-bar"></span>
+        </div>
+        <nav role="navigation" className={`h-side-nav ${btnClick ? 'open-side' : ''}`}>
+          <div className='hs-container'>
+            
+            <ul className='hs-start'>
+              {sideItems.map((t) => {
                 return (
                   <li key={t.id}>
-                    <NavLink to={t.url} className="menu-item active-link">
+                    <NavLink to={t.url} className="h-item">
                       {t.title}
                     </NavLink>
                   </li>
                 );
               })}
             </ul>
-          </nav>
-          <div className="header-contact">
-            <NavLink to="/contact" className="contact-item active-link">
-              get in touch
-            </NavLink>
+            <ul className='hs-end'>
+              {socialItems.map((t) => {
+                return (
+                  <li key={t.id}>
+                    <a href={t.url} target="_blank" className='h-item'>
+                      {t.title}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
-          <div
-            className={`open-menu-btn ${btnClick ? 'clicked' : ''}`}
-            onClick={showMenu}
-            type="button"
-          >
-            <span className="first-bar"></span>
-            <span className="second-bar"></span>
-          </div>
-        </div>
-        {/* /main-header */}
-        {/* secondary-header */}
-        <div className="secondary-header">
-          {/* <p className="background-title">navigate</p> */}
-          <nav className="secondary-nav" role="navigation">
-            <div className="sn-container">
-              <ul className="sn-menu">
-                <p className=" sn-title">menu</p>
-                {menuItems.map((t) => {
-                  return (
-                    <li key={t.id}>
-                      <NavLink to={t.url} className="sn-item">
-                        {t.title}
-                      </NavLink>
-                    </li>
-                  );
-                })}
-              </ul>
-              <div className="sn-contact">
-                <p className="sn-title">get in touch</p>
-                <NavLink to="/contact" className="sn-item">
-                  contact
-                </NavLink>
-              </div>
-              <ul className="sn-social">
-                <p className="sn-title">social</p>
-                {socialItems.map((t) => {
-                  return (
-                    <li key={t.id}>
-                      <a href={t.url} target="_blank" className="sn-item">
-                        {t.title}
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </nav>
-        </div>
-        {/* /secondary-header */}
-      </div>
+        </nav>
+      </nav>
     </header>
   );
 };
