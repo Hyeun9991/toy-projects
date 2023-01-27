@@ -1,15 +1,8 @@
 @import '../../styles/variable';
 
 .contact {
-  background-color: $secondary-color-02;
+  background-color: $primary-color;
   cursor: default;
-
-  .page-footer-title {
-    .pf-title {
-      color: $text-white;
-    }
-  }
-
   .tab-menu-container {
     display: flex;
     flex-direction: column;
@@ -21,9 +14,7 @@
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-
     .background-title {
-      opacity: 0.2;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -31,7 +22,6 @@
       white-space: nowrap;
       font-size: 12vw;
     }
-
     .contact-container {
       width: 450px;
       height: 500px;
@@ -42,9 +32,8 @@
       border-radius: 14px;
       background-color: rgba($color: $secondary-color, $alpha: 0.2);
       border: 0.25px solid rgba($color: $secondary-color, $alpha: 0.5);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       .side-title-container {
         display: flex;
         flex-direction: column;
@@ -53,7 +42,7 @@
         margin-bottom: 1.5rem;
 
         .content-side-title {
-          // color: $text-black;
+          color: $text-white;
         }
       }
       /**********[ tabs ]**********/
@@ -61,9 +50,7 @@
         width: 400px;
         height: 50px;
         display: flex;
-
         .tab {
-          // background-color: $main-white;
           width: 50%;
           height: 100%;
           display: flex;
@@ -71,12 +58,11 @@
           justify-content: center;
           cursor: pointer;
           opacity: 0.4;
-          color: $text-black;
+          color: $text-white;
           text-transform: uppercase;
-          font-size: $font-size-sm;
+          font-size: $font-size-xs;
           font-weight: 500;
         }
-
         .active-tab {
           position: relative;
           opacity: 1;
@@ -86,26 +72,21 @@
       .content-tabs {
         width: 400px;
         height: 300px;
-
         .content {
           width: 100%;
           height: 100%;
           display: none;
-
           .email-form {
             display: flex;
             flex-direction: column;
             padding: 1rem;
-
             .input-form {
               margin-bottom: 1rem;
             }
-
             .label-input {
               height: 40px;
               display: flex;
               align-items: center;
-
               input,
               textarea {
                 background-color: transparent;
@@ -116,77 +97,63 @@
                 outline: none;
                 font-size: $font-size-sm;
                 border-bottom: 0.05rem solid
-                  rgba($color: $black-color, $alpha: 0.4);
+                  rgba($color: $white-color, $alpha: 0.4);
                 transition: all 0.35s;
                 resize: none;
-
+                color: $text-white;
                 &::placeholder {
                   font-weight: 300;
-                  color: $text-black;
+                  color: $text-white;
                 }
-
                 &:hover {
-                  border-bottom: 0.05rem solid $black-color;
+                  border-bottom: 0.05rem solid $white-color;
                 }
-
                 &:focus {
-                  border-bottom: 0.2rem solid $black-color;
+                  border-bottom: 0.2rem solid $white-color;
 
                   &::placeholder {
                     font-weight: 600;
                   }
                 }
               }
-
               textarea {
                 padding-bottom: 0;
                 height: 40px;
                 transition: height 0.35s;
                 margin-top: 3rem;
-
                 &:focus {
                   height: 80px;
                 }
               }
             }
-
             .submit-btn {
-              width: 100%;
-              height: 3rem;
-              outline: none;
+              background-color: rgba($color: $secondary-color, $alpha: 0.2);
+              border: 0.25px solid rgba($color: $secondary-color, $alpha: 0.5);
               display: flex;
               align-items: center;
               justify-content: center;
-              background-color: transparent;
-              border: 0.05rem solid $black-color;
-              position: relative;
-              margin-top: 15%;
+              width: 100%;
+              height: 3rem;
+              margin-top: 20%;
               transition: all 0.35s;
-
+              border-radius: 7px;
+              cursor: pointer;
               .send-btn {
                 border: none;
                 background-color: transparent;
-                color: $text-black;
-                text-transform: uppercase;
                 font-size: $font-size-xs;
-                font-weight: 600;
-                letter-spacing: 0.1rem;
-                width: 100%;
-                height: 100%;
-                cursor: pointer;
-                transition: all 0.35s;
+                font-weight: 500;
+                color: $text-white;
+                text-transform: uppercase;
               }
-
               &:hover {
-                background-color: $black-color;
-
-                .send-btn {
-                  color: $text-white;
-                }
+                background-color: rgba(
+                  $color: $secondary-color-02,
+                  $alpha: 0.2
+                );
               }
             }
           }
-
           .social-content {
             width: 100%;
             height: 100%;
@@ -195,26 +162,22 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-
             li {
               display: flex;
               align-items: center;
               gap: 0.5rem;
               opacity: 0.7;
               transition: all 0.35s;
-
               .content-text {
-                color: $text-black;
+                color: $text-white;
                 font-weight: 500;
               }
-
               &:hover {
                 opacity: 1;
               }
             }
           }
         }
-
         .active-content {
           display: block;
         }
@@ -226,10 +189,7 @@
 @media screen and (max-width: 1023px) {
   .contact {
     height: auto;
-
     .tab-menu-container {
-      // max-width: 80%;
-
       .background-title {
         font-size: 17vw;
       }
@@ -242,23 +202,19 @@
       height: auto;
       padding-top: 20vh;
       padding-bottom: 15vh;
-
       .background-title {
         font-size: 24vw;
       }
-
       .contact-container {
         width: 90%;
         height: auto;
         padding-top: 7vh;
         padding-bottom: 7vh;
-
         /**********[ tabs ]**********/
         .tabs {
           width: 100%;
           height: 3rem;
         }
-
         /**********[ contents ]**********/
         .content-tabs {
           width: 100%;
