@@ -62,8 +62,6 @@
         margin: 0 auto;
         display: flex;
         position: relative;
-
-        // project title
         .title-link-position {
           position: absolute;
           top: 50%;
@@ -77,14 +75,17 @@
           align-items: center;
           justify-content: center;
           font-size: 10vw;
-          font-weight: 600;
           white-space: nowrap;
-          font-family: sans-serif;
           z-index: 999;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+            'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+            'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+            'Noto Color Emoji';
         }
         .preview-img {
-          filter: brightness(95%);
+          filter: brightness(90%);
           width: 100%;
+          max-width: 50%;
           position: relative;
           overflow: hidden;
           -moz-animation: fadeInUp 0.7s ease-in-out; /* Firefox */
@@ -98,19 +99,21 @@
     /**********[ project 1 ]**********/
     .project-link-1 {
       .content-container {
+        flex-direction: column;
         align-items: center;
 
         .left-img-wrapper {
-          width: 50%;
+          width: 100%;
+          height: 50%;
+          display: flex;
+          align-items: flex-end;
+        }
+        .right-img-wrapper {
+          width: 100%;
           height: 50%;
           display: flex;
           align-items: flex-start;
-        }
-        .right-img-wrapper {
-          width: 50%;
-          height: 70%;
-          display: flex;
-          align-items: flex-end;
+          justify-content: flex-end;
         }
       }
     }
@@ -137,18 +140,6 @@
           }
         }
       }
-
-      /**********[ project 1 ]**********/
-      .project-link-1 {
-        .content-container {
-          .left-img-wrapper {
-            height: 400px;
-          }
-          .right-img-wrapper {
-            height: 400px;
-          }
-        }
-      }
     }
   }
 }
@@ -163,18 +154,6 @@
           }
         }
       }
-
-      /**********[ project 1 ]**********/
-      .project-link-1 {
-        .content-container {
-          .left-img-wrapper {
-            height: 350px;
-          }
-          .right-img-wrapper {
-            height: 350px;
-          }
-        }
-      }
     }
   }
 }
@@ -184,36 +163,15 @@
       .project-link {
         .content-container {
           height: 400px;
-
           .background-title {
             font-size: 12vw;
           }
         }
       }
-
       /**********[ project 1 ]**********/
       .project-link-1 {
         height: auto;
         padding-bottom: 7vh;
-
-        .content-container {
-          .left-img-wrapper {
-            height: 180px;
-            height: auto;
-
-            .preview-img {
-              padding-bottom: 15vh;
-            }
-          }
-          .right-img-wrapper {
-            // height: 240px;
-            height: 160px;
-
-            .preview-img {
-              padding-top: 15vh;
-            }
-          }
-        }
       }
     }
   }

@@ -23,7 +23,7 @@
     overflow: hidden;
 
     .background-title {
-      opacity: 0.4;
+      opacity: 0.2;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -41,9 +41,9 @@
       justify-content: center;
       border-radius: 14px;
       background-color: rgba($color: $secondary-color, $alpha: 0.2);
+      border: 0.25px solid rgba($color: $secondary-color, $alpha: 0.5);
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
-      border: 0.25px solid rgba($color: $secondary-color, $alpha: 0.5);
 
       .side-title-container {
         display: flex;
@@ -53,7 +53,7 @@
         margin-bottom: 1.5rem;
 
         .content-side-title {
-          color: $text-white;
+          // color: $text-black;
         }
       }
       /**********[ tabs ]**********/
@@ -71,7 +71,7 @@
           justify-content: center;
           cursor: pointer;
           opacity: 0.4;
-          color: $text-white;
+          color: $text-black;
           text-transform: uppercase;
           font-size: $font-size-sm;
           font-weight: 500;
@@ -116,21 +116,21 @@
                 outline: none;
                 font-size: $font-size-sm;
                 border-bottom: 0.05rem solid
-                  rgba($color: $white-color, $alpha: 0.4);
+                  rgba($color: $black-color, $alpha: 0.4);
                 transition: all 0.35s;
                 resize: none;
 
                 &::placeholder {
                   font-weight: 300;
-                  color: $text-white;
+                  color: $text-black;
                 }
 
                 &:hover {
-                  border-bottom: 0.05rem solid $white-color;
+                  border-bottom: 0.05rem solid $black-color;
                 }
 
                 &:focus {
-                  border-bottom: 0.2rem solid $white-color;
+                  border-bottom: 0.2rem solid $black-color;
 
                   &::placeholder {
                     font-weight: 600;
@@ -158,7 +158,7 @@
               align-items: center;
               justify-content: center;
               background-color: transparent;
-              border: 0.05rem solid $white-color;
+              border: 0.05rem solid $black-color;
               position: relative;
               margin-top: 15%;
               transition: all 0.35s;
@@ -166,7 +166,7 @@
               .send-btn {
                 border: none;
                 background-color: transparent;
-                color: $text-white;
+                color: $text-black;
                 text-transform: uppercase;
                 font-size: $font-size-xs;
                 font-weight: 600;
@@ -178,10 +178,10 @@
               }
 
               &:hover {
-                background-color: $white-color;
+                background-color: $black-color;
 
                 .send-btn {
-                  color: $text-black;
+                  color: $text-white;
                 }
               }
             }
@@ -204,7 +204,7 @@
               transition: all 0.35s;
 
               .content-text {
-                color: $text-white;
+                color: $text-black;
                 font-weight: 500;
               }
 

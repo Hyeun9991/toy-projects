@@ -1,99 +1,149 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { profileItems } from './profileItems';
 import './AboutContainer.scss';
 
 const AboutContainer = () => {
   return (
     <div className="about">
-      <div className="about-section-container">
-        <section className="about-section about-section-01">
-          <p className="background-title">eunhye</p>
-          <div className="about-img-wrapper">
-            <img
-              src={require('../../assets/images/home-about-img.png')}
-              alt="about 이미지 01"
-              className="about-img"
-            />
-            <p className="sign-text">Eunhye .</p>
-          </div>
-        </section>
-        <section className="about-section about-section-02">
-          <div className="content-container">
-            <h2 className="content-main-title">SCALABILITY & WAY</h2>
-            <p className="content-side-title">: 웹의 확장성과 공부 방법</p>
-            <div className="content-text-container">
-              <div className="text-item">
-                <p className="content-text">
-                  온라인으로 일처리하는 시대가 오면서 온라인의 핵심 플랫폼인
-                  웹,앱의 프론트 부분을 개발하는 프론트엔드 개발자는 온라인
-                  비즈니스 산업 종류에 얽매이지 않고 필요로 하다는 것에 웹
-                  개발의 전망이 밝다고 판단했습니다.
-                </p>
-                <p className="content-text">
-                  먼저 적성에 맞는지 생활코딩을 비롯해 인터넷 강의를 통해 웹의
-                  동작 원리부터 기초, JavaScript 등 웹 개발에 필요한 내용들을
-                  학습했습니다.
-                </p>
-              </div>
-              <div className="text-item">
-                <p className="content-text">
-                  공부하는 과정에서 개발에 대해 흥미를 느껴 kamranahmedse의
-                  프론트엔드 개발자 로드맵을 따라 단계별로 학습하고 중요하거나
-                  배운 내용을 깃허브와 블로그에 올리는 방식으로 공부했습니다.
-                </p>
-                <p className="content-text">
-                  수업 과정을 따라가면서 나온 아웃풋과 그 과정에서 발생한 오류를
-                  해석하고 해결 방법을 찾아 해결한 시간이 성취감을 가져왔습니다.
-                  현재는 React (react-router)를 학습하고 복습하는 시간을 갖기
-                  위해 반응형 포트폴리오 웹사이트를 개발하고 있습니다.
-                </p>
-              </div>
-            </div>
-            <a href="#02" className="content-link">
-              더 보기
-            </a>
-          </div>
-        </section>
-        <section className="about-section about-section-03" id="02">
-          <div className="content-container">
-            <h2 className="content-main-title sign-text">
-              {/* My Favorite Things */}
-            </h2>
-            <h2 className="content-main-title">More About me</h2>
-            <ul className="favorite-container">
-              <li className="favorite-item">
-                <h3 className="content-side-title">favorite thing to do : </h3>
-                <p className="item-text handwriting-text">
-                  커피 마시면서 TV보기
-                </p>
-              </li>
-              <li className="favorite-item">
-                <h3 className="content-side-title">favorite food :</h3>
-                <p className="item-text handwriting-text">
-                  지코바 양념 구이 치킨
-                </p>
-              </li>
-              <li className="favorite-item">
-                <h3 className="content-side-title">my favorite song :</h3>
-                <p className="item-text handwriting-text">
-                  태연 - 사계 (Four Seasons)
-                </p>
-              </li>
-              <li className="favorite-item">
-                <h3 className="content-side-title">what makes me happy :</h3>
-                <p className="item-text handwriting-text">
-                  침대위에서 플레이리스트 들으면서 공부할 때
-                </p>
-              </li>
-            </ul>
-          </div>
-        </section>
+      <div className="about-cover">
+        <h1 className="background-title">eunhye</h1>
+        <div className="about-img-wrapper">
+          <img
+            src={require('../../assets/images/profile-img.png')}
+            alt="프로필사진"
+            className="about-img"
+          />
+          <p className="sign-text">Eunhye .</p>
+        </div>
       </div>
-      {/* page-footer-title */}
+      <div className="about-section-container">
+        <section className="s-start">
+          <div className="sticky-profile">
+            <div className="content-container">
+              <article className="content">
+                {/* <div className="profile-01">
+                  <div className="profile-img-wrapper">
+                    <img
+                      src={require('../../assets/images/profile-img.png')}
+                      alt="프로필사진"
+                      className="profile-img"
+                    />
+                  </div>
+                  <div className="profile-name-wrapper">
+                    <p className="content-text">eun-hye park</p>
+                    <p className="content-side-title">developer front-end</p>
+                  </div>
+                </div> */}
+                <div className="profile-02">
+                  <ul>
+                    {profileItems.map((t) => {
+                      return (
+                        <li key={t.id}>
+                          {t.icon}
+                          <a
+                            href={t.url}
+                            target="_blank"
+                            className="content-text"
+                          >
+                            {t.title}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+                <div className="contact-button">
+                  <Link to="/contact" className="content-link">
+                    get in touch
+                  </Link>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+        <section className="s-end">
+          <section className="se-section se-01">
+            <div className="content-container">
+              <h2 className="content-side-title">about me</h2>
+              <article className="content">
+                <h3 className="content-secondary-title">
+                  “나의 DEFAULT는 배움”
+                </h3>
+                <p className="content-text">
+                  저는 어릴 때부터 무엇이든지 직접 구현해보고 만드는 것을
+                  좋아했습니다.
+                </p>
+                <p className="content-text">
+                  점점 발전하는 온라인 시대의 양질의 서비스를 접하면서 지금
+                  이용하고 있는 서비스 혹은 점점 발전될 미래의 기술에 대해
+                  흥미가 생겼습니다.
+                </p>
+              </article>
+            </div>
+          </section>
+          <section className="se-section se-02">
+            <div className="content-container">
+              <h2 className="content-side-title">my skills</h2>
+              <article className="content">
+                <ul className="sl-left">
+                  <li className="skill-item">
+                    <h3 className="content-secondary-title">HTML</h3>
+                    <div className="text-container">
+                      <p className="content-text">
+                        웹접근성과 SEO를 고려하여 적절한 태그사용
+                      </p>
+                    </div>
+                  </li>
+                  <li className="skill-item">
+                    <h3 className="content-secondary-title">CSS</h3>
+                    <div className="text-container">
+                      <p className="content-text">
+                        @MEDIA QUERY를 사용해 반응형 웹사이트 개발
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+                <ul className="sl-right">
+                  <li className="skill-item">
+                    <h3 className="content-secondary-title">JAVASCRIPT</h3>
+                    <div className="text-container">
+                      <p className="content-text">
+                        DOM 조작과 EVENTLISTENER를 활용해 간단한 기능 구현
+                      </p>
+                      <p className="content-text">
+                        RESTFUL API를 활용하여 외부 API 연동
+                      </p>
+                      <p className="content-text">
+                        스크린 높이값을 구해 PARALLAX SCROLLING 구현
+                      </p>
+                    </div>
+                  </li>
+                  <li className="skill-item">
+                    <h3 className="content-secondary-title">REACT.JS</h3>
+                    <div className="text-container">
+                      <p className="content-text">
+                        HOOKS의 STATE를 활용해 간단한 기능 구현
+                      </p>
+                      <p className="content-text">
+                        CRA, REACT-ROUTER로 SPA 웹사이트 구현
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        {/* <section className="about-section about-section-04">
+          <h2 className="background-title">skills</h2>
+          <div className="content-container"></div>
+        </section> */}
+      </div>
       <div className="page-footer-title">
         <p className="pf-title">about</p>
       </div>
-      {/* /page-footer-title */}
     </div>
   );
 };

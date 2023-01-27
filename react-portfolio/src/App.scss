@@ -1,6 +1,5 @@
 @charset "UTF-8";
 @import './styles/variable';
-
 /**********[ fonts ]**********/
 @import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
 @font-face {
@@ -11,13 +10,6 @@
   font-family: 'daniel';
   src: url('./assets/fonts/daniel.ttf') format('truetype');
 }
-@font-face {
-  font-family: 'Future_tree';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_04@1.0/Future_tree.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 /**********[ initialization ]**********/
 * {
   margin: 0;
@@ -36,9 +28,9 @@
 html,
 body {
   background-color: $primary-color;
-  font-family: 'SF Pro KR', 'SF Pro Text', 'Yoon Gothic', 'Myriad Set Pro',
-    'SF Pro Icons', 'Apple Gothic', 'HY Gulim', 'MalgunGothic', 'HY Dotum',
-    'Lexi Gulim', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -74,9 +66,23 @@ a {
 }
 
 /**********[ 2023.01.12 ]**********/
+.logo {
+  font-family: 'Petit Formal Script';
+  font-size: $font-size-xl;
+  color: $text-white;
+  font-weight: 600;
+}
 .content-main-title {
   color: $text-black;
   font-size: $font-size-xxxl;
+  font-weight: 500;
+  line-height: 1.8rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.content-secondary-title {
+  color: $text-black;
+  font-size: $font-size-lg;
   font-weight: 500;
   line-height: 1.8rem;
   text-transform: uppercase;
@@ -90,7 +96,7 @@ a {
 .content-text {
   color: $text-black;
   font-size: $font-size-sm;
-  line-height: 2rem;
+  line-height: 1.8rem;
   text-transform: uppercase;
 
   b {
@@ -114,14 +120,9 @@ a {
   }
 }
 .sign-text {
-  // font-family: 'Future_tree';
   font-family: 'daniel';
   font-size: 1.5vw;
   color: $text-white;
-}
-.handwriting-text {
-  font-family: 'Future_tree';
-  font-size: $font-size-xl;
 }
 .background-title {
   color: $text-white;
@@ -140,297 +141,9 @@ a {
 
   .pf-title {
     text-transform: uppercase;
-    color: $primary-color;
+    color: $text-white;
     font-weight: 500;
     font-size: $font-size-xs;
-  }
-}
-
-/**********[ logo ]**********/
-.logo {
-  font-family: 'Petit Formal Script';
-  color: $text-white;
-  font-size: $font-size-xl;
-  font-weight: 600;
-}
-.logo-small {
-  color: $text-black;
-  font-size: $font-size-sm;
-  font-family: $bodoni-moda;
-  text-transform: uppercase;
-  line-height: 1;
-  letter-spacing: 0.25rem;
-}
-
-/**********[ cursive fonts ]**********/
-.cursive-text {
-  font-size: $font-size-xxxl;
-  font-size: 4vw;
-  color: $text-black;
-  font-family: 'Homemade Apple', cursive;
-}
-
-/**********[ title ]**********/
-.title {
-  color: $text-black;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  font-size: $font-size-xxl;
-  line-height: 1;
-
-  b {
-    font-weight: lighter;
-  }
-}
-.title-middle {
-  color: $text-black;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  font-size: $font-size-xl;
-  line-height: 1;
-
-  b {
-    font-weight: lighter;
-  }
-}
-.title-small {
-  color: $text-black;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  font-size: $font-size-base;
-  line-height: 1;
-  font-weight: 600;
-
-  b {
-    font-weight: lighter;
-  }
-}
-.secondary-title {
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  font-size: $font-size-xs;
-  line-height: 1;
-  font-weight: 300;
-  color: $text-black;
-}
-
-/**********[ bold & normal text, color-white ]**********/
-.bold-text {
-  text-transform: uppercase;
-  font-size: $font-size-sm;
-  font-weight: 600;
-  letter-spacing: 0.1rem;
-  line-height: 2rem;
-  color: $text-black;
-}
-.thin-text {
-  color: rgba($color: $text-black, $alpha: 1);
-  font-size: $font-size-sm;
-  line-height: 2rem;
-  font-weight: 300;
-
-  b {
-    font-weight: 600;
-  }
-}
-.color-white {
-  color: rgba($color: $text-white, $alpha: 0.9) !important;
-
-  // &::before {
-  //   background-color: rgba($color: $main-white, $alpha: 0.7) !important;
-  // }
-
-  // &:hover {
-  //   &::before {
-  //     background-color: $main-white;
-  //   }
-  // }
-}
-
-/**********[ link ]**********/
-.base-link {
-  text-transform: uppercase;
-  font-size: $font-size-sm;
-  font-weight: 600;
-  letter-spacing: 0.1rem;
-  color: $text-black;
-}
-.base-link-small {
-  text-transform: uppercase;
-  font-size: $font-size-xs;
-  font-weight: 600;
-  letter-spacing: 0.1rem;
-  color: $text-black;
-}
-.base-underline-link-small {
-  text-transform: uppercase;
-  font-size: $font-size-xs;
-  font-weight: 300;
-  letter-spacing: 0.05rem;
-  color: rgba($color: $text-black, $alpha: 0.4);
-  position: relative;
-  transition: all 0.35s;
-
-  &::before {
-    content: '';
-    background-color: transparent;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 0.05rem;
-    border-radius: 2px;
-    transition: all 0.1s;
-  }
-
-  &:hover {
-    color: $text-black;
-
-    &::before {
-      background-color: rgba($color: $main-black, $alpha: 0.4);
-    }
-  }
-}
-.underline-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  font-size: $font-size-sm;
-  letter-spacing: 0.1rem;
-  font-weight: 600;
-  position: relative;
-  color: $text-black;
-
-  &::before {
-    content: '';
-    background-color: $main-black;
-    position: absolute;
-    bottom: 0;
-    bottom: -0.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 0.1rem;
-    transition: all 0.35s;
-    opacity: 0.2;
-  }
-
-  &:hover::before {
-    opacity: 1;
-  }
-}
-.underline-link-small {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  font-size: $font-size-xs;
-  letter-spacing: 0.1rem;
-  font-weight: 600;
-  color: $text-white;
-  position: relative;
-
-  &::before {
-    content: '';
-    background-color: $main-white !important;
-    position: absolute;
-    bottom: -0.2rem;
-    left: 0;
-    width: 100%;
-    height: 0.05rem;
-    transition: all 0.35s;
-    opacity: 0.4;
-    z-index: -1;
-  }
-
-  &:hover {
-    color: $text-black;
-
-    &::before {
-      background-color: $main-white;
-      opacity: 1;
-      height: 130%;
-    }
-  }
-}
-.box-link {
-  border: 0.05rem solid $main-black;
-  color: $text-black;
-  width: 100px;
-  height: 50px;
-  font-size: $font-size-xs;
-  letter-spacing: 0.1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  transition: all 0.35s;
-
-  &:hover {
-    background-color: $main-black !important;
-    color: $text-white !important;
-  }
-}
-
-/**********[ button ]**********/
-.underline-button {
-  font-size: $font-size-xs;
-  color: $text-black;
-  line-height: 1;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  position: relative;
-  z-index: 1;
-
-  &::before {
-    content: '';
-    background-color: $main-black;
-    position: absolute;
-    bottom: -0.3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 95%;
-    height: 1.5px;
-    transition: all 0.35s;
-    z-index: -1;
-    opacity: 0.2;
-  }
-
-  &:hover {
-    &::before {
-      opacity: 1 !important;
-    }
-  }
-}
-.circle-button {
-  background-color: $main-white;
-  border: 0.3rem solid $main-black;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  z-index: 9999;
-
-  p {
-    font-size: $font-size-xxs;
-    color: $text-black;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 1px;
-  }
-
-  &:hover {
-    background-color: $main-black;
-    p {
-      color: $text-white;
-    }
   }
 }
 

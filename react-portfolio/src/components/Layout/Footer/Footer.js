@@ -1,63 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { footerMenuItems, footerSocialItems } from './footerItems';
 import './Footer.scss';
 
 const Footer = () => {
-  const menuList = [
-    {
-      id: 1,
-      title: 'home',
-      url: '/',
-    },
-    {
-      id: 2,
-      title: 'about',
-      url: '/about',
-    },
-    {
-      id: 3,
-      title: 'skills',
-      url: '/skills',
-    },
-    {
-      id: 4,
-      title: 'projects',
-      url: '/projects',
-    },
-  ];
-  const socialList = [
-    {
-      id: 1,
-      title: 'email',
-      url: 'mailto: hyeun9991@gmail.com',
-    },
-    {
-      id: 2,
-      title: 'mobile',
-      url: 'sms: 010-7527-5792',
-    },
-    {
-      id: 3,
-      title: 'github',
-      url: 'https://github.com/Hyeun9991',
-    },
-    {
-      id: 4,
-      title: 'blog',
-      url: 'https://velog.io/@hyeun9991',
-    },
-  ];
-
   return (
-    <div className="footer">
+    <footer className="footer">
       <p className="background-title">eunhye</p>
       <div className="footer-container">
         {/* secondary-footer */}
         <div className="secondary-footer">
-          <div className="sf-start sf-container">
+          <nav className="sf-start sf-container" role="navigation">
             <p className="footer-item">navigate</p>
             <ul>
-              {menuList.map((t) => {
+              {footerMenuItems.map((t) => {
                 return (
                   <li key={t.id}>
                     <Link to={t.url} className="footer-active-item">
@@ -67,11 +23,11 @@ const Footer = () => {
                 );
               })}
             </ul>
-          </div>
-          <div className="sf-end sf-container">
+          </nav>
+          <nav className="sf-end sf-container" role="navigation">
             <p className="footer-item">connection</p>
             <ul>
-              {socialList.map((t) => {
+              {footerSocialItems.map((t) => {
                 return (
                   <li key={t.id}>
                     <a
@@ -85,7 +41,7 @@ const Footer = () => {
                 );
               })}
             </ul>
-          </div>
+          </nav>
         </div>
         {/* /secondary-footer */}
         {/* main-footer */}
@@ -105,7 +61,7 @@ const Footer = () => {
         </div>
         {/* /main-footer */}
       </div>
-    </div>
+    </footer>
   );
 };
 
