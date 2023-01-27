@@ -22,7 +22,7 @@ const AboutContainer = () => {
           <div className="sticky-profile">
             <div className="content-container">
               <article className="content">
-                {/* <div className="profile-01">
+                <div className="profile-01">
                   <div className="profile-img-wrapper">
                     <img
                       src={require('../../assets/images/profile-img.png')}
@@ -31,10 +31,10 @@ const AboutContainer = () => {
                     />
                   </div>
                   <div className="profile-name-wrapper">
-                    <p className="content-text">eun-hye park</p>
+                    <p className="content-text">eunhye</p>
                     <p className="content-side-title">developer front-end</p>
                   </div>
-                </div> */}
+                </div>
                 <div className="profile-02">
                   <ul>
                     {profileItems.map((t) => {
@@ -54,7 +54,7 @@ const AboutContainer = () => {
                   </ul>
                 </div>
                 <div className="contact-button">
-                  <Link to="/contact" className="content-link">
+                  <Link to="/contact" className="link-button">
                     get in touch
                   </Link>
                 </div>
@@ -91,7 +91,7 @@ const AboutContainer = () => {
                     <h3 className="content-secondary-title">HTML</h3>
                     <div className="text-container">
                       <p className="content-text">
-                        웹접근성과 SEO를 고려하여 적절한 태그사용
+                        ·&nbsp;&nbsp;웹접근성과 SEO를 고려하여 적절한 태그사용
                       </p>
                     </div>
                   </li>
@@ -99,7 +99,7 @@ const AboutContainer = () => {
                     <h3 className="content-secondary-title">CSS</h3>
                     <div className="text-container">
                       <p className="content-text">
-                        @MEDIA QUERY를 사용해 반응형 웹사이트 개발
+                        ·&nbsp;&nbsp;@MEDIA QUERY를 사용해 반응형 웹사이트 개발
                       </p>
                     </div>
                   </li>
@@ -109,13 +109,15 @@ const AboutContainer = () => {
                     <h3 className="content-secondary-title">JAVASCRIPT</h3>
                     <div className="text-container">
                       <p className="content-text">
-                        DOM 조작과 EVENTLISTENER를 활용해 간단한 기능 구현
+                        ·&nbsp;&nbsp;DOM 조작과 EVENTLISTENER를 활용해 간단한
+                        기능 구현
                       </p>
                       <p className="content-text">
-                        RESTFUL API를 활용하여 외부 API 연동
+                        ·&nbsp;&nbsp;RESTFUL API를 활용하여 외부 API 연동
                       </p>
                       <p className="content-text">
-                        스크린 높이값을 구해 PARALLAX SCROLLING 구현
+                        ·&nbsp;&nbsp;스크린 높이값을 구해 PARALLAX SCROLLING
+                        구현
                       </p>
                     </div>
                   </li>
@@ -123,10 +125,10 @@ const AboutContainer = () => {
                     <h3 className="content-secondary-title">REACT.JS</h3>
                     <div className="text-container">
                       <p className="content-text">
-                        HOOKS의 STATE를 활용해 간단한 기능 구현
+                        ·&nbsp;&nbsp;HOOKS의 STATE를 활용해 간단한 기능 구현
                       </p>
                       <p className="content-text">
-                        CRA, REACT-ROUTER로 SPA 웹사이트 구현
+                        ·&nbsp;&nbsp;CRA, REACT-ROUTER로 SPA 웹사이트 구현
                       </p>
                     </div>
                   </li>
@@ -135,11 +137,6 @@ const AboutContainer = () => {
             </div>
           </section>
         </section>
-
-        {/* <section className="about-section about-section-04">
-          <h2 className="background-title">skills</h2>
-          <div className="content-container"></div>
-        </section> */}
       </div>
       <div className="page-footer-title">
         <p className="pf-title">about</p>

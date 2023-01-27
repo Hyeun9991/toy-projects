@@ -6,7 +6,7 @@ import { MdEmail } from 'react-icons/md';
 export const profileItems = [
   {
     id: 1,
-    title: 'eunhye park',
+    title: 'eun-hye park, 박은혜',
     icon: <HiUserCircle className="content-text" />,
   },
   {

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { menuItems, socialItems, sideItems } from './menuItems';
 import './Header.scss';
 
@@ -45,10 +45,12 @@ const Header = () => {
           <span className="first-bar"></span>
           <span className="second-bar"></span>
         </div>
-        <nav role="navigation" className={`h-side-nav ${btnClick ? 'open-side' : ''}`}>
-          <div className='hs-container'>
-            
-            <ul className='hs-start'>
+        <nav
+          role="navigation"
+          className={`h-side-nav ${btnClick ? 'open-side' : ''}`}
+        >
+          <div className="hs-container">
+            <ul className="hs-start">
               {sideItems.map((t) => {
                 return (
                   <li key={t.id}>
@@ -59,11 +61,11 @@ const Header = () => {
                 );
               })}
             </ul>
-            <ul className='hs-end'>
+            <ul className="hs-end">
               {socialItems.map((t) => {
                 return (
                   <li key={t.id}>
-                    <a href={t.url} target="_blank" className='h-item'>
+                    <a href={t.url} target="_blank" className="h-item">
                       {t.title}
                     </a>
                   </li>
