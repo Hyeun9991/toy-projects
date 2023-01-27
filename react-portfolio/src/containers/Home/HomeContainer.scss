@@ -68,8 +68,8 @@
       .content-container {
         background-color: rgba($color: $secondary-color, $alpha: 0.2);
         border: 0.25px solid rgba($color: $secondary-color, $alpha: 0.5);
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         width: 100%;
         max-width: 1200px;
         display: flex;
@@ -134,7 +134,7 @@
             width: 32%;
             height: auto;
             border-radius: 14px;
-            padding: 1rem;
+            padding: 0.6rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -231,7 +231,7 @@
           left: -0.2rem;
           font-size: 14vw;
         }
-  
+
         .content-container {
           padding: 0.6rem;
           padding-bottom: 1.5rem;
@@ -243,8 +243,6 @@
             }
             .project-item {
               width: 96%;
-              padding: 0.6rem;
-              gap: 0.6rem;
             }
           }
         }
