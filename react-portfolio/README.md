@@ -1,4 +1,4 @@
-## Eh:Eunhye Portfolio
+## Eh: Eunhye Portfolio
 
 <img width="80%" src="./src/assets/images/portfolio_cover.png"/>
 
@@ -97,6 +97,7 @@ _2022.11 ~ 현재_
 | Home     | 프로젝트 커버, 프로젝트 리스트 페이지 | `/`         |
 | About    | resume 페이지                         | `/about`    |
 | Projects | 프로젝트 리스트 페이지                | `/projects` |
+| Portfolio | 프로젝트 리스트 중 Portfolio 페이지                | `/projects/portfolio` |
 | Contact  | 이메일을 보낼 수 있는 페이지          | `/contact`  |
 
 <br>
@@ -443,4 +444,4 @@ const ContactContainer = () => {
 <br />
 <br />
 
-🔝 [Back To Top](#목차)
+🔝 [Back To Top](#eh-eunhye-portfolio)
