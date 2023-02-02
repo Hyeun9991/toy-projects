@@ -1,17 +1,17 @@
-## Eh:Eunhye Hangout
+## Eh:Eunhye Portfolio
 
 <img width="80%" src="./src/assets/images/portfolio_cover.png"/>
 
 #### 목차
 
+- [스크린샷](#스크린샷)
 - [프로잭트 소개](#프로젝트-소개)
   - [개발 기간](#개발-기간)
-  - [기획 의도](#기획-의도)
+  - [개요 및 기획 의도](#개요-및-기획-의도)
   - [기술 스택](#기술-스택)
-  - [React를 선택한 이유](#react를-선택한-이유)
   - [기여한 일](#기여한-일)
 - [프로잭트 구성](#프로젝트-구성)
-  - [폴더](#폴더src)
+  - [폴더](#src폴더)
   - [페이지](#페이지)
 - [기능 구현](#기능-구현)
   - [Layout](#layout-component)
@@ -20,18 +20,17 @@
   - [ToTopButton](#totopbutton-component)
   - [EmailForm](#email-form)
 - [개발 후기](#개발-후기)
-  - [어려웠던 첫 프로젝트](#어려웠던-첫-프로젝트)
-  - [ver02에 추가할 내용](#ver02에-추가할-내용)
+  - [추후 개선점](#추후-개선점)
 
 <br>
 <br>
 
-# 프리뷰
+# 스크린샷
 
-<img width="80%" src="./src/assets/images/about_02.png"/>
-<img width="80%" src="./src/assets/images/skills_01.png"/>
-<img width="80%" src="./src/assets/images/projects_01.png"/>
-<img width="80%" src="./src/assets/images/contact_01.png"/>
+<img width="80%" src="./src/assets/images/preview/homepage_projects_preview.png"/>
+<img width="80%" src="./src/assets/images/preview/aboutpage_preview.png"/>
+<img width="80%" src="./src/assets/images/preview/Projectpage_preview.png"/>
+<img width="80%" src="./src/assets/images/preview/Contactpage_preview.png"/>
 
 <br>
 <br>
@@ -39,46 +38,39 @@
 
 # 프로젝트 소개
 
-> 홈페이지 겸 포트폴리오 웹사이트
-
 ## 개발 기간
 
-_2022.11 ~ 2023.01_
+_2022.11 ~ 현재_
 
 <br />
 
-## 기획 의도
+## 개요 및 기획 의도
 
-React를 배우고 React 기초지식을 활용해서 나만의 홈페이지를 만들고 싶었습니다.
+- React로 개발한 홈페이지, 포트폴리오 웹사이트
+- 웹 개발에 입문하고 습득한 지식을 기반으로 사이트 기획, 기능 구현, 배포 과정을 학습할 목적으로 만든 프로젝트
 
 <br>
 
 ## 기술 스택
 
-- HTML/SCSS
-- JavaScript
-- React, react-router-dom(v6), CRA
-
-<br>
-
-## React를 선택한 이유
-
-- **재사용 가능한** UI 구성 요소를 만들 수 있음
-- 레고를 조립하듯이 Component를 조립하여 UI를 개발하기에 **유지 보수**하기에 유리함
-- 페이지 전체를 렌더링 하지 않고 **필요한 부분만 렌더링** 할 수 있음
-  - 불필요한 렌더링 과정의 비효율성을 최소화
-- JSX(JavaScript + xml) 지원
-- **서버 사이드 렌더링, 클라이언트 사이드 렌더링 지원 가능**
+- HTML
+- SCSS(v.1.56.1)
+- JavaScript(ES6+)
+- React(v.18.2.0), react-router-dom(v.6.4.3), CRA
+  - 편한 유지보수, 넓은 생태계로 선택
 
 <br>
 
 ## 기여한 일
 
-- Figma로 웹사이트 구성과 디자인을 기획했습니다.
-- React Router V6의 `Link` 의 `to` 속성을 활용하여 url 변경을 통해 **리로드 되지 않는 페이지 전환** 기능을 구현했습니다.
-- `@media-query` 로 PC, 태블릿, 모바일 각각 스크린 사이즈에 맞게 **반응형**으로 제작했습니다.
-- `Email.JS API` 와 연결해서 **Email Form** 기능을 구현했습니다.
-- `state` 를 활용해서 **모달 창 열기 & 닫기, 탭 전환 기능**을 구현 했습니다.
+- Figma를 활용해 사이트의 전반적인 구성과 디자인을 기획
+- 파일 구성을 기획
+- EmailJS를 활용해 이메일폼 구현
+- 컴포넌트 단위로 페이지를 만들고 React Router를 활용해 URL 이동 기능 구현
+- `useLocation`, `useEffect` 를 활용하여 URL이 변경될 때마다 스크롤 위치를 맨 위로 올리는 기능 구현
+- window에 `scrollTo` 함수를 활용하여 클릭하면 스크롤 위치를 맨 위로 올리는 기능 구현
+- window의 높이를 구해 일정 스크롤 위치를 초과하면 화면에 나타나는 기능 구현
+- `@media-query` 를 활용해서 반응형 적용
 
 <br>
 <br>
@@ -86,27 +78,26 @@ React를 배우고 React 기초지식을 활용해서 나만의 홈페이지를 
 
 # 프로젝트 구성
 
-## 폴더/src
+## src/폴더
 
-| 폴더 이름  | 설명                                                                      | 폴더 구성                                                                 |
-| :--------- | :------------------------------------------------------------------------ | :------------------------------------------------------------------------ |
-| assets     | ttf, oft폰트, 이미지 모음 폴더                                            | fonts, images                                                             |
-| components | 사이트 전역에서 사용할 컴포넌트 폴더                                      | Layout(Header, Footer), ScrollToTop, ToTopButton                          |
-| containers | pages 컴포넌트안에 들어갈 컴포넌트 폴더                                   | Home, About, Skills, Projects, Contact                                    |
-| pages      | Layout 컴포넌트안에 들어갈 컴포넌트, Container 컴포넌트를 감싸는 컴포넌트 | Homepage.js, AboutPage.js, SkillsPage.js, ProjectsPage.js, ContactPage.js |
-| styles     | 프로젝트 전역에서 사용할 스타일 변수 모음 폴더                            | \_variable.scss                                                           |
+| 폴더       | 구성                                               | 설명                                                                             |
+| ---------- | -------------------------------------------------- | -------------------------------------------------------------------------------- |
+| assets     | fonts, images                                      | 폰트와 이미지를 보관하는 폴더                                                    |
+| components | Layout(Header, Footer), ScrollToTop, ToTopButton   | 사이트 전역에서 사용할 컴포넌트 폴더                                             |
+| pages      | Homepage.js, AboutPage.js, Projects.js, Contact.js | Containers 컴포넌트를 감싸는 컴포넌트 폴더, Layout 컴포넌트 안에 들어갈 컴포넌트 |
+| containers | Home, About, Projects, Contact                     | pages 컴포넌트 안에 들어갈 컴포넌트 폴더                                         |
+| styles     | \_variable.scss                                    | 프로젝트 전역에서 사용할 스타일 변수 모음 폴더                                   |
 
 <br />
 
 ## 페이지
 
-| 페이지   | 구성                                                         | url           |
-| :------- | :----------------------------------------------------------- | :------------ |
-| Home     | Navigate, Intro Section, About, SKills, Project List Section | `'/'`         |
-| About    | Overview Section, More About me Section                      | `'/about'`    |
-| Skills   | Front-end, tool Level Section                                | `'/skills'`   |
-| Projects | Project Sections, Project Page Link                          | `'/projects'` |
-| Contact  | Email Form, Connection(Github, Blog, Mobile)                 | `'/contact'`  |
+| 페이지   | 구성                                  | Path        |
+| -------- | ------------------------------------- | ----------- |
+| Home     | 프로젝트 커버, 프로젝트 리스트 페이지 | `/`         |
+| About    | resume 페이지                         | `/about`    |
+| Projects | 프로젝트 리스트 페이지                | `/projects` |
+| Contact  | 이메일을 보낼 수 있는 페이지          | `/contact`  |
 
 <br>
 <br>
@@ -439,18 +430,14 @@ const ContactContainer = () => {
 
 # 개발 후기
 
-## 어려웠던 첫 프로젝트
-
-백지상태인 폴더를 어떤 방식으로 채워나가야 하는지 감이 잡히지 않았습니다.
-개발을 진행하다 막히는 부분은 실무에서 활동하시는 분들의 프로젝트 제작기 포스팅을 참고했습니다.
-
-단순히 개발 언어를 사용해서 기능 구현하는 것뿐만 아니라 사용자 친화적인 구성, 디자인, 접근성을 고려하여 개발해야 한다는 것을 알게 되었습니다. 이론으로만 실습했을 때보다 직접 답을 찾아내서 하나의 프로젝트를 완성시킨 결과를 보니 작지만 값진 경험을 했습니다.
+- 이론적으로 습득한 지식 이외 새로운 지식을 습득하는 시간이 되었습니다. 새롭게 알게된 지식은 공식 문서를 활용해 학습했습니다.
+- 테스트하는 과정에서 불편했던 점을 발견하고 이를 보완할 수 있는 기능을 구현하면서 개발이 재밌게 느껴졌습니다.
 
 <br />
 
-## ver02에 추가할 내용
+## 추후 개선점
 
-- CRUD 기능을 구현하여 Blog 컴포넌트 기능 구현
+- 코드 리팩토링과 게시판을 작성하기 위한 CRUD를 학습해서 버전 2에 추가할 계획입니다.
 
 <br />
 <br />
