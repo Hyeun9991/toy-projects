@@ -48,7 +48,7 @@ const Footer = () => {
         <div className="main-footer">
           <div className="footer-info-01">
             <p className="footer-item">ver.01</p>
-            <p className="footer-item">last update 2023.01.16</p>
+            <p className="footer-item">last update 2023.02.02</p>
           </div>
           <div className="footer-info-02">
             <p className="footer-item">eh: eunhye Hangout</p>
