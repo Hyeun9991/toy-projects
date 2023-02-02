@@ -12,7 +12,6 @@ const HomeContainer = () => {
   return (
     <div className="home">
       <div className="home-section-container">
-        {/* intro-section */}
         <section className="intro-section">
           <div className="intro-title-container">
             <h1 className="intro-title">eunhye</h1>
@@ -56,9 +55,6 @@ const HomeContainer = () => {
                     alt="portfolio 썸네일"
                     src={require('../../assets/images/portfolio_cover.png')}
                   ></img>
-                  <div className="project-info">
-                    <h3 className="content-text">Eh: Eunhye Portfolio</h3>
-                  </div>
                 </Link>
               </li>
               <li
@@ -66,16 +62,13 @@ const HomeContainer = () => {
                   toggleState === 2 ? 'active-content' : ''
                 }`}
               >
-                <div className="project-item">
+                <Link to="/projects/portfolio" className="project-item">
                   <img
                     className="project-thumbnail"
                     alt="portfolio 썸네일"
                     src={require('../../assets/images/portfolio_cover.png')}
                   ></img>
-                  <div className="project-info">
-                    <h3 className="content-text">Eh: Eunhye Portfolio</h3>
-                  </div>
-                </div>
+                </Link>
               </li>
             </ul>
           </div>

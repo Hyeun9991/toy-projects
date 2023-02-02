@@ -54,7 +54,7 @@ const ProjectContainer = () => {
             </div>
             <div className="right-img-wrapper">
               <img
-                src={require('../../assets/images/home_02.png')}
+                src={require('../../assets/images/homepage_projects.png')}
                 alt="portfolio 프리뷰 이미지 02"
                 className="portfolio-preview-img-2 preview-img"
               />

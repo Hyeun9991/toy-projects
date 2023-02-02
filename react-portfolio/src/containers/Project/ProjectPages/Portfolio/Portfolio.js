@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { PortfolioItemList } from './PortfolioItemList';
 import { IoChevronBackCircleOutline } from 'react-icons/io5';
 import './Portfolio.scss';
 
@@ -41,24 +40,24 @@ const Portfolio = () => {
               className="project-img"
             />
             <img
-              src={require('../../../../assets/images/home_01.png')}
+              src={require('../../../../assets/images/homepage_projects.png')}
               alt="portfolio 프리뷰 2"
               className="project-img"
             />
             <img
-              src={require('../../../../assets/images/skills_01.png')}
+              src={require('../../../../assets/images/aboutpage.png')}
+              alt="portfolio 프리뷰 2"
+              className="project-img"
+            />
+            <img
+              src={require('../../../../assets/images/projectspage.png')}
               alt="portfolio 프리뷰 3"
               className="project-img"
             />
             <img
-              src={require('../../../../assets/images/projects_01.png')}
+              src={require('../../../../assets/images/contactpage.png')}
               alt="portfolio 프리뷰 4"
               className="project-img"
-            />
-            <img
-              src={require('../../../../assets/images/contact_01.png')}
-              alt="portfolio 프리뷰 5"
-              className="project-img last-img"
             />
           </div>
         </div>
@@ -77,15 +76,22 @@ const Portfolio = () => {
                 <p className="content-side-title tag-text">UX & UI</p>
                 <p className="content-side-title tag-text">Web Development</p>
                 <p className="content-side-title tag-text">JavaScript</p>
-                <p className="content-side-title tag-text">React.JS</p>
+                <p className="content-side-title tag-text">React</p>
               </div>
             </div>
             <div className="ce-center">
               <div className="desc-item">
                 <h2 className="content-side-title">개요</h2>
                 <p className="content-text">
-                  ·&nbsp;&nbsp;개발자로서 나만의 홈페이지를 개발하고 싶어서 시작한
-                  프로젝트
+                  ·&nbsp;&nbsp;습득했던 지식을 기반으로 사이트 기획, 기능 구현,
+                  배포를 공부하기 위해서 진행한 프로젝트
+                </p>
+              </div>
+              <div className="desc-item">
+                <h2 className="content-side-title">참여인원 및 자신의 역할</h2>
+                <p className="content-text">·&nbsp;&nbsp;개인 프로젝트</p>
+                <p className="content-text">
+                  ·&nbsp;&nbsp;기획(사이트 구성, 디자인, 파일 구성), 기능 구현
                 </p>
               </div>
               <div className="desc-item">
@@ -95,17 +101,33 @@ const Portfolio = () => {
                 </p>
               </div>
               <div className="desc-item">
-                <p className="content-side-title">기능 구현</p>
+                <p className="content-side-title">주요 개발 내용</p>
                 <p className="content-text">
-                  ·&nbsp;&nbsp;react router dom(ver.6)을 활용하여 routing 기능 구현 기능
-                  구현{' '}
+                  ·&nbsp;&nbsp;useLocation, useEffect 를 활용하여 URL이 변경될
+                  때마다 스크롤 위치를 맨 위로 올리는 기능 구현
+                </p>
+                <p className="content-text">
+                  ·&nbsp;&nbsp;window에 scrollTo 함수를 활용하여 클릭하면 스크롤
+                  위치를 맨 위로 올리는 기능 구현
+                </p>
+                <p className="content-text">
+                  ·&nbsp;&nbsp;window의 높이를 구해 일정 스크롤 위치를 초과하면
+                  화면에 나타나는 기능 구현
                 </p>
               </div>
               <div className="desc-item">
                 <p className="content-side-title">개발 후기</p>
                 <p className="content-text">
-                  ·&nbsp;&nbsp;react router dom(ver.6)을 활용하여 routing 기능 구현 기능
-                  구현{' '}
+                  ·&nbsp;&nbsp;이론적으로 습득한 지식 이외 새로운 지식을
+                  습득하는 시간이 되었습니다.
+                </p>
+                <p className="content-text">
+                  ·&nbsp;&nbsp;테스트하는 과정에서 불편했던 점을 발견하고 기능을
+                  구현하여 보완하는 경험을 했습니다.
+                </p>
+                <p className="content-text">
+                  ·&nbsp;&nbsp;리팩토링과 CRUD 지식을 학습해서 버전 2에 추가할
+                  계획입니다.
                 </p>
               </div>
             </div>

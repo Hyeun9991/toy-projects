@@ -73,7 +73,7 @@ a {
   color: $text-black;
   font-size: $font-size-xxxl;
   font-weight: 500;
-  line-height: 1.8rem;
+  line-height: 1.81em;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
 }
@@ -81,7 +81,7 @@ a {
   color: $text-black;
   font-size: $font-size-lg;
   font-weight: 500;
-  line-height: 1.8rem;
+  line-height: 1.81em;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
 }
@@ -93,7 +93,8 @@ a {
 .content-text {
   color: $text-black;
   font-size: $font-size-sm;
-  line-height: 1.8rem;
+  line-height: 1.81em;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
 
   b {

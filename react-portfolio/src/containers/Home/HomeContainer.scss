@@ -6,7 +6,6 @@
   .home-section-container {
     display: flex;
     flex-direction: column;
-    /**********[ intro section ]**********/
     .intro-section {
       background-color: $primary-color;
       width: 100%;
@@ -121,50 +120,60 @@
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 1rem;
             gap: 0;
             row-gap: 3rem;
           }
           .project-item {
-            background-color: rgba($color: $secondary-color, $alpha: 0.2);
-            border: 0.2rem solid transparent;
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            width: 378px;
             width: 32%;
             height: auto;
             border-radius: 14px;
-            padding: 0.6rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 1rem;
             cursor: pointer;
             transition: border-color 0.35s;
+            position: relative;
+
+            &::after {
+              content: 'Eh: Eunhye Portfolio';
+              background-color: rgba($color: $secondary-color-02, $alpha: 0.2);
+              backdrop-filter: blur(8px);
+              -webkit-backdrop-filter: blur(8px);
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 0vh;
+              opacity: 0;
+              visibility: hidden;
+              border-bottom-left-radius: 7px;
+              border-bottom-right-radius: 7px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: $text-white;
+              font-weight: 500;
+              transition: all 0.35s ease-in;
+            }
 
             &:hover {
               border-color: $white-color;
+
+              &::after {
+                height: 85%;
+                visibility: visible;
+                opacity: 1;
+              }
             }
 
             .project-thumbnail {
               width: 100%;
               border-radius: 7px;
             }
-
-            .content-text {
-              color: $text-white;
-              text-transform: none;
-              font-weight: 500;
-            }
           }
         }
       }
-    }
-  }
-  /**********[ page footer title ]**********/
-  .page-footer-title {
-    .pf-title {
-      color: $white-color;
     }
   }
 }
